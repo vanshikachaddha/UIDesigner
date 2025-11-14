@@ -1,19 +1,21 @@
 {
-  "vocab": [
-    ",",
-    "btn-add",
-    "btn-contact",
-    "btn-download",
-    "btn-more",
-    "btn-search",
-    "footer",
-    "img",
-    "label",
-    "row",
-    "slider",
-    "stack",
-    "switch",
-    "{",
-    "}"
-  ]
+  "<PAD>": 0,
+  "<START>": 1,
+  "<END>": 2,
+  "<UNK>": 3,
+  ",": 4,
+  "btn-add": 5,
+  "btn-contact": 6,
+  "btn-download": 7,
+  "btn-more": 8,
+  "btn-search": 9,
+  "footer": 10,
+  "img": 11,
+  "label": 12,
+  "row": 13,
+  "slider": 14,
+  "stack": 15,
+  "switch": 16,
+  "{": 17,
+  "}": 18
 }
