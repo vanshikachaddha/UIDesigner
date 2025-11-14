@@ -1,0 +1,61 @@
+# ---------------------------
+# Ignore dataset artifacts
+# ---------------------------
+data/images/
+data/tokens/
+data/dsl/
+data/raw/
+data/*/*.png
+data/*/*.jpg
+data/*/*.txt
+data/*/*.gui
+
+# Keep metadata/json splits but ignore big files
+data/*.zip
+data/*.tar
+data/*.tar.gz
+
+# ---------------------------
+# Python / Jupyter ignores
+# ---------------------------
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.ipynb_checkpoints/
+
+# ---------------------------
+# Environment / package files
+# ---------------------------
+.env
+.venv/
+venv/
+env/
+*.egg-info/
+dist/
+build/
+
+# ---------------------------
+# MacOS system files
+# ---------------------------
+.DS_Store
+**/.DS_Store
+
+# ---------------------------
+# Model weights / checkpoints
+# ---------------------------
+checkpoints/
+*.pt
+*.pth
+
+# ---------------------------
+# Logs / outputs
+# ---------------------------
+logs/
+*.log
+
+# ---------------------------
+# Temporary files
+# ---------------------------
+tmp/
+temp/
