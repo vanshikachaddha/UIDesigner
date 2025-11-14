@@ -65,17 +65,3 @@ class Pix2CodeDataset:
         token_tensor = torch.tensor(id_list, dtype=torch.long)
 
         return (image_tensor, token_tensor)
-
-
-
-
-
-
-            
-
-
-
-
-
-
-

@@ -59,3 +59,16 @@ logs/
 # ---------------------------
 tmp/
 temp/
+
+# Virtual envs
+venv/
+.env/
+.venv/
+env/
+pix2code_env/
+pix2code/
+
+
+# Python cache
+__pycache__/
+*.pyc
