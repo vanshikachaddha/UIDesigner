@@ -8,8 +8,8 @@
 | Leo Phung | leophung@bu.edu |
 | Vanshika Chaddha| vchaddha@bu.edu |
 | Isabelle Canty | icanty@bu.edu |
-| |  |
-|  | |
+| Amrita Kohli | kohlia@bu.edu |
+| Aakanksha Lambi | aalambi@bu.edu |
 
 ## 1. Goals and Motivation of Project
 
