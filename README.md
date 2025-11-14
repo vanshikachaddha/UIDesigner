@@ -106,3 +106,10 @@ Why?
 * OpenCV
 * TorchVision
 
+## 6. FINAL GOALS
+✔️ A fully working Pix2Code baseline
+✔️ A modernized Transformer-based UI-to-Code pipeline
+✔️ Automatic HTML/CSS generation
+✔️ A full ML workflow from preprocessing → inference
+✔️ A polished, documented GitHub repo
+
