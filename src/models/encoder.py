@@ -26,8 +26,8 @@ class CNNEncoder(nn.Module):
         self.conv6 = nn.Conv2d(128, 128, 3, padding=1)
         self.relu = nn.ReLU()
         self.pool = nn.MaxPool2d(2)
-        self.f1 = nn.Linear(in_features=32*32*128, out_features=1024)
-        self.f2 = nn.Linear(in_features=1024, out_features=1024)
+        self.f1 = nn.Linear(in_features=32*32*128, out_features=512)
+        self.f2 = nn.Linear(in_features=512, out_features=512)
     def block1(self, input):
         # input (256, 256, 3)
         conv1 = self.relu(self.conv1(input))
@@ -57,7 +57,9 @@ class CNNEncoder(nn.Module):
         block1_output = self.block1(x)
         block2_output = self.block2(block1_output)
         block3_output = self.block3(block2_output)
-        f1_output = self.relu(self.f1(block3_output))
+        # Flatten: (B, 128, 32, 32) -> (B, 32*32*128)
+        flattened = block3_output.view(block3_output.size(0), -1)
+        f1_output = self.relu(self.f1(flattened))
         f2_output = self.relu(self.f2(f1_output))
         return f2_output
 

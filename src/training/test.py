@@ -16,6 +16,7 @@ train_loader, val_loader = get_dataloaders(
     max_seq_len=512
 )
 
-images, tokens = next(iter(train_loader))
-print(images.shape)
-print(tokens.shape)
+images, input_tokens, target_tokens = next(iter(train_loader))
+print(f"Images shape: {images.shape}")
+print(f"Input tokens shape: {input_tokens.shape}")
+print(f"Target tokens shape: {target_tokens.shape}")
