@@ -68,6 +68,12 @@ Why?
 * Handles complex DSL sequences
 * Industry standard in seq-to-seq tasks
 
+### Add Attention → Cross Attention
+Why?
+* Referencing past tokens before generating new ones
+* Instead of having one vector -> flatten to patches
+* Better inferences rather than model trying to remember 
+
 ## 3. Team Responsiblity
 
 ### Data Preprocessing
