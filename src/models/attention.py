@@ -1,32 +1,54 @@
-class CrossAttentionBlock(nn.Module):
-    def __init__(self, dim, heads=8, mlp_ratio=4):
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
+
+class CrossAttention(nn.Module):
+    """
+    Pure Cross Attention Layer (LSTM Decoder ↔ Encoder Features)
+
+    Query     → decoder hidden states  (B, Tq, D)
+    Key/Value → image patch embeddings (B, Tk, D)
+    """
+
+    def __init__(self, dim, heads=8, dropout=0.1):
         super().__init__()
-        self.self_attn = nn.MultiheadAttention(dim, heads, batch_first=True)
-        self.cross_attn = nn.MultiheadAttention(dim, heads, batch_first=True)
-        
-        self.mlp = nn.Sequential(
-            nn.Linear(dim, dim*mlp_ratio),
-            nn.ReLU(),
-            nn.Linear(dim*mlp_ratio, dim),
-        )
+        self.dim = dim
+        self.heads = heads
+        self.head_dim = dim // heads
 
-        self.norm1 = nn.LayerNorm(dim)
-        self.norm2 = nn.LayerNorm(dim)
-        self.norm3 = nn.LayerNorm(dim)
+        self.to_q = nn.Linear(dim, dim)
+        self.to_k = nn.Linear(dim, dim)
+        self.to_v = nn.Linear(dim, dim)
 
-    def forward(self, tokens, visual_embeds):
-        # 1) masked self-attention over text tokens
-        x = self.norm1(tokens)
-        x,_ = self.self_attn(x,x,x, need_weights=False)  # causal mask later
-        tokens = tokens + x
+        self.out = nn.Linear(dim, dim)
+        self.dropout = nn.Dropout(dropout)
 
-        # 2) cross-attention — decoder queries image
-        x = self.norm2(tokens)
-        x,_ = self.cross_attn(x, visual_embeds, visual_embeds)  # Q=tokens, K/V=image
-        tokens = tokens + x
+    def forward(self, query, key_value, mask=None):
+        """
+        query     = decoder output      (B, Tq, D)
+        key_value = visual embeddings   (B, Tk, D)
+        """
 
-        # 3) feed-forward MLP
-        x = self.norm3(tokens)
-        tokens = tokens + self.mlp(x)
+        B, Tq, D = query.size()
+        Tk = key_value.size(1)
 
-        return tokens
+        Q = self.to_q(query)                # (B,Tq,D)
+        K = self.to_k(key_value)            # (B,Tk,D)
+        V = self.to_v(key_value)            # (B,Tk,D)
+
+        # split into heads
+        Q = Q.view(B, Tq, self.heads, self.head_dim).transpose(1, 2)
+        K = K.view(B, Tk, self.heads, self.head_dim).transpose(1, 2)
+        V = V.view(B, Tk, self.heads, self.head_dim).transpose(1, 2)
+
+        attn = (Q @ K.transpose(-2, -1)) / (self.head_dim ** 0.5) # (B,H,Tq,Tk)
+
+        if mask is not None:
+            attn = attn.masked_fill(mask == 0, float('-inf'))
+
+        weights = F.softmax(attn, dim=-1)
+        weights = self.dropout(weights)
+
+        context = (weights @ V).transpose(1,2).contiguous().view(B, Tq, D)
+
+        return self.out(context)  # (B,Tq,D)

@@ -1,54 +1,64 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
+from attention import CrossAttention
 
-class CrossAttention(nn.Module):
-    """
-    Pure Cross Attention Layer (LSTM Decoder ↔ Encoder Features)
-
-    Query     → decoder hidden states  (B, Tq, D)
-    Key/Value → image patch embeddings (B, Tk, D)
-    """
-
-    def __init__(self, dim, heads=8, dropout=0.1):
+class TransformerDecoderBlock(nn.Module):
+    def __init__(self, dim, heads=8, mlp_ratio=4.0, dropout=0.1):
         super().__init__()
-        self.dim = dim
-        self.heads = heads
-        self.head_dim = dim // heads
 
-        self.to_q = nn.Linear(dim, dim)
-        self.to_k = nn.Linear(dim, dim)
-        self.to_v = nn.Linear(dim, dim)
+        self.self_attn = nn.MultiheadAttention(dim, heads, dropout=dropout, batch_first=True)
+        self.cross_attn = CrossAttention(dim=dim, heads=heads, dropout=dropout)
 
-        self.out = nn.Linear(dim, dim)
-        self.dropout = nn.Dropout(dropout)
+        self.mlp = nn.Sequential(
+            nn.Linear(dim, int(dim * mlp_ratio)),
+            nn.GELU(),
+            nn.Linear(int(dim * mlp_ratio), dim)
+        )
 
-    def forward(self, query, key_value, mask=None):
-        """
-        query     = decoder output      (B, Tq, D)
-        key_value = visual embeddings   (B, Tk, D)
-        """
+        self.norm1 = nn.LayerNorm(dim)
+        self.norm2 = nn.LayerNorm(dim)
+        self.norm3 = nn.LayerNorm(dim)
 
-        B, Tq, D = query.size()
-        Tk = key_value.size(1)
+    def forward(self, tokens, visual_embeds, mask=None):
+        # 1) Masked self-attention (autoregressive)
+        x = self.norm1(tokens)
+        x,_ = self.self_attn(x, x, x, attn_mask=mask)
+        tokens = tokens + x
 
-        Q = self.to_q(query)                # (B,Tq,D)
-        K = self.to_k(key_value)            # (B,Tk,D)
-        V = self.to_v(key_value)            # (B,Tk,D)
+        # 2) Cross-attention to encoder features
+        x = self.norm2(tokens)
+        context = self.cross_attn(x, visual_embeds)
+        tokens = tokens + context
 
-        # split into heads
-        Q = Q.view(B, Tq, self.heads, self.head_dim).transpose(1, 2)
-        K = K.view(B, Tk, self.heads, self.head_dim).transpose(1, 2)
-        V = V.view(B, Tk, self.heads, self.head_dim).transpose(1, 2)
+        # 3) Feed-forward expansion
+        x = self.norm3(tokens)
+        tokens = tokens + self.mlp(x)
 
-        attn = (Q @ K.transpose(-2, -1)) / (self.head_dim ** 0.5) # (B,H,Tq,Tk)
+        return tokens
 
-        if mask is not None:
-            attn = attn.masked_fill(mask == 0, float('-inf'))
 
-        weights = F.softmax(attn, dim=-1)
-        weights = self.dropout(weights)
+class TransformerDecoder(nn.Module):
+    def __init__(self, vocab_size, dim=512, depth=6, heads=8, max_len=256):
+        super().__init__()
 
-        context = (weights @ V).transpose(1,2).contiguous().view(B, Tq, D)
+        self.token_emb = nn.Embedding(vocab_size, dim)
+        self.pos_emb   = nn.Embedding(max_len, dim)
+        self.layers = nn.ModuleList([
+            TransformerDecoderBlock(dim, heads=heads) for _ in range(depth)
+        ])
+        self.output_fc = nn.Linear(dim, vocab_size)
 
-        return self.out(context)  # (B,Tq,D)
+    def forward(self, visual_embeds, token_ids):
+        B,T = token_ids.shape
+        pos = torch.arange(0,T,device=token_ids.device).unsqueeze(0)
+
+        x = self.token_emb(token_ids) + self.pos_emb(pos)
+
+        # autoregressive attention mask (no peeking ahead)
+        mask = torch.triu(torch.ones(T,T,device=token_ids.device)*float("-inf"),1)
+
+        for layer in self.layers:
+            x = layer(x, visual_embeds, mask)
+
+        return self.output_fc(x)  # (B,T,vocab_size)
