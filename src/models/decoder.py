@@ -1,111 +1,54 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-decoder.py
-
-LSTM decoder for pix2code-style model.
-"""
-
-from typing import Tuple, Optional
-
 import torch
 import torch.nn as nn
+import torch.nn.functional as F
 
-
-class LSTMDecoder(nn.Module):
+class CrossAttention(nn.Module):
     """
-    LSTM decoder with:
-    - token embedding
-    - conditioning on encoder features via initial hidden state
+    Pure Cross Attention Layer (LSTM Decoder ↔ Encoder Features)
+
+    Query     → decoder hidden states  (B, Tq, D)
+    Key/Value → image patch embeddings (B, Tk, D)
     """
 
-    def __init__(
-        self,
-        vocab_size: int,
-        emb_dim: int = 256,
-        hidden_dim: int = 512,
-        enc_dim: int = 512,
-        num_layers: int = 1,
-    ):
+    def __init__(self, dim, heads=8, dropout=0.1):
         super().__init__()
-        self.vocab_size = vocab_size
-        self.emb_dim = emb_dim
-        self.hidden_dim = hidden_dim
-        self.enc_dim = enc_dim
-        self.num_layers = num_layers
+        self.dim = dim
+        self.heads = heads
+        self.head_dim = dim // heads
 
-        self.embedding = nn.Embedding(vocab_size, emb_dim)
+        self.to_q = nn.Linear(dim, dim)
+        self.to_k = nn.Linear(dim, dim)
+        self.to_v = nn.Linear(dim, dim)
 
-        self.lstm = nn.LSTM(
-            input_size=emb_dim,
-            hidden_size=hidden_dim,
-            num_layers=num_layers,
-            batch_first=True,
-        )
+        self.out = nn.Linear(dim, dim)
+        self.dropout = nn.Dropout(dropout)
 
-        # project encoder feature into initial hidden state
-        self.enc_to_h = nn.Linear(enc_dim, hidden_dim)
-        self.enc_to_c = nn.Linear(enc_dim, hidden_dim)
-
-        self.fc_out = nn.Linear(hidden_dim, vocab_size)
-
-    def init_hidden(
-        self, enc_feat: torch.Tensor
-    ) -> Tuple[torch.Tensor, torch.Tensor]:
+    def forward(self, query, key_value, mask=None):
         """
-        enc_feat: (B, enc_dim)
-        Returns (h0, c0) each of shape (num_layers, B, hidden_dim)
+        query     = decoder output      (B, Tq, D)
+        key_value = visual embeddings   (B, Tk, D)
         """
-        h0 = self.enc_to_h(enc_feat)  # (B, hidden_dim)
-        c0 = self.enc_to_c(enc_feat)  # (B, hidden_dim)
 
-        # reshape for LSTM
-        h0 = h0.unsqueeze(0).repeat(self.num_layers, 1, 1)  # (num_layers, B, H)
-        c0 = c0.unsqueeze(0).repeat(self.num_layers, 1, 1)
-        return h0, c0
+        B, Tq, D = query.size()
+        Tk = key_value.size(1)
 
-    def forward(
-        self,
-        enc_feat: torch.Tensor,
-        tgt_tokens: torch.Tensor,
-    ) -> torch.Tensor:
-        """
-        Teacher-forcing forward pass.
+        Q = self.to_q(query)                # (B,Tq,D)
+        K = self.to_k(key_value)            # (B,Tk,D)
+        V = self.to_v(key_value)            # (B,Tk,D)
 
-        enc_feat: (B, enc_dim)
-        tgt_tokens: (B, T)
+        # split into heads
+        Q = Q.view(B, Tq, self.heads, self.head_dim).transpose(1, 2)
+        K = K.view(B, Tk, self.heads, self.head_dim).transpose(1, 2)
+        V = V.view(B, Tk, self.heads, self.head_dim).transpose(1, 2)
 
-        Returns:
-            logits: (B, T, vocab_size)
-        """
-        h0, c0 = self.init_hidden(enc_feat)  # each: (num_layers, B, H)
-        emb = self.embedding(tgt_tokens)     # (B, T, emb_dim)
+        attn = (Q @ K.transpose(-2, -1)) / (self.head_dim ** 0.5) # (B,H,Tq,Tk)
 
-        outputs, _ = self.lstm(emb, (h0, c0))   # (B, T, hidden_dim)
-        logits = self.fc_out(outputs)           # (B, T, vocab_size)
-        return logits
+        if mask is not None:
+            attn = attn.masked_fill(mask == 0, float('-inf'))
 
-    def decode_step(
-        self,
-        enc_feat: torch.Tensor,
-        prev_token: torch.Tensor,
-        hidden: Optional[Tuple[torch.Tensor, torch.Tensor]] = None,
-    ) -> Tuple[torch.Tensor, Tuple[torch.Tensor, torch.Tensor]]:
-        """
-        Single decoding step for greedy search.
+        weights = F.softmax(attn, dim=-1)
+        weights = self.dropout(weights)
 
-        enc_feat: (B, enc_dim)
-        prev_token: (B, 1)
-        hidden: (h, c) or None
+        context = (weights @ V).transpose(1,2).contiguous().view(B, Tq, D)
 
-        Returns:
-            logits: (B, 1, vocab_size)
-            hidden: updated hidden state
-        """
-        if hidden is None:
-            hidden = self.init_hidden(enc_feat)
-
-        emb = self.embedding(prev_token)     # (B, 1, emb_dim)
-        output, hidden = self.lstm(emb, hidden)  # (B, 1, hidden_dim)
-        logits = self.fc_out(output)         # (B, 1, vocab_size)
-        return logits, hidden
+        return self.out(context)  # (B,Tq,D)
