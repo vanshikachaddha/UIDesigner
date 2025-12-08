@@ -1,0 +1,11 @@
+stack {
+row {
+check
+}
+row {
+btn
+}
+}
+footer {
+btn-dashboard, btn-notifications, btn-search
+}

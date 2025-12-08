@@ -1,7 +1,8 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from attention import CrossAttention
+
+from .attention import CrossAttention
 
 class TransformerDecoderBlock(nn.Module):
     def __init__(self, dim, heads=8, mlp_ratio=4.0, dropout=0.1):

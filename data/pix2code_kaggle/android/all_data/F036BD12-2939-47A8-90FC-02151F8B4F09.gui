@@ -1,0 +1,26 @@
+stack {
+row {
+label, slider, label
+}
+row {
+switch
+}
+row {
+label, slider, label
+}
+row {
+radio
+}
+row {
+check
+}
+row {
+check
+}
+row {
+btn
+}
+}
+footer {
+btn-home, btn-dashboard
+}

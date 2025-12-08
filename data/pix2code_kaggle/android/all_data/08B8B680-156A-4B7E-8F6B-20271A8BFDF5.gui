@@ -1,0 +1,23 @@
+stack {
+row {
+radio
+}
+row {
+switch, switch, btn
+}
+row {
+check
+}
+row {
+switch
+}
+row {
+radio
+}
+row {
+radio
+}
+}
+footer {
+btn-notifications, btn-home
+}

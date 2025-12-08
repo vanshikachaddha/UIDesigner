@@ -1,0 +1,23 @@
+stack {
+row {
+label, slider, label
+}
+row {
+img, img, img, img
+}
+row {
+img, label
+}
+row {
+label, slider, label
+}
+row {
+label, switch
+}
+row {
+label, switch
+}
+}
+footer {
+btn-contact, btn-contact, btn-download, btn-more
+}

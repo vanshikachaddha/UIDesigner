@@ -139,23 +139,23 @@ pip install -r requirements.txt
 ### Training Loop
 1. Running
 ```bash
-python src/training/train.py --data_dir data --batch_size 32 --epochs 50 —> running
+python -m src.training.train --data_dir data --batch_size 32 --epochs 50
 ```
 2. Running with custom settings
 ```bash
-python src/training/train.py \
+python -m src.training.train \
     --data_dir data \
     --batch_size 16 \
     --epochs 100 \
     --lr 0.001 \
     --max_seq_len 512 \
-    --hidden_dim 512 \
-    --use_amp \
-    --save_dir checkpoints
+    --enc_dim 512 \
+    --dec_dim 512 \
+    --num_layers 6 \
+    --heads 8 \
+    --use_amp
 ```
 3. Resume training at checkpoint
 ```bash
-python src/training/train.py --resume checkpoints/latest.pt (http://latest.pt)
+python -m src.training.train --resume checkpoints/latest.pt
 ```
-
-

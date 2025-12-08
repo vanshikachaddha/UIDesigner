@@ -1,0 +1,8 @@
+stack {
+row {
+btn, btn, btn, btn
+}
+}
+footer {
+btn-dashboard, btn-notifications
+}

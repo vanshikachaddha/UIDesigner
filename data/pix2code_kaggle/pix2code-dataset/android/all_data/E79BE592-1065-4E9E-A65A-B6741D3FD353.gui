@@ -1,0 +1,11 @@
+stack {
+row {
+check
+}
+row {
+check
+}
+}
+footer {
+btn-home, btn-dashboard
+}

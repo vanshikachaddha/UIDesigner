@@ -1,0 +1,20 @@
+stack {
+row {
+btn, switch
+}
+row {
+check
+}
+row {
+switch
+}
+row {
+label, slider, label
+}
+row {
+switch
+}
+}
+footer {
+btn-dashboard, btn-search, btn-notifications, btn-notifications
+}

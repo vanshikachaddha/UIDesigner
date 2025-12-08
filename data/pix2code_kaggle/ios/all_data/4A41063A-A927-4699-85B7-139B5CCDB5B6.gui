@@ -1,0 +1,8 @@
+stack {
+row {
+img, img, img, img
+}
+}
+footer {
+btn-search, btn-download, btn-download
+}

@@ -1,0 +1,26 @@
+stack {
+row {
+switch
+}
+row {
+btn, btn, btn
+}
+row {
+switch
+}
+row {
+switch
+}
+row {
+switch
+}
+row {
+btn, btn, switch, btn
+}
+row {
+radio
+}
+}
+footer {
+btn-notifications, btn-search
+}

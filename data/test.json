@@ -1,877 +1,1317 @@
 [
   {
-    "id": "73A1E839-3E35-4158-8C7E-450785E586E3",
-    "image": "/content/processed/images/73A1E839-3E35-4158-8C7E-450785E586E3.png",
-    "gui": "/content/processed/dsl/73A1E839-3E35-4158-8C7E-450785E586E3.gui"
+    "id": "92FAC8AC-8203-4523-81B2-34BFC41A415B",
+    "image": "data/pix2code_kaggle/web/all_data/92FAC8AC-8203-4523-81B2-34BFC41A415B.png",
+    "gui": "data/pix2code_kaggle/web/all_data/92FAC8AC-8203-4523-81B2-34BFC41A415B.gui"
   },
   {
-    "id": "26350519-15B5-4B50-9F37-30A55727E888",
-    "image": "/content/processed/images/26350519-15B5-4B50-9F37-30A55727E888.png",
-    "gui": "/content/processed/dsl/26350519-15B5-4B50-9F37-30A55727E888.gui"
+    "id": "4F13FB6A-7EE1-49F7-9F30-29D13EC29832",
+    "image": "data/pix2code_kaggle/web/all_data/4F13FB6A-7EE1-49F7-9F30-29D13EC29832.png",
+    "gui": "data/pix2code_kaggle/web/all_data/4F13FB6A-7EE1-49F7-9F30-29D13EC29832.gui"
   },
   {
-    "id": "75D799E7-E97E-4A1B-B47E-41B3F0A155DF",
-    "image": "/content/processed/images/75D799E7-E97E-4A1B-B47E-41B3F0A155DF.png",
-    "gui": "/content/processed/dsl/75D799E7-E97E-4A1B-B47E-41B3F0A155DF.gui"
+    "id": "4D3FFA52-B6D1-48E1-897C-D72C02A21657",
+    "image": "data/pix2code_kaggle/web/all_data/4D3FFA52-B6D1-48E1-897C-D72C02A21657.png",
+    "gui": "data/pix2code_kaggle/web/all_data/4D3FFA52-B6D1-48E1-897C-D72C02A21657.gui"
   },
   {
-    "id": "B88F556D-6E67-4A2D-B343-77CCA4BDAE93",
-    "image": "/content/processed/images/B88F556D-6E67-4A2D-B343-77CCA4BDAE93.png",
-    "gui": "/content/processed/dsl/B88F556D-6E67-4A2D-B343-77CCA4BDAE93.gui"
+    "id": "7EFBB693-B471-45CF-AE96-33A17BC016F1",
+    "image": "data/pix2code_kaggle/web/all_data/7EFBB693-B471-45CF-AE96-33A17BC016F1.png",
+    "gui": "data/pix2code_kaggle/web/all_data/7EFBB693-B471-45CF-AE96-33A17BC016F1.gui"
   },
   {
-    "id": "620EC4F5-6515-4497-8C22-DA50C7345B13",
-    "image": "/content/processed/images/620EC4F5-6515-4497-8C22-DA50C7345B13.png",
-    "gui": "/content/processed/dsl/620EC4F5-6515-4497-8C22-DA50C7345B13.gui"
+    "id": "4A7A497F-1E69-498F-9611-A517CD030429",
+    "image": "data/pix2code_kaggle/web/all_data/4A7A497F-1E69-498F-9611-A517CD030429.png",
+    "gui": "data/pix2code_kaggle/web/all_data/4A7A497F-1E69-498F-9611-A517CD030429.gui"
   },
   {
-    "id": "36B5B587-6B88-48FE-BBA2-209E7822F38E",
-    "image": "/content/processed/images/36B5B587-6B88-48FE-BBA2-209E7822F38E.png",
-    "gui": "/content/processed/dsl/36B5B587-6B88-48FE-BBA2-209E7822F38E.gui"
+    "id": "3B66DC46-53FF-469C-90E5-8BE0DBA19CE2",
+    "image": "data/pix2code_kaggle/web/all_data/3B66DC46-53FF-469C-90E5-8BE0DBA19CE2.png",
+    "gui": "data/pix2code_kaggle/web/all_data/3B66DC46-53FF-469C-90E5-8BE0DBA19CE2.gui"
   },
   {
-    "id": "386BE917-EBFB-459C-94AC-F10611C515FF",
-    "image": "/content/processed/images/386BE917-EBFB-459C-94AC-F10611C515FF.png",
-    "gui": "/content/processed/dsl/386BE917-EBFB-459C-94AC-F10611C515FF.gui"
+    "id": "DA8F2A8D-70C4-4BCD-8C4F-460C6FC2A1C7",
+    "image": "data/pix2code_kaggle/web/all_data/DA8F2A8D-70C4-4BCD-8C4F-460C6FC2A1C7.png",
+    "gui": "data/pix2code_kaggle/web/all_data/DA8F2A8D-70C4-4BCD-8C4F-460C6FC2A1C7.gui"
   },
   {
-    "id": "08B8C66F-409C-4ED9-A680-F3007E4D4D89",
-    "image": "/content/processed/images/08B8C66F-409C-4ED9-A680-F3007E4D4D89.png",
-    "gui": "/content/processed/dsl/08B8C66F-409C-4ED9-A680-F3007E4D4D89.gui"
+    "id": "1D70C31F-C198-4159-8388-18CB2BDA15D6",
+    "image": "data/pix2code_kaggle/web/all_data/1D70C31F-C198-4159-8388-18CB2BDA15D6.png",
+    "gui": "data/pix2code_kaggle/web/all_data/1D70C31F-C198-4159-8388-18CB2BDA15D6.gui"
   },
   {
-    "id": "826569D6-7A08-4A8F-A3AF-FE73DBDF38BD",
-    "image": "/content/processed/images/826569D6-7A08-4A8F-A3AF-FE73DBDF38BD.png",
-    "gui": "/content/processed/dsl/826569D6-7A08-4A8F-A3AF-FE73DBDF38BD.gui"
+    "id": "90A12967-4E49-4EA9-A12D-440F754D8252",
+    "image": "data/pix2code_kaggle/web/all_data/90A12967-4E49-4EA9-A12D-440F754D8252.png",
+    "gui": "data/pix2code_kaggle/web/all_data/90A12967-4E49-4EA9-A12D-440F754D8252.gui"
   },
   {
-    "id": "1E4AD7E3-6C44-4822-AD91-BC320D270CE2",
-    "image": "/content/processed/images/1E4AD7E3-6C44-4822-AD91-BC320D270CE2.png",
-    "gui": "/content/processed/dsl/1E4AD7E3-6C44-4822-AD91-BC320D270CE2.gui"
+    "id": "D02AF11F-6037-4D6E-B460-B70B61B4A19D",
+    "image": "data/pix2code_kaggle/web/all_data/D02AF11F-6037-4D6E-B460-B70B61B4A19D.png",
+    "gui": "data/pix2code_kaggle/web/all_data/D02AF11F-6037-4D6E-B460-B70B61B4A19D.gui"
   },
   {
-    "id": "DAF66488-C139-450D-A505-E62BF93E5BEE",
-    "image": "/content/processed/images/DAF66488-C139-450D-A505-E62BF93E5BEE.png",
-    "gui": "/content/processed/dsl/DAF66488-C139-450D-A505-E62BF93E5BEE.gui"
+    "id": "733A1B8E-DCFF-4606-A163-526F98AAC0AD",
+    "image": "data/pix2code_kaggle/web/all_data/733A1B8E-DCFF-4606-A163-526F98AAC0AD.png",
+    "gui": "data/pix2code_kaggle/web/all_data/733A1B8E-DCFF-4606-A163-526F98AAC0AD.gui"
   },
   {
-    "id": "3E5E2EC9-005C-4E51-8428-7E7310227621",
-    "image": "/content/processed/images/3E5E2EC9-005C-4E51-8428-7E7310227621.png",
-    "gui": "/content/processed/dsl/3E5E2EC9-005C-4E51-8428-7E7310227621.gui"
+    "id": "109ED3A8-BCBB-460A-BE0D-90B160E7CC47",
+    "image": "data/pix2code_kaggle/web/all_data/109ED3A8-BCBB-460A-BE0D-90B160E7CC47.png",
+    "gui": "data/pix2code_kaggle/web/all_data/109ED3A8-BCBB-460A-BE0D-90B160E7CC47.gui"
   },
   {
-    "id": "7926B327-F0C4-49C9-A83A-86FDAD5F23BD",
-    "image": "/content/processed/images/7926B327-F0C4-49C9-A83A-86FDAD5F23BD.png",
-    "gui": "/content/processed/dsl/7926B327-F0C4-49C9-A83A-86FDAD5F23BD.gui"
+    "id": "D8E84E94-486D-4159-A618-9CAB4E9DBC39",
+    "image": "data/pix2code_kaggle/web/all_data/D8E84E94-486D-4159-A618-9CAB4E9DBC39.png",
+    "gui": "data/pix2code_kaggle/web/all_data/D8E84E94-486D-4159-A618-9CAB4E9DBC39.gui"
   },
   {
-    "id": "8E899689-E9BA-4FB1-8D12-206FDFD5AD41",
-    "image": "/content/processed/images/8E899689-E9BA-4FB1-8D12-206FDFD5AD41.png",
-    "gui": "/content/processed/dsl/8E899689-E9BA-4FB1-8D12-206FDFD5AD41.gui"
+    "id": "DE77DB11-79E0-4D41-B15A-2ACAD1A3E42D",
+    "image": "data/pix2code_kaggle/web/all_data/DE77DB11-79E0-4D41-B15A-2ACAD1A3E42D.png",
+    "gui": "data/pix2code_kaggle/web/all_data/DE77DB11-79E0-4D41-B15A-2ACAD1A3E42D.gui"
   },
   {
-    "id": "6297A71A-C7B1-46BF-992D-BCA2747EDFFB",
-    "image": "/content/processed/images/6297A71A-C7B1-46BF-992D-BCA2747EDFFB.png",
-    "gui": "/content/processed/dsl/6297A71A-C7B1-46BF-992D-BCA2747EDFFB.gui"
+    "id": "20C63A0E-2F7D-45C6-A4EE-F4702B828962",
+    "image": "data/pix2code_kaggle/web/all_data/20C63A0E-2F7D-45C6-A4EE-F4702B828962.png",
+    "gui": "data/pix2code_kaggle/web/all_data/20C63A0E-2F7D-45C6-A4EE-F4702B828962.gui"
   },
   {
-    "id": "A6F1CB98-D76B-4C3E-8C73-3B0E993A3632",
-    "image": "/content/processed/images/A6F1CB98-D76B-4C3E-8C73-3B0E993A3632.png",
-    "gui": "/content/processed/dsl/A6F1CB98-D76B-4C3E-8C73-3B0E993A3632.gui"
+    "id": "83126DBC-B6C8-4991-B7B6-0321D9208A3D",
+    "image": "data/pix2code_kaggle/web/all_data/83126DBC-B6C8-4991-B7B6-0321D9208A3D.png",
+    "gui": "data/pix2code_kaggle/web/all_data/83126DBC-B6C8-4991-B7B6-0321D9208A3D.gui"
   },
   {
-    "id": "7C489F7D-8175-4CEC-BBDE-6C3CEAC3B750",
-    "image": "/content/processed/images/7C489F7D-8175-4CEC-BBDE-6C3CEAC3B750.png",
-    "gui": "/content/processed/dsl/7C489F7D-8175-4CEC-BBDE-6C3CEAC3B750.gui"
+    "id": "297A7B9E-1F0E-481F-B625-307F6E36A0B5",
+    "image": "data/pix2code_kaggle/web/all_data/297A7B9E-1F0E-481F-B625-307F6E36A0B5.png",
+    "gui": "data/pix2code_kaggle/web/all_data/297A7B9E-1F0E-481F-B625-307F6E36A0B5.gui"
   },
   {
-    "id": "F58A07EF-DD77-478B-9DDF-E6EC94FC7E42",
-    "image": "/content/processed/images/F58A07EF-DD77-478B-9DDF-E6EC94FC7E42.png",
-    "gui": "/content/processed/dsl/F58A07EF-DD77-478B-9DDF-E6EC94FC7E42.gui"
+    "id": "5CD905AB-F521-4284-9E3F-5AA8B29CE258",
+    "image": "data/pix2code_kaggle/web/all_data/5CD905AB-F521-4284-9E3F-5AA8B29CE258.png",
+    "gui": "data/pix2code_kaggle/web/all_data/5CD905AB-F521-4284-9E3F-5AA8B29CE258.gui"
   },
   {
-    "id": "351887C6-2D32-4DEA-90A5-2E97D6EFD51B",
-    "image": "/content/processed/images/351887C6-2D32-4DEA-90A5-2E97D6EFD51B.png",
-    "gui": "/content/processed/dsl/351887C6-2D32-4DEA-90A5-2E97D6EFD51B.gui"
+    "id": "FB861487-B540-47F8-900A-686AEF91D25B",
+    "image": "data/pix2code_kaggle/web/all_data/FB861487-B540-47F8-900A-686AEF91D25B.png",
+    "gui": "data/pix2code_kaggle/web/all_data/FB861487-B540-47F8-900A-686AEF91D25B.gui"
   },
   {
-    "id": "5F816799-5618-409D-A78B-F27C7F33092E",
-    "image": "/content/processed/images/5F816799-5618-409D-A78B-F27C7F33092E.png",
-    "gui": "/content/processed/dsl/5F816799-5618-409D-A78B-F27C7F33092E.gui"
+    "id": "A517D051-ECFF-4AD7-BA35-E96E465F45BA",
+    "image": "data/pix2code_kaggle/web/all_data/A517D051-ECFF-4AD7-BA35-E96E465F45BA.png",
+    "gui": "data/pix2code_kaggle/web/all_data/A517D051-ECFF-4AD7-BA35-E96E465F45BA.gui"
   },
   {
-    "id": "E0513E6A-D26A-4704-A96E-F252AD09F974",
-    "image": "/content/processed/images/E0513E6A-D26A-4704-A96E-F252AD09F974.png",
-    "gui": "/content/processed/dsl/E0513E6A-D26A-4704-A96E-F252AD09F974.gui"
+    "id": "626A22D1-DD2A-44AB-9C28-9B3B7CF60ADC",
+    "image": "data/pix2code_kaggle/web/all_data/626A22D1-DD2A-44AB-9C28-9B3B7CF60ADC.png",
+    "gui": "data/pix2code_kaggle/web/all_data/626A22D1-DD2A-44AB-9C28-9B3B7CF60ADC.gui"
   },
   {
-    "id": "FB75FCA5-FCF9-46AC-901C-D7335CE0E45F",
-    "image": "/content/processed/images/FB75FCA5-FCF9-46AC-901C-D7335CE0E45F.png",
-    "gui": "/content/processed/dsl/FB75FCA5-FCF9-46AC-901C-D7335CE0E45F.gui"
+    "id": "4131F531-F8D6-4E96-92B2-7DDAB4636463",
+    "image": "data/pix2code_kaggle/web/all_data/4131F531-F8D6-4E96-92B2-7DDAB4636463.png",
+    "gui": "data/pix2code_kaggle/web/all_data/4131F531-F8D6-4E96-92B2-7DDAB4636463.gui"
   },
   {
-    "id": "6559A040-03CF-4AE9-9556-B17535392802",
-    "image": "/content/processed/images/6559A040-03CF-4AE9-9556-B17535392802.png",
-    "gui": "/content/processed/dsl/6559A040-03CF-4AE9-9556-B17535392802.gui"
+    "id": "E116A3D1-C283-4E54-AE31-1A978A1B205F",
+    "image": "data/pix2code_kaggle/web/all_data/E116A3D1-C283-4E54-AE31-1A978A1B205F.png",
+    "gui": "data/pix2code_kaggle/web/all_data/E116A3D1-C283-4E54-AE31-1A978A1B205F.gui"
   },
   {
-    "id": "3B992392-5B2C-4582-A639-F03729EC6148",
-    "image": "/content/processed/images/3B992392-5B2C-4582-A639-F03729EC6148.png",
-    "gui": "/content/processed/dsl/3B992392-5B2C-4582-A639-F03729EC6148.gui"
+    "id": "45DA9E46-6E8B-4E9B-A2CB-10F884FE61FA",
+    "image": "data/pix2code_kaggle/web/all_data/45DA9E46-6E8B-4E9B-A2CB-10F884FE61FA.png",
+    "gui": "data/pix2code_kaggle/web/all_data/45DA9E46-6E8B-4E9B-A2CB-10F884FE61FA.gui"
   },
   {
-    "id": "DF5F618D-789C-4B20-8296-3F48E3598EC2",
-    "image": "/content/processed/images/DF5F618D-789C-4B20-8296-3F48E3598EC2.png",
-    "gui": "/content/processed/dsl/DF5F618D-789C-4B20-8296-3F48E3598EC2.gui"
+    "id": "AA0523E0-33ED-4EFF-900D-5EB12B08E81F",
+    "image": "data/pix2code_kaggle/web/all_data/AA0523E0-33ED-4EFF-900D-5EB12B08E81F.png",
+    "gui": "data/pix2code_kaggle/web/all_data/AA0523E0-33ED-4EFF-900D-5EB12B08E81F.gui"
   },
   {
-    "id": "EBE102D1-4D6D-4B45-93BB-A185BCBF9A8F",
-    "image": "/content/processed/images/EBE102D1-4D6D-4B45-93BB-A185BCBF9A8F.png",
-    "gui": "/content/processed/dsl/EBE102D1-4D6D-4B45-93BB-A185BCBF9A8F.gui"
+    "id": "A78939E1-D905-4F6C-8E04-46900C0302F9",
+    "image": "data/pix2code_kaggle/web/all_data/A78939E1-D905-4F6C-8E04-46900C0302F9.png",
+    "gui": "data/pix2code_kaggle/web/all_data/A78939E1-D905-4F6C-8E04-46900C0302F9.gui"
   },
   {
-    "id": "F133EE9F-2BB8-4A59-A104-F5B8B28FAF87",
-    "image": "/content/processed/images/F133EE9F-2BB8-4A59-A104-F5B8B28FAF87.png",
-    "gui": "/content/processed/dsl/F133EE9F-2BB8-4A59-A104-F5B8B28FAF87.gui"
+    "id": "4489A32F-DCA5-4694-A6C6-3F596F4D7F6D",
+    "image": "data/pix2code_kaggle/web/all_data/4489A32F-DCA5-4694-A6C6-3F596F4D7F6D.png",
+    "gui": "data/pix2code_kaggle/web/all_data/4489A32F-DCA5-4694-A6C6-3F596F4D7F6D.gui"
   },
   {
-    "id": "D1C1E6BD-05C2-48A7-B7A7-4B269FD2D469",
-    "image": "/content/processed/images/D1C1E6BD-05C2-48A7-B7A7-4B269FD2D469.png",
-    "gui": "/content/processed/dsl/D1C1E6BD-05C2-48A7-B7A7-4B269FD2D469.gui"
+    "id": "85A6EAC2-4FD0-4C45-8BAD-E660A3B8D33E",
+    "image": "data/pix2code_kaggle/web/all_data/85A6EAC2-4FD0-4C45-8BAD-E660A3B8D33E.png",
+    "gui": "data/pix2code_kaggle/web/all_data/85A6EAC2-4FD0-4C45-8BAD-E660A3B8D33E.gui"
   },
   {
-    "id": "D7F2FFEE-8D6B-4820-9E00-732919260E7E",
-    "image": "/content/processed/images/D7F2FFEE-8D6B-4820-9E00-732919260E7E.png",
-    "gui": "/content/processed/dsl/D7F2FFEE-8D6B-4820-9E00-732919260E7E.gui"
+    "id": "55B392A1-5A60-4745-BFB6-BCD2EA801DD8",
+    "image": "data/pix2code_kaggle/web/all_data/55B392A1-5A60-4745-BFB6-BCD2EA801DD8.png",
+    "gui": "data/pix2code_kaggle/web/all_data/55B392A1-5A60-4745-BFB6-BCD2EA801DD8.gui"
   },
   {
-    "id": "47249A0B-84E6-4E65-A1D0-B9E59E5C2F40",
-    "image": "/content/processed/images/47249A0B-84E6-4E65-A1D0-B9E59E5C2F40.png",
-    "gui": "/content/processed/dsl/47249A0B-84E6-4E65-A1D0-B9E59E5C2F40.gui"
+    "id": "28CBBE62-59AC-418A-8BB7-17BB18B64D49",
+    "image": "data/pix2code_kaggle/web/all_data/28CBBE62-59AC-418A-8BB7-17BB18B64D49.png",
+    "gui": "data/pix2code_kaggle/web/all_data/28CBBE62-59AC-418A-8BB7-17BB18B64D49.gui"
   },
   {
-    "id": "3E76D398-3AA2-43EB-8F62-6601C555604E",
-    "image": "/content/processed/images/3E76D398-3AA2-43EB-8F62-6601C555604E.png",
-    "gui": "/content/processed/dsl/3E76D398-3AA2-43EB-8F62-6601C555604E.gui"
+    "id": "D08B5697-4881-4FA9-B1C3-E016A3C61CA7",
+    "image": "data/pix2code_kaggle/web/all_data/D08B5697-4881-4FA9-B1C3-E016A3C61CA7.png",
+    "gui": "data/pix2code_kaggle/web/all_data/D08B5697-4881-4FA9-B1C3-E016A3C61CA7.gui"
   },
   {
-    "id": "4A41063A-A927-4699-85B7-139B5CCDB5B6",
-    "image": "/content/processed/images/4A41063A-A927-4699-85B7-139B5CCDB5B6.png",
-    "gui": "/content/processed/dsl/4A41063A-A927-4699-85B7-139B5CCDB5B6.gui"
+    "id": "F45323B1-EAA1-4971-B430-6265C249752B",
+    "image": "data/pix2code_kaggle/web/all_data/F45323B1-EAA1-4971-B430-6265C249752B.png",
+    "gui": "data/pix2code_kaggle/web/all_data/F45323B1-EAA1-4971-B430-6265C249752B.gui"
   },
   {
-    "id": "9F5160F6-CFD1-4376-913F-11D8FB0F74FE",
-    "image": "/content/processed/images/9F5160F6-CFD1-4376-913F-11D8FB0F74FE.png",
-    "gui": "/content/processed/dsl/9F5160F6-CFD1-4376-913F-11D8FB0F74FE.gui"
+    "id": "0EBD0467-076F-4946-8549-C3EEF47F37AF",
+    "image": "data/pix2code_kaggle/web/all_data/0EBD0467-076F-4946-8549-C3EEF47F37AF.png",
+    "gui": "data/pix2code_kaggle/web/all_data/0EBD0467-076F-4946-8549-C3EEF47F37AF.gui"
   },
   {
-    "id": "A9350E7E-6EAB-4BD8-942A-72D7B8C49E0A",
-    "image": "/content/processed/images/A9350E7E-6EAB-4BD8-942A-72D7B8C49E0A.png",
-    "gui": "/content/processed/dsl/A9350E7E-6EAB-4BD8-942A-72D7B8C49E0A.gui"
+    "id": "561FD654-C626-4480-9B63-9D6144CA1AEF",
+    "image": "data/pix2code_kaggle/web/all_data/561FD654-C626-4480-9B63-9D6144CA1AEF.png",
+    "gui": "data/pix2code_kaggle/web/all_data/561FD654-C626-4480-9B63-9D6144CA1AEF.gui"
   },
   {
-    "id": "153BE9C1-4031-489B-91D0-4176FBDF6635",
-    "image": "/content/processed/images/153BE9C1-4031-489B-91D0-4176FBDF6635.png",
-    "gui": "/content/processed/dsl/153BE9C1-4031-489B-91D0-4176FBDF6635.gui"
+    "id": "1E5D1FFD-6212-4540-A67C-37B9A97747A8",
+    "image": "data/pix2code_kaggle/web/all_data/1E5D1FFD-6212-4540-A67C-37B9A97747A8.png",
+    "gui": "data/pix2code_kaggle/web/all_data/1E5D1FFD-6212-4540-A67C-37B9A97747A8.gui"
   },
   {
-    "id": "F45031C0-C305-4A55-A6F1-46F7CC684082",
-    "image": "/content/processed/images/F45031C0-C305-4A55-A6F1-46F7CC684082.png",
-    "gui": "/content/processed/dsl/F45031C0-C305-4A55-A6F1-46F7CC684082.gui"
+    "id": "D9758F34-03CB-4CAF-B61B-A33966A7A838",
+    "image": "data/pix2code_kaggle/web/all_data/D9758F34-03CB-4CAF-B61B-A33966A7A838.png",
+    "gui": "data/pix2code_kaggle/web/all_data/D9758F34-03CB-4CAF-B61B-A33966A7A838.gui"
   },
   {
-    "id": "22CB1A9E-40E2-4847-A2ED-28DF9A68996B",
-    "image": "/content/processed/images/22CB1A9E-40E2-4847-A2ED-28DF9A68996B.png",
-    "gui": "/content/processed/dsl/22CB1A9E-40E2-4847-A2ED-28DF9A68996B.gui"
+    "id": "49F407D7-57CC-42FE-8738-0CA1C805CD02",
+    "image": "data/pix2code_kaggle/web/all_data/49F407D7-57CC-42FE-8738-0CA1C805CD02.png",
+    "gui": "data/pix2code_kaggle/web/all_data/49F407D7-57CC-42FE-8738-0CA1C805CD02.gui"
   },
   {
-    "id": "1D0FD3D6-7259-4059-94A3-8443ED07EB20",
-    "image": "/content/processed/images/1D0FD3D6-7259-4059-94A3-8443ED07EB20.png",
-    "gui": "/content/processed/dsl/1D0FD3D6-7259-4059-94A3-8443ED07EB20.gui"
+    "id": "2C9CB527-F490-4318-9EF0-4D3DB32FBA16",
+    "image": "data/pix2code_kaggle/web/all_data/2C9CB527-F490-4318-9EF0-4D3DB32FBA16.png",
+    "gui": "data/pix2code_kaggle/web/all_data/2C9CB527-F490-4318-9EF0-4D3DB32FBA16.gui"
   },
   {
-    "id": "9DF29001-CE43-4050-A3E8-F80B1FB5C330",
-    "image": "/content/processed/images/9DF29001-CE43-4050-A3E8-F80B1FB5C330.png",
-    "gui": "/content/processed/dsl/9DF29001-CE43-4050-A3E8-F80B1FB5C330.gui"
+    "id": "CD8E2464-1842-42CA-B37B-B9333DAA7CD1",
+    "image": "data/pix2code_kaggle/web/all_data/CD8E2464-1842-42CA-B37B-B9333DAA7CD1.png",
+    "gui": "data/pix2code_kaggle/web/all_data/CD8E2464-1842-42CA-B37B-B9333DAA7CD1.gui"
   },
   {
-    "id": "D4176A0D-83DD-4DD5-9CFE-5811E7E8CE0B",
-    "image": "/content/processed/images/D4176A0D-83DD-4DD5-9CFE-5811E7E8CE0B.png",
-    "gui": "/content/processed/dsl/D4176A0D-83DD-4DD5-9CFE-5811E7E8CE0B.gui"
+    "id": "EDD1BE0D-7821-49E3-9EA0-82EAFA97DFAA",
+    "image": "data/pix2code_kaggle/web/all_data/EDD1BE0D-7821-49E3-9EA0-82EAFA97DFAA.png",
+    "gui": "data/pix2code_kaggle/web/all_data/EDD1BE0D-7821-49E3-9EA0-82EAFA97DFAA.gui"
   },
   {
-    "id": "A304D0DD-9F3E-43F5-A3A9-7F223F216430",
-    "image": "/content/processed/images/A304D0DD-9F3E-43F5-A3A9-7F223F216430.png",
-    "gui": "/content/processed/dsl/A304D0DD-9F3E-43F5-A3A9-7F223F216430.gui"
+    "id": "8AFFD852-C077-434E-A77B-9C68C89D7F15",
+    "image": "data/pix2code_kaggle/web/all_data/8AFFD852-C077-434E-A77B-9C68C89D7F15.png",
+    "gui": "data/pix2code_kaggle/web/all_data/8AFFD852-C077-434E-A77B-9C68C89D7F15.gui"
   },
   {
-    "id": "6F02355D-F1D4-4FA2-8F67-982267389E3E",
-    "image": "/content/processed/images/6F02355D-F1D4-4FA2-8F67-982267389E3E.png",
-    "gui": "/content/processed/dsl/6F02355D-F1D4-4FA2-8F67-982267389E3E.gui"
+    "id": "6859E3C7-BB31-4297-8945-0FDF776FAAFF",
+    "image": "data/pix2code_kaggle/web/all_data/6859E3C7-BB31-4297-8945-0FDF776FAAFF.png",
+    "gui": "data/pix2code_kaggle/web/all_data/6859E3C7-BB31-4297-8945-0FDF776FAAFF.gui"
   },
   {
-    "id": "F91CB746-034C-4129-A649-947DD66EBB4C",
-    "image": "/content/processed/images/F91CB746-034C-4129-A649-947DD66EBB4C.png",
-    "gui": "/content/processed/dsl/F91CB746-034C-4129-A649-947DD66EBB4C.gui"
+    "id": "A98BB4F5-3DE7-4754-9B02-B95ACD297F01",
+    "image": "data/pix2code_kaggle/web/all_data/A98BB4F5-3DE7-4754-9B02-B95ACD297F01.png",
+    "gui": "data/pix2code_kaggle/web/all_data/A98BB4F5-3DE7-4754-9B02-B95ACD297F01.gui"
   },
   {
-    "id": "E6A8C591-3440-406E-8219-7CAF8B313C1E",
-    "image": "/content/processed/images/E6A8C591-3440-406E-8219-7CAF8B313C1E.png",
-    "gui": "/content/processed/dsl/E6A8C591-3440-406E-8219-7CAF8B313C1E.gui"
+    "id": "B39EA407-B756-456E-B983-8EB68C239AD4",
+    "image": "data/pix2code_kaggle/web/all_data/B39EA407-B756-456E-B983-8EB68C239AD4.png",
+    "gui": "data/pix2code_kaggle/web/all_data/B39EA407-B756-456E-B983-8EB68C239AD4.gui"
   },
   {
-    "id": "DEB4B582-44DB-4F36-B67D-F309DB70676E",
-    "image": "/content/processed/images/DEB4B582-44DB-4F36-B67D-F309DB70676E.png",
-    "gui": "/content/processed/dsl/DEB4B582-44DB-4F36-B67D-F309DB70676E.gui"
+    "id": "9D8069D1-C0BA-428B-8454-7CDBA626659B",
+    "image": "data/pix2code_kaggle/web/all_data/9D8069D1-C0BA-428B-8454-7CDBA626659B.png",
+    "gui": "data/pix2code_kaggle/web/all_data/9D8069D1-C0BA-428B-8454-7CDBA626659B.gui"
   },
   {
-    "id": "4135051B-A4B0-423E-B9EA-10FCCF9F051A",
-    "image": "/content/processed/images/4135051B-A4B0-423E-B9EA-10FCCF9F051A.png",
-    "gui": "/content/processed/dsl/4135051B-A4B0-423E-B9EA-10FCCF9F051A.gui"
+    "id": "7193D407-8FE8-4580-B7DD-E8472E4126D0",
+    "image": "data/pix2code_kaggle/web/all_data/7193D407-8FE8-4580-B7DD-E8472E4126D0.png",
+    "gui": "data/pix2code_kaggle/web/all_data/7193D407-8FE8-4580-B7DD-E8472E4126D0.gui"
   },
   {
-    "id": "23F0FA8C-3F0A-480E-9649-9516C0A702D9",
-    "image": "/content/processed/images/23F0FA8C-3F0A-480E-9649-9516C0A702D9.png",
-    "gui": "/content/processed/dsl/23F0FA8C-3F0A-480E-9649-9516C0A702D9.gui"
+    "id": "463520C6-39DC-4D89-AA83-0398BE21AD5E",
+    "image": "data/pix2code_kaggle/web/all_data/463520C6-39DC-4D89-AA83-0398BE21AD5E.png",
+    "gui": "data/pix2code_kaggle/web/all_data/463520C6-39DC-4D89-AA83-0398BE21AD5E.gui"
   },
   {
-    "id": "96FED464-3638-4ECD-9E5F-AA0DDE683400",
-    "image": "/content/processed/images/96FED464-3638-4ECD-9E5F-AA0DDE683400.png",
-    "gui": "/content/processed/dsl/96FED464-3638-4ECD-9E5F-AA0DDE683400.gui"
+    "id": "A6960AA5-56D4-4A51-9B8C-C7B06B6BAECF",
+    "image": "data/pix2code_kaggle/web/all_data/A6960AA5-56D4-4A51-9B8C-C7B06B6BAECF.png",
+    "gui": "data/pix2code_kaggle/web/all_data/A6960AA5-56D4-4A51-9B8C-C7B06B6BAECF.gui"
   },
   {
-    "id": "DC80FCFD-6793-48F2-A358-063CB7D2691A",
-    "image": "/content/processed/images/DC80FCFD-6793-48F2-A358-063CB7D2691A.png",
-    "gui": "/content/processed/dsl/DC80FCFD-6793-48F2-A358-063CB7D2691A.gui"
+    "id": "856823BB-3D57-4A63-A896-C7F6FEABDF0A",
+    "image": "data/pix2code_kaggle/web/all_data/856823BB-3D57-4A63-A896-C7F6FEABDF0A.png",
+    "gui": "data/pix2code_kaggle/web/all_data/856823BB-3D57-4A63-A896-C7F6FEABDF0A.gui"
   },
   {
-    "id": "C3C721BB-BFCB-4CBF-BE81-E0D82123F17F",
-    "image": "/content/processed/images/C3C721BB-BFCB-4CBF-BE81-E0D82123F17F.png",
-    "gui": "/content/processed/dsl/C3C721BB-BFCB-4CBF-BE81-E0D82123F17F.gui"
+    "id": "F5C7E010-F21A-4A67-A73E-D655F5B26B29",
+    "image": "data/pix2code_kaggle/web/all_data/F5C7E010-F21A-4A67-A73E-D655F5B26B29.png",
+    "gui": "data/pix2code_kaggle/web/all_data/F5C7E010-F21A-4A67-A73E-D655F5B26B29.gui"
   },
   {
-    "id": "5B0858C8-6840-486D-921C-FA37F2A71671",
-    "image": "/content/processed/images/5B0858C8-6840-486D-921C-FA37F2A71671.png",
-    "gui": "/content/processed/dsl/5B0858C8-6840-486D-921C-FA37F2A71671.gui"
+    "id": "DC0ADA53-7AD5-4B1F-8937-EDA7DE2CADE0",
+    "image": "data/pix2code_kaggle/web/all_data/DC0ADA53-7AD5-4B1F-8937-EDA7DE2CADE0.png",
+    "gui": "data/pix2code_kaggle/web/all_data/DC0ADA53-7AD5-4B1F-8937-EDA7DE2CADE0.gui"
   },
   {
-    "id": "7A06BE1A-9056-4646-831C-EF4310C658BE",
-    "image": "/content/processed/images/7A06BE1A-9056-4646-831C-EF4310C658BE.png",
-    "gui": "/content/processed/dsl/7A06BE1A-9056-4646-831C-EF4310C658BE.gui"
+    "id": "18D4F7A6-0745-4B76-A64A-C24F60200A63",
+    "image": "data/pix2code_kaggle/web/all_data/18D4F7A6-0745-4B76-A64A-C24F60200A63.png",
+    "gui": "data/pix2code_kaggle/web/all_data/18D4F7A6-0745-4B76-A64A-C24F60200A63.gui"
   },
   {
-    "id": "549C2B68-F069-4F68-AF98-AFFEFD75034E",
-    "image": "/content/processed/images/549C2B68-F069-4F68-AF98-AFFEFD75034E.png",
-    "gui": "/content/processed/dsl/549C2B68-F069-4F68-AF98-AFFEFD75034E.gui"
+    "id": "64ABC0A8-4F09-4BAE-B9E4-F2EA1411E46F",
+    "image": "data/pix2code_kaggle/web/all_data/64ABC0A8-4F09-4BAE-B9E4-F2EA1411E46F.png",
+    "gui": "data/pix2code_kaggle/web/all_data/64ABC0A8-4F09-4BAE-B9E4-F2EA1411E46F.gui"
   },
   {
-    "id": "D44EDA26-C604-48A4-BA04-379FA954C0F0",
-    "image": "/content/processed/images/D44EDA26-C604-48A4-BA04-379FA954C0F0.png",
-    "gui": "/content/processed/dsl/D44EDA26-C604-48A4-BA04-379FA954C0F0.gui"
+    "id": "53BEA532-62DA-40A0-B4E5-130ABCF11B18",
+    "image": "data/pix2code_kaggle/web/all_data/53BEA532-62DA-40A0-B4E5-130ABCF11B18.png",
+    "gui": "data/pix2code_kaggle/web/all_data/53BEA532-62DA-40A0-B4E5-130ABCF11B18.gui"
   },
   {
-    "id": "51A0F97A-6681-4A93-A8D2-420C1CBC1AA5",
-    "image": "/content/processed/images/51A0F97A-6681-4A93-A8D2-420C1CBC1AA5.png",
-    "gui": "/content/processed/dsl/51A0F97A-6681-4A93-A8D2-420C1CBC1AA5.gui"
+    "id": "D6295385-D729-4FC5-AE5A-53EC78E69C22",
+    "image": "data/pix2code_kaggle/web/all_data/D6295385-D729-4FC5-AE5A-53EC78E69C22.png",
+    "gui": "data/pix2code_kaggle/web/all_data/D6295385-D729-4FC5-AE5A-53EC78E69C22.gui"
   },
   {
-    "id": "EBEB8872-211F-40B7-A62A-100395A05E8E",
-    "image": "/content/processed/images/EBEB8872-211F-40B7-A62A-100395A05E8E.png",
-    "gui": "/content/processed/dsl/EBEB8872-211F-40B7-A62A-100395A05E8E.gui"
+    "id": "4465100E-8BA7-4F9F-97E1-5334C2A482C9",
+    "image": "data/pix2code_kaggle/web/all_data/4465100E-8BA7-4F9F-97E1-5334C2A482C9.png",
+    "gui": "data/pix2code_kaggle/web/all_data/4465100E-8BA7-4F9F-97E1-5334C2A482C9.gui"
   },
   {
-    "id": "3A376BA9-410B-4AA8-BFDA-EAEAF659E34A",
-    "image": "/content/processed/images/3A376BA9-410B-4AA8-BFDA-EAEAF659E34A.png",
-    "gui": "/content/processed/dsl/3A376BA9-410B-4AA8-BFDA-EAEAF659E34A.gui"
+    "id": "3BE04C98-8116-4D94-BD59-897EA07240A5",
+    "image": "data/pix2code_kaggle/web/all_data/3BE04C98-8116-4D94-BD59-897EA07240A5.png",
+    "gui": "data/pix2code_kaggle/web/all_data/3BE04C98-8116-4D94-BD59-897EA07240A5.gui"
   },
   {
-    "id": "AA91A806-8187-435F-BA07-0ED9187B1960",
-    "image": "/content/processed/images/AA91A806-8187-435F-BA07-0ED9187B1960.png",
-    "gui": "/content/processed/dsl/AA91A806-8187-435F-BA07-0ED9187B1960.gui"
+    "id": "A02A3F82-B330-45D5-9F18-D1517C4E31ED",
+    "image": "data/pix2code_kaggle/web/all_data/A02A3F82-B330-45D5-9F18-D1517C4E31ED.png",
+    "gui": "data/pix2code_kaggle/web/all_data/A02A3F82-B330-45D5-9F18-D1517C4E31ED.gui"
   },
   {
-    "id": "475B811A-B810-4F80-8522-CE636A2054FB",
-    "image": "/content/processed/images/475B811A-B810-4F80-8522-CE636A2054FB.png",
-    "gui": "/content/processed/dsl/475B811A-B810-4F80-8522-CE636A2054FB.gui"
+    "id": "776A5AD1-0D0A-463F-B330-4C7320CF55E5",
+    "image": "data/pix2code_kaggle/web/all_data/776A5AD1-0D0A-463F-B330-4C7320CF55E5.png",
+    "gui": "data/pix2code_kaggle/web/all_data/776A5AD1-0D0A-463F-B330-4C7320CF55E5.gui"
   },
   {
-    "id": "A241528D-14E9-412F-B88D-D524C646534A",
-    "image": "/content/processed/images/A241528D-14E9-412F-B88D-D524C646534A.png",
-    "gui": "/content/processed/dsl/A241528D-14E9-412F-B88D-D524C646534A.gui"
+    "id": "AF503393-BA7C-42C5-8BF8-45653FC8C211",
+    "image": "data/pix2code_kaggle/web/all_data/AF503393-BA7C-42C5-8BF8-45653FC8C211.png",
+    "gui": "data/pix2code_kaggle/web/all_data/AF503393-BA7C-42C5-8BF8-45653FC8C211.gui"
   },
   {
-    "id": "96349E3F-9088-4AD4-A52C-A3C8AD404421",
-    "image": "/content/processed/images/96349E3F-9088-4AD4-A52C-A3C8AD404421.png",
-    "gui": "/content/processed/dsl/96349E3F-9088-4AD4-A52C-A3C8AD404421.gui"
+    "id": "385412B9-AB59-450C-8979-A07BFCBBD774",
+    "image": "data/pix2code_kaggle/web/all_data/385412B9-AB59-450C-8979-A07BFCBBD774.png",
+    "gui": "data/pix2code_kaggle/web/all_data/385412B9-AB59-450C-8979-A07BFCBBD774.gui"
   },
   {
-    "id": "D52BD14C-5272-46AD-9617-5CE05387A6C8",
-    "image": "/content/processed/images/D52BD14C-5272-46AD-9617-5CE05387A6C8.png",
-    "gui": "/content/processed/dsl/D52BD14C-5272-46AD-9617-5CE05387A6C8.gui"
+    "id": "B479BC23-941F-4D68-BF10-422C82FFC512",
+    "image": "data/pix2code_kaggle/web/all_data/B479BC23-941F-4D68-BF10-422C82FFC512.png",
+    "gui": "data/pix2code_kaggle/web/all_data/B479BC23-941F-4D68-BF10-422C82FFC512.gui"
   },
   {
-    "id": "B02F280A-8174-4FA2-966F-D8BB10C15D4E",
-    "image": "/content/processed/images/B02F280A-8174-4FA2-966F-D8BB10C15D4E.png",
-    "gui": "/content/processed/dsl/B02F280A-8174-4FA2-966F-D8BB10C15D4E.gui"
+    "id": "EACB242F-842B-4652-952B-D596A11FA64F",
+    "image": "data/pix2code_kaggle/web/all_data/EACB242F-842B-4652-952B-D596A11FA64F.png",
+    "gui": "data/pix2code_kaggle/web/all_data/EACB242F-842B-4652-952B-D596A11FA64F.gui"
   },
   {
-    "id": "1AAB6306-7C3C-4E7F-AD54-2E4DC31A58B0",
-    "image": "/content/processed/images/1AAB6306-7C3C-4E7F-AD54-2E4DC31A58B0.png",
-    "gui": "/content/processed/dsl/1AAB6306-7C3C-4E7F-AD54-2E4DC31A58B0.gui"
+    "id": "94BADD55-7A99-417F-8067-ACE05F514217",
+    "image": "data/pix2code_kaggle/web/all_data/94BADD55-7A99-417F-8067-ACE05F514217.png",
+    "gui": "data/pix2code_kaggle/web/all_data/94BADD55-7A99-417F-8067-ACE05F514217.gui"
   },
   {
-    "id": "CF68BE7F-D95B-4FA0-9081-EDB515E854DC",
-    "image": "/content/processed/images/CF68BE7F-D95B-4FA0-9081-EDB515E854DC.png",
-    "gui": "/content/processed/dsl/CF68BE7F-D95B-4FA0-9081-EDB515E854DC.gui"
+    "id": "918B9B0E-3BB0-40AB-8197-E89A46119C57",
+    "image": "data/pix2code_kaggle/web/all_data/918B9B0E-3BB0-40AB-8197-E89A46119C57.png",
+    "gui": "data/pix2code_kaggle/web/all_data/918B9B0E-3BB0-40AB-8197-E89A46119C57.gui"
   },
   {
-    "id": "B83C30A5-933A-455C-9913-BA435058F322",
-    "image": "/content/processed/images/B83C30A5-933A-455C-9913-BA435058F322.png",
-    "gui": "/content/processed/dsl/B83C30A5-933A-455C-9913-BA435058F322.gui"
+    "id": "92152E13-0F49-4377-85D1-B41B6828129A",
+    "image": "data/pix2code_kaggle/web/all_data/92152E13-0F49-4377-85D1-B41B6828129A.png",
+    "gui": "data/pix2code_kaggle/web/all_data/92152E13-0F49-4377-85D1-B41B6828129A.gui"
   },
   {
-    "id": "A2C6FC48-1534-4AF3-8CAD-D0C54CB9E4CE",
-    "image": "/content/processed/images/A2C6FC48-1534-4AF3-8CAD-D0C54CB9E4CE.png",
-    "gui": "/content/processed/dsl/A2C6FC48-1534-4AF3-8CAD-D0C54CB9E4CE.gui"
+    "id": "39C19125-6A16-4E34-B592-F6C9FB367D06",
+    "image": "data/pix2code_kaggle/web/all_data/39C19125-6A16-4E34-B592-F6C9FB367D06.png",
+    "gui": "data/pix2code_kaggle/web/all_data/39C19125-6A16-4E34-B592-F6C9FB367D06.gui"
   },
   {
-    "id": "03E8265F-7BC3-4E77-B4FC-EDB8981E28C9",
-    "image": "/content/processed/images/03E8265F-7BC3-4E77-B4FC-EDB8981E28C9.png",
-    "gui": "/content/processed/dsl/03E8265F-7BC3-4E77-B4FC-EDB8981E28C9.gui"
+    "id": "6E2D55C9-7233-42C3-9138-92CFFA960EDB",
+    "image": "data/pix2code_kaggle/web/all_data/6E2D55C9-7233-42C3-9138-92CFFA960EDB.png",
+    "gui": "data/pix2code_kaggle/web/all_data/6E2D55C9-7233-42C3-9138-92CFFA960EDB.gui"
   },
   {
-    "id": "44FFB65C-C16B-465E-9FE0-7C471668A513",
-    "image": "/content/processed/images/44FFB65C-C16B-465E-9FE0-7C471668A513.png",
-    "gui": "/content/processed/dsl/44FFB65C-C16B-465E-9FE0-7C471668A513.gui"
+    "id": "ABAAEB5B-2999-489D-A05C-55D3E65B9512",
+    "image": "data/pix2code_kaggle/web/all_data/ABAAEB5B-2999-489D-A05C-55D3E65B9512.png",
+    "gui": "data/pix2code_kaggle/web/all_data/ABAAEB5B-2999-489D-A05C-55D3E65B9512.gui"
   },
   {
-    "id": "C00406D2-56FB-4B11-AFA9-B75061284C8F",
-    "image": "/content/processed/images/C00406D2-56FB-4B11-AFA9-B75061284C8F.png",
-    "gui": "/content/processed/dsl/C00406D2-56FB-4B11-AFA9-B75061284C8F.gui"
+    "id": "E1B6634B-A1B3-4ED0-BBE2-6DBC248A2853",
+    "image": "data/pix2code_kaggle/web/all_data/E1B6634B-A1B3-4ED0-BBE2-6DBC248A2853.png",
+    "gui": "data/pix2code_kaggle/web/all_data/E1B6634B-A1B3-4ED0-BBE2-6DBC248A2853.gui"
   },
   {
-    "id": "AA88989D-1BFF-4C89-B93E-3A3128D1C92E",
-    "image": "/content/processed/images/AA88989D-1BFF-4C89-B93E-3A3128D1C92E.png",
-    "gui": "/content/processed/dsl/AA88989D-1BFF-4C89-B93E-3A3128D1C92E.gui"
+    "id": "3B0EB092-42B8-4F3F-A8FF-551C3893A2D3",
+    "image": "data/pix2code_kaggle/web/all_data/3B0EB092-42B8-4F3F-A8FF-551C3893A2D3.png",
+    "gui": "data/pix2code_kaggle/web/all_data/3B0EB092-42B8-4F3F-A8FF-551C3893A2D3.gui"
   },
   {
-    "id": "4B3C0939-0A49-41C1-88CB-201FF1E7C4AB",
-    "image": "/content/processed/images/4B3C0939-0A49-41C1-88CB-201FF1E7C4AB.png",
-    "gui": "/content/processed/dsl/4B3C0939-0A49-41C1-88CB-201FF1E7C4AB.gui"
+    "id": "44E16FA7-2FA4-4384-A614-0333DA358397",
+    "image": "data/pix2code_kaggle/web/all_data/44E16FA7-2FA4-4384-A614-0333DA358397.png",
+    "gui": "data/pix2code_kaggle/web/all_data/44E16FA7-2FA4-4384-A614-0333DA358397.gui"
   },
   {
-    "id": "17FF9C0D-A387-42B5-9F5B-93E30318803E",
-    "image": "/content/processed/images/17FF9C0D-A387-42B5-9F5B-93E30318803E.png",
-    "gui": "/content/processed/dsl/17FF9C0D-A387-42B5-9F5B-93E30318803E.gui"
+    "id": "49ACB495-38AE-4AEC-A089-FF164CBB1312",
+    "image": "data/pix2code_kaggle/web/all_data/49ACB495-38AE-4AEC-A089-FF164CBB1312.png",
+    "gui": "data/pix2code_kaggle/web/all_data/49ACB495-38AE-4AEC-A089-FF164CBB1312.gui"
   },
   {
-    "id": "10B5C343-30C4-453C-81D6-3937D0A99D14",
-    "image": "/content/processed/images/10B5C343-30C4-453C-81D6-3937D0A99D14.png",
-    "gui": "/content/processed/dsl/10B5C343-30C4-453C-81D6-3937D0A99D14.gui"
+    "id": "D44AABBA-AFE2-4E39-8719-B0526410C9A5",
+    "image": "data/pix2code_kaggle/web/all_data/D44AABBA-AFE2-4E39-8719-B0526410C9A5.png",
+    "gui": "data/pix2code_kaggle/web/all_data/D44AABBA-AFE2-4E39-8719-B0526410C9A5.gui"
   },
   {
-    "id": "90858080-A591-4F34-A465-3FCE37C33B88",
-    "image": "/content/processed/images/90858080-A591-4F34-A465-3FCE37C33B88.png",
-    "gui": "/content/processed/dsl/90858080-A591-4F34-A465-3FCE37C33B88.gui"
+    "id": "CB5A78AB-FC11-45F6-A6E7-06FAEF7A8EA6",
+    "image": "data/pix2code_kaggle/web/all_data/CB5A78AB-FC11-45F6-A6E7-06FAEF7A8EA6.png",
+    "gui": "data/pix2code_kaggle/web/all_data/CB5A78AB-FC11-45F6-A6E7-06FAEF7A8EA6.gui"
   },
   {
-    "id": "AC16DF69-9E30-4D5E-B1F4-9E102824DEED",
-    "image": "/content/processed/images/AC16DF69-9E30-4D5E-B1F4-9E102824DEED.png",
-    "gui": "/content/processed/dsl/AC16DF69-9E30-4D5E-B1F4-9E102824DEED.gui"
+    "id": "DC3AA695-621D-4490-A17A-F0B5F415BFC0",
+    "image": "data/pix2code_kaggle/web/all_data/DC3AA695-621D-4490-A17A-F0B5F415BFC0.png",
+    "gui": "data/pix2code_kaggle/web/all_data/DC3AA695-621D-4490-A17A-F0B5F415BFC0.gui"
   },
   {
-    "id": "339B849C-5AA5-4E0E-A00E-DAB76C818870",
-    "image": "/content/processed/images/339B849C-5AA5-4E0E-A00E-DAB76C818870.png",
-    "gui": "/content/processed/dsl/339B849C-5AA5-4E0E-A00E-DAB76C818870.gui"
+    "id": "AF4840B2-2B9F-4ED0-A58D-E260B14858E1",
+    "image": "data/pix2code_kaggle/web/all_data/AF4840B2-2B9F-4ED0-A58D-E260B14858E1.png",
+    "gui": "data/pix2code_kaggle/web/all_data/AF4840B2-2B9F-4ED0-A58D-E260B14858E1.gui"
   },
   {
-    "id": "E0B1FA66-822A-4B14-8329-504C9EFE5448",
-    "image": "/content/processed/images/E0B1FA66-822A-4B14-8329-504C9EFE5448.png",
-    "gui": "/content/processed/dsl/E0B1FA66-822A-4B14-8329-504C9EFE5448.gui"
+    "id": "A904207C-6073-400C-B394-87CE3F8DE256",
+    "image": "data/pix2code_kaggle/web/all_data/A904207C-6073-400C-B394-87CE3F8DE256.png",
+    "gui": "data/pix2code_kaggle/web/all_data/A904207C-6073-400C-B394-87CE3F8DE256.gui"
   },
   {
-    "id": "879597E2-8E77-4667-A22A-02FDC0AF7307",
-    "image": "/content/processed/images/879597E2-8E77-4667-A22A-02FDC0AF7307.png",
-    "gui": "/content/processed/dsl/879597E2-8E77-4667-A22A-02FDC0AF7307.gui"
+    "id": "55C83592-BF31-44AF-8006-844F1C5CBCB9",
+    "image": "data/pix2code_kaggle/web/all_data/55C83592-BF31-44AF-8006-844F1C5CBCB9.png",
+    "gui": "data/pix2code_kaggle/web/all_data/55C83592-BF31-44AF-8006-844F1C5CBCB9.gui"
   },
   {
-    "id": "955CE98B-2A31-46BD-9640-689419A84992",
-    "image": "/content/processed/images/955CE98B-2A31-46BD-9640-689419A84992.png",
-    "gui": "/content/processed/dsl/955CE98B-2A31-46BD-9640-689419A84992.gui"
+    "id": "9A261A6D-E5E8-4533-B1D3-DB7EC392F7E9",
+    "image": "data/pix2code_kaggle/web/all_data/9A261A6D-E5E8-4533-B1D3-DB7EC392F7E9.png",
+    "gui": "data/pix2code_kaggle/web/all_data/9A261A6D-E5E8-4533-B1D3-DB7EC392F7E9.gui"
   },
   {
-    "id": "CC5E2814-6C47-43D6-9A67-FD1BDE5CC324",
-    "image": "/content/processed/images/CC5E2814-6C47-43D6-9A67-FD1BDE5CC324.png",
-    "gui": "/content/processed/dsl/CC5E2814-6C47-43D6-9A67-FD1BDE5CC324.gui"
+    "id": "FAD962F2-28DC-4A70-9A78-2707C0A0FB12",
+    "image": "data/pix2code_kaggle/web/all_data/FAD962F2-28DC-4A70-9A78-2707C0A0FB12.png",
+    "gui": "data/pix2code_kaggle/web/all_data/FAD962F2-28DC-4A70-9A78-2707C0A0FB12.gui"
   },
   {
-    "id": "D36B7A4D-7C6C-4B09-BD5F-6E90CBB77D4A",
-    "image": "/content/processed/images/D36B7A4D-7C6C-4B09-BD5F-6E90CBB77D4A.png",
-    "gui": "/content/processed/dsl/D36B7A4D-7C6C-4B09-BD5F-6E90CBB77D4A.gui"
+    "id": "2B4585C8-8A9A-4D5F-B41F-B70D9FCDB6CD",
+    "image": "data/pix2code_kaggle/web/all_data/2B4585C8-8A9A-4D5F-B41F-B70D9FCDB6CD.png",
+    "gui": "data/pix2code_kaggle/web/all_data/2B4585C8-8A9A-4D5F-B41F-B70D9FCDB6CD.gui"
   },
   {
-    "id": "64AF03D6-C1A5-4B0A-8A4D-721882093B85",
-    "image": "/content/processed/images/64AF03D6-C1A5-4B0A-8A4D-721882093B85.png",
-    "gui": "/content/processed/dsl/64AF03D6-C1A5-4B0A-8A4D-721882093B85.gui"
+    "id": "766FEEAF-4249-4034-B832-362407C08ACE",
+    "image": "data/pix2code_kaggle/web/all_data/766FEEAF-4249-4034-B832-362407C08ACE.png",
+    "gui": "data/pix2code_kaggle/web/all_data/766FEEAF-4249-4034-B832-362407C08ACE.gui"
   },
   {
-    "id": "8E8EB640-A2DA-4BBF-807E-19DC7FEF7F7D",
-    "image": "/content/processed/images/8E8EB640-A2DA-4BBF-807E-19DC7FEF7F7D.png",
-    "gui": "/content/processed/dsl/8E8EB640-A2DA-4BBF-807E-19DC7FEF7F7D.gui"
+    "id": "DB7A4118-EF22-45BF-A23D-32C4100BD7AF",
+    "image": "data/pix2code_kaggle/web/all_data/DB7A4118-EF22-45BF-A23D-32C4100BD7AF.png",
+    "gui": "data/pix2code_kaggle/web/all_data/DB7A4118-EF22-45BF-A23D-32C4100BD7AF.gui"
   },
   {
-    "id": "D59A720D-C5E0-447A-B257-FFECC7331CB5",
-    "image": "/content/processed/images/D59A720D-C5E0-447A-B257-FFECC7331CB5.png",
-    "gui": "/content/processed/dsl/D59A720D-C5E0-447A-B257-FFECC7331CB5.gui"
+    "id": "036D2558-71CC-452B-BCD1-5BF1B93521DD",
+    "image": "data/pix2code_kaggle/web/all_data/036D2558-71CC-452B-BCD1-5BF1B93521DD.png",
+    "gui": "data/pix2code_kaggle/web/all_data/036D2558-71CC-452B-BCD1-5BF1B93521DD.gui"
   },
   {
-    "id": "02D47D74-FEB5-49E5-BB1C-FBADCB2C2AD8",
-    "image": "/content/processed/images/02D47D74-FEB5-49E5-BB1C-FBADCB2C2AD8.png",
-    "gui": "/content/processed/dsl/02D47D74-FEB5-49E5-BB1C-FBADCB2C2AD8.gui"
+    "id": "DB3C4CE6-4C28-42DD-BF1D-15EA3A32F022",
+    "image": "data/pix2code_kaggle/web/all_data/DB3C4CE6-4C28-42DD-BF1D-15EA3A32F022.png",
+    "gui": "data/pix2code_kaggle/web/all_data/DB3C4CE6-4C28-42DD-BF1D-15EA3A32F022.gui"
   },
   {
-    "id": "65A0E933-2B26-4016-8E26-8DBF472FCD61",
-    "image": "/content/processed/images/65A0E933-2B26-4016-8E26-8DBF472FCD61.png",
-    "gui": "/content/processed/dsl/65A0E933-2B26-4016-8E26-8DBF472FCD61.gui"
+    "id": "082BA976-E18A-4CCB-B46D-1228F09DE88C",
+    "image": "data/pix2code_kaggle/web/all_data/082BA976-E18A-4CCB-B46D-1228F09DE88C.png",
+    "gui": "data/pix2code_kaggle/web/all_data/082BA976-E18A-4CCB-B46D-1228F09DE88C.gui"
   },
   {
-    "id": "CFBB4DAE-0738-4DE2-A2B3-94A37CCAFC13",
-    "image": "/content/processed/images/CFBB4DAE-0738-4DE2-A2B3-94A37CCAFC13.png",
-    "gui": "/content/processed/dsl/CFBB4DAE-0738-4DE2-A2B3-94A37CCAFC13.gui"
+    "id": "60AA6231-9F74-4040-B129-6B9AA779C22C",
+    "image": "data/pix2code_kaggle/web/all_data/60AA6231-9F74-4040-B129-6B9AA779C22C.png",
+    "gui": "data/pix2code_kaggle/web/all_data/60AA6231-9F74-4040-B129-6B9AA779C22C.gui"
   },
   {
-    "id": "456D75A5-6FED-45AF-93CD-6C809504F618",
-    "image": "/content/processed/images/456D75A5-6FED-45AF-93CD-6C809504F618.png",
-    "gui": "/content/processed/dsl/456D75A5-6FED-45AF-93CD-6C809504F618.gui"
+    "id": "6593AD49-60AB-4366-83D6-25967E1C999E",
+    "image": "data/pix2code_kaggle/web/all_data/6593AD49-60AB-4366-83D6-25967E1C999E.png",
+    "gui": "data/pix2code_kaggle/web/all_data/6593AD49-60AB-4366-83D6-25967E1C999E.gui"
   },
   {
-    "id": "455E0D2D-DDEB-4BD1-8817-39306D3698B2",
-    "image": "/content/processed/images/455E0D2D-DDEB-4BD1-8817-39306D3698B2.png",
-    "gui": "/content/processed/dsl/455E0D2D-DDEB-4BD1-8817-39306D3698B2.gui"
+    "id": "1A4A0B67-2481-49AF-9E74-1AAC30F88AF4",
+    "image": "data/pix2code_kaggle/web/all_data/1A4A0B67-2481-49AF-9E74-1AAC30F88AF4.png",
+    "gui": "data/pix2code_kaggle/web/all_data/1A4A0B67-2481-49AF-9E74-1AAC30F88AF4.gui"
   },
   {
-    "id": "870D9F6E-4DBD-4152-A5E8-D49F37ADB50E",
-    "image": "/content/processed/images/870D9F6E-4DBD-4152-A5E8-D49F37ADB50E.png",
-    "gui": "/content/processed/dsl/870D9F6E-4DBD-4152-A5E8-D49F37ADB50E.gui"
+    "id": "3A31039D-C77D-4A2C-AAA2-4AB3772CEE4B",
+    "image": "data/pix2code_kaggle/web/all_data/3A31039D-C77D-4A2C-AAA2-4AB3772CEE4B.png",
+    "gui": "data/pix2code_kaggle/web/all_data/3A31039D-C77D-4A2C-AAA2-4AB3772CEE4B.gui"
   },
   {
-    "id": "3BC0980C-4660-46CC-933A-6183D6D7505F",
-    "image": "/content/processed/images/3BC0980C-4660-46CC-933A-6183D6D7505F.png",
-    "gui": "/content/processed/dsl/3BC0980C-4660-46CC-933A-6183D6D7505F.gui"
+    "id": "A1E9A76E-B19F-40B3-8D01-48BBCC218BB6",
+    "image": "data/pix2code_kaggle/web/all_data/A1E9A76E-B19F-40B3-8D01-48BBCC218BB6.png",
+    "gui": "data/pix2code_kaggle/web/all_data/A1E9A76E-B19F-40B3-8D01-48BBCC218BB6.gui"
   },
   {
-    "id": "860096AF-0399-413F-80F3-AA5835950AF1",
-    "image": "/content/processed/images/860096AF-0399-413F-80F3-AA5835950AF1.png",
-    "gui": "/content/processed/dsl/860096AF-0399-413F-80F3-AA5835950AF1.gui"
+    "id": "D68EAA47-D031-42D4-876A-370EAA5DE925",
+    "image": "data/pix2code_kaggle/web/all_data/D68EAA47-D031-42D4-876A-370EAA5DE925.png",
+    "gui": "data/pix2code_kaggle/web/all_data/D68EAA47-D031-42D4-876A-370EAA5DE925.gui"
   },
   {
-    "id": "89A8824C-DA1C-4D9D-8499-CF9A2E211815",
-    "image": "/content/processed/images/89A8824C-DA1C-4D9D-8499-CF9A2E211815.png",
-    "gui": "/content/processed/dsl/89A8824C-DA1C-4D9D-8499-CF9A2E211815.gui"
+    "id": "38D2AE9B-D550-4C74-A1F6-AD325BE29786",
+    "image": "data/pix2code_kaggle/web/all_data/38D2AE9B-D550-4C74-A1F6-AD325BE29786.png",
+    "gui": "data/pix2code_kaggle/web/all_data/38D2AE9B-D550-4C74-A1F6-AD325BE29786.gui"
   },
   {
-    "id": "54432035-1232-46EF-8A1F-E87DF8704933",
-    "image": "/content/processed/images/54432035-1232-46EF-8A1F-E87DF8704933.png",
-    "gui": "/content/processed/dsl/54432035-1232-46EF-8A1F-E87DF8704933.gui"
+    "id": "D6B2FAC8-8BA5-4736-A287-061338E59B1D",
+    "image": "data/pix2code_kaggle/web/all_data/D6B2FAC8-8BA5-4736-A287-061338E59B1D.png",
+    "gui": "data/pix2code_kaggle/web/all_data/D6B2FAC8-8BA5-4736-A287-061338E59B1D.gui"
   },
   {
-    "id": "EA82902D-4E06-4AE8-999F-F0895B266EF4",
-    "image": "/content/processed/images/EA82902D-4E06-4AE8-999F-F0895B266EF4.png",
-    "gui": "/content/processed/dsl/EA82902D-4E06-4AE8-999F-F0895B266EF4.gui"
+    "id": "F284B69F-4E2D-431D-850A-549214EC0B4D",
+    "image": "data/pix2code_kaggle/web/all_data/F284B69F-4E2D-431D-850A-549214EC0B4D.png",
+    "gui": "data/pix2code_kaggle/web/all_data/F284B69F-4E2D-431D-850A-549214EC0B4D.gui"
   },
   {
-    "id": "98E153A3-08EE-4252-804A-86046AD051E0",
-    "image": "/content/processed/images/98E153A3-08EE-4252-804A-86046AD051E0.png",
-    "gui": "/content/processed/dsl/98E153A3-08EE-4252-804A-86046AD051E0.gui"
+    "id": "7231B830-B0F0-44D1-BBB8-0DAB127C8F82",
+    "image": "data/pix2code_kaggle/web/all_data/7231B830-B0F0-44D1-BBB8-0DAB127C8F82.png",
+    "gui": "data/pix2code_kaggle/web/all_data/7231B830-B0F0-44D1-BBB8-0DAB127C8F82.gui"
   },
   {
-    "id": "2A2B8FA0-2091-49AB-A79A-75D4FEE00B48",
-    "image": "/content/processed/images/2A2B8FA0-2091-49AB-A79A-75D4FEE00B48.png",
-    "gui": "/content/processed/dsl/2A2B8FA0-2091-49AB-A79A-75D4FEE00B48.gui"
+    "id": "B8BB669D-18E5-4371-83B6-FB2293CF6D14",
+    "image": "data/pix2code_kaggle/web/all_data/B8BB669D-18E5-4371-83B6-FB2293CF6D14.png",
+    "gui": "data/pix2code_kaggle/web/all_data/B8BB669D-18E5-4371-83B6-FB2293CF6D14.gui"
   },
   {
-    "id": "A6F28855-C8E3-42FF-9255-D183E4D2EC7E",
-    "image": "/content/processed/images/A6F28855-C8E3-42FF-9255-D183E4D2EC7E.png",
-    "gui": "/content/processed/dsl/A6F28855-C8E3-42FF-9255-D183E4D2EC7E.gui"
+    "id": "C6D334B3-0026-4DB2-B727-FA76FCE036C9",
+    "image": "data/pix2code_kaggle/web/all_data/C6D334B3-0026-4DB2-B727-FA76FCE036C9.png",
+    "gui": "data/pix2code_kaggle/web/all_data/C6D334B3-0026-4DB2-B727-FA76FCE036C9.gui"
   },
   {
-    "id": "AD92F823-B48A-4B78-9947-EA7A050602A9",
-    "image": "/content/processed/images/AD92F823-B48A-4B78-9947-EA7A050602A9.png",
-    "gui": "/content/processed/dsl/AD92F823-B48A-4B78-9947-EA7A050602A9.gui"
+    "id": "25833168-8453-4B2A-9E3B-E8E818C2AFE7",
+    "image": "data/pix2code_kaggle/web/all_data/25833168-8453-4B2A-9E3B-E8E818C2AFE7.png",
+    "gui": "data/pix2code_kaggle/web/all_data/25833168-8453-4B2A-9E3B-E8E818C2AFE7.gui"
   },
   {
-    "id": "B7D234E9-BBD3-4238-AB07-B7367EE62BF3",
-    "image": "/content/processed/images/B7D234E9-BBD3-4238-AB07-B7367EE62BF3.png",
-    "gui": "/content/processed/dsl/B7D234E9-BBD3-4238-AB07-B7367EE62BF3.gui"
+    "id": "7784F9B3-30DA-4DDA-8843-ED9037C71EC6",
+    "image": "data/pix2code_kaggle/web/all_data/7784F9B3-30DA-4DDA-8843-ED9037C71EC6.png",
+    "gui": "data/pix2code_kaggle/web/all_data/7784F9B3-30DA-4DDA-8843-ED9037C71EC6.gui"
   },
   {
-    "id": "E5349A73-4B1B-4F6F-A38C-4A9C6E645170",
-    "image": "/content/processed/images/E5349A73-4B1B-4F6F-A38C-4A9C6E645170.png",
-    "gui": "/content/processed/dsl/E5349A73-4B1B-4F6F-A38C-4A9C6E645170.gui"
+    "id": "4DD2E76B-3A79-45A0-902F-546EE2B71FFC",
+    "image": "data/pix2code_kaggle/web/all_data/4DD2E76B-3A79-45A0-902F-546EE2B71FFC.png",
+    "gui": "data/pix2code_kaggle/web/all_data/4DD2E76B-3A79-45A0-902F-546EE2B71FFC.gui"
   },
   {
-    "id": "97F9A506-516B-40E1-A5A6-D25CD6C97C58",
-    "image": "/content/processed/images/97F9A506-516B-40E1-A5A6-D25CD6C97C58.png",
-    "gui": "/content/processed/dsl/97F9A506-516B-40E1-A5A6-D25CD6C97C58.gui"
+    "id": "B1D75862-EE9E-43CA-89E2-05BCBD37325C",
+    "image": "data/pix2code_kaggle/web/all_data/B1D75862-EE9E-43CA-89E2-05BCBD37325C.png",
+    "gui": "data/pix2code_kaggle/web/all_data/B1D75862-EE9E-43CA-89E2-05BCBD37325C.gui"
   },
   {
-    "id": "8E828041-59AF-4952-9761-296F8EE6ADEC",
-    "image": "/content/processed/images/8E828041-59AF-4952-9761-296F8EE6ADEC.png",
-    "gui": "/content/processed/dsl/8E828041-59AF-4952-9761-296F8EE6ADEC.gui"
+    "id": "9D5915BA-8504-4EBD-9FEF-5D999A296C86",
+    "image": "data/pix2code_kaggle/web/all_data/9D5915BA-8504-4EBD-9FEF-5D999A296C86.png",
+    "gui": "data/pix2code_kaggle/web/all_data/9D5915BA-8504-4EBD-9FEF-5D999A296C86.gui"
   },
   {
-    "id": "DDE8E3F1-A3C2-4A59-837F-710222E9B3AC",
-    "image": "/content/processed/images/DDE8E3F1-A3C2-4A59-837F-710222E9B3AC.png",
-    "gui": "/content/processed/dsl/DDE8E3F1-A3C2-4A59-837F-710222E9B3AC.gui"
+    "id": "5FC17573-C7E0-4FA1-B15D-98713575BE94",
+    "image": "data/pix2code_kaggle/web/all_data/5FC17573-C7E0-4FA1-B15D-98713575BE94.png",
+    "gui": "data/pix2code_kaggle/web/all_data/5FC17573-C7E0-4FA1-B15D-98713575BE94.gui"
   },
   {
-    "id": "08E5908B-10DB-4B3B-B902-84920D9C7490",
-    "image": "/content/processed/images/08E5908B-10DB-4B3B-B902-84920D9C7490.png",
-    "gui": "/content/processed/dsl/08E5908B-10DB-4B3B-B902-84920D9C7490.gui"
+    "id": "77F30523-8A12-4294-BF6A-DA766BE85FDA",
+    "image": "data/pix2code_kaggle/web/all_data/77F30523-8A12-4294-BF6A-DA766BE85FDA.png",
+    "gui": "data/pix2code_kaggle/web/all_data/77F30523-8A12-4294-BF6A-DA766BE85FDA.gui"
   },
   {
-    "id": "F01CBCC2-090B-4525-BCFB-6235E57B7004",
-    "image": "/content/processed/images/F01CBCC2-090B-4525-BCFB-6235E57B7004.png",
-    "gui": "/content/processed/dsl/F01CBCC2-090B-4525-BCFB-6235E57B7004.gui"
+    "id": "5614EE80-782E-4F46-8FB4-EB663FDF16D3",
+    "image": "data/pix2code_kaggle/web/all_data/5614EE80-782E-4F46-8FB4-EB663FDF16D3.png",
+    "gui": "data/pix2code_kaggle/web/all_data/5614EE80-782E-4F46-8FB4-EB663FDF16D3.gui"
   },
   {
-    "id": "A3503DC9-4417-4FE6-9C18-552A9B272476",
-    "image": "/content/processed/images/A3503DC9-4417-4FE6-9C18-552A9B272476.png",
-    "gui": "/content/processed/dsl/A3503DC9-4417-4FE6-9C18-552A9B272476.gui"
+    "id": "2B4BE5AF-D965-4772-ABCB-33E37F233289",
+    "image": "data/pix2code_kaggle/web/all_data/2B4BE5AF-D965-4772-ABCB-33E37F233289.png",
+    "gui": "data/pix2code_kaggle/web/all_data/2B4BE5AF-D965-4772-ABCB-33E37F233289.gui"
   },
   {
-    "id": "0838D144-CEB2-424F-AE50-CA5877E5DDF5",
-    "image": "/content/processed/images/0838D144-CEB2-424F-AE50-CA5877E5DDF5.png",
-    "gui": "/content/processed/dsl/0838D144-CEB2-424F-AE50-CA5877E5DDF5.gui"
+    "id": "F503751C-80B0-4AB1-BEDB-CA168DC931F7",
+    "image": "data/pix2code_kaggle/web/all_data/F503751C-80B0-4AB1-BEDB-CA168DC931F7.png",
+    "gui": "data/pix2code_kaggle/web/all_data/F503751C-80B0-4AB1-BEDB-CA168DC931F7.gui"
   },
   {
-    "id": "61AFCB04-0B83-48C9-8CBA-FF87FBEFBA3F",
-    "image": "/content/processed/images/61AFCB04-0B83-48C9-8CBA-FF87FBEFBA3F.png",
-    "gui": "/content/processed/dsl/61AFCB04-0B83-48C9-8CBA-FF87FBEFBA3F.gui"
+    "id": "5DDE4ADE-0C77-4D1F-98D4-14109FE47C1A",
+    "image": "data/pix2code_kaggle/web/all_data/5DDE4ADE-0C77-4D1F-98D4-14109FE47C1A.png",
+    "gui": "data/pix2code_kaggle/web/all_data/5DDE4ADE-0C77-4D1F-98D4-14109FE47C1A.gui"
   },
   {
-    "id": "6A6B5793-221F-4897-AAC7-049A485E6C01",
-    "image": "/content/processed/images/6A6B5793-221F-4897-AAC7-049A485E6C01.png",
-    "gui": "/content/processed/dsl/6A6B5793-221F-4897-AAC7-049A485E6C01.gui"
+    "id": "FD6D3FB2-C8DA-4F4F-AEAA-AB0D7A4247F4",
+    "image": "data/pix2code_kaggle/web/all_data/FD6D3FB2-C8DA-4F4F-AEAA-AB0D7A4247F4.png",
+    "gui": "data/pix2code_kaggle/web/all_data/FD6D3FB2-C8DA-4F4F-AEAA-AB0D7A4247F4.gui"
   },
   {
-    "id": "C5B52FDD-3FDF-4DE5-9A8F-77CD8E96D22C",
-    "image": "/content/processed/images/C5B52FDD-3FDF-4DE5-9A8F-77CD8E96D22C.png",
-    "gui": "/content/processed/dsl/C5B52FDD-3FDF-4DE5-9A8F-77CD8E96D22C.gui"
+    "id": "EAB35589-CD1C-4625-9EE1-D87DC52E999B",
+    "image": "data/pix2code_kaggle/web/all_data/EAB35589-CD1C-4625-9EE1-D87DC52E999B.png",
+    "gui": "data/pix2code_kaggle/web/all_data/EAB35589-CD1C-4625-9EE1-D87DC52E999B.gui"
   },
   {
-    "id": "4F041189-3143-4649-B140-72473BF8330C",
-    "image": "/content/processed/images/4F041189-3143-4649-B140-72473BF8330C.png",
-    "gui": "/content/processed/dsl/4F041189-3143-4649-B140-72473BF8330C.gui"
+    "id": "8F5F3282-D901-40A6-ADC4-033F9A85C172",
+    "image": "data/pix2code_kaggle/web/all_data/8F5F3282-D901-40A6-ADC4-033F9A85C172.png",
+    "gui": "data/pix2code_kaggle/web/all_data/8F5F3282-D901-40A6-ADC4-033F9A85C172.gui"
   },
   {
-    "id": "EB2D8C0F-D433-4CF1-857E-A3AE02B3FBD2",
-    "image": "/content/processed/images/EB2D8C0F-D433-4CF1-857E-A3AE02B3FBD2.png",
-    "gui": "/content/processed/dsl/EB2D8C0F-D433-4CF1-857E-A3AE02B3FBD2.gui"
+    "id": "DE9CAF54-1388-4329-B367-033A3E05AB9E",
+    "image": "data/pix2code_kaggle/web/all_data/DE9CAF54-1388-4329-B367-033A3E05AB9E.png",
+    "gui": "data/pix2code_kaggle/web/all_data/DE9CAF54-1388-4329-B367-033A3E05AB9E.gui"
   },
   {
-    "id": "3B781C73-3F3D-4948-B952-361603898A8F",
-    "image": "/content/processed/images/3B781C73-3F3D-4948-B952-361603898A8F.png",
-    "gui": "/content/processed/dsl/3B781C73-3F3D-4948-B952-361603898A8F.gui"
+    "id": "C9B34CD3-59D9-42E8-9F1F-F4CB698B5C29",
+    "image": "data/pix2code_kaggle/web/all_data/C9B34CD3-59D9-42E8-9F1F-F4CB698B5C29.png",
+    "gui": "data/pix2code_kaggle/web/all_data/C9B34CD3-59D9-42E8-9F1F-F4CB698B5C29.gui"
   },
   {
-    "id": "A539B850-DDC7-49FF-A03D-3B66E31AC856",
-    "image": "/content/processed/images/A539B850-DDC7-49FF-A03D-3B66E31AC856.png",
-    "gui": "/content/processed/dsl/A539B850-DDC7-49FF-A03D-3B66E31AC856.gui"
+    "id": "B9261BA5-39AE-4261-9F43-29F25695C821",
+    "image": "data/pix2code_kaggle/web/all_data/B9261BA5-39AE-4261-9F43-29F25695C821.png",
+    "gui": "data/pix2code_kaggle/web/all_data/B9261BA5-39AE-4261-9F43-29F25695C821.gui"
   },
   {
-    "id": "4A854C00-5561-438A-9ADC-B85A91B97181",
-    "image": "/content/processed/images/4A854C00-5561-438A-9ADC-B85A91B97181.png",
-    "gui": "/content/processed/dsl/4A854C00-5561-438A-9ADC-B85A91B97181.gui"
+    "id": "9563CB87-4E04-4CB0-8EA8-9B25AB511709",
+    "image": "data/pix2code_kaggle/web/all_data/9563CB87-4E04-4CB0-8EA8-9B25AB511709.png",
+    "gui": "data/pix2code_kaggle/web/all_data/9563CB87-4E04-4CB0-8EA8-9B25AB511709.gui"
   },
   {
-    "id": "993AFE50-E498-48BC-9652-3DD0B034794A",
-    "image": "/content/processed/images/993AFE50-E498-48BC-9652-3DD0B034794A.png",
-    "gui": "/content/processed/dsl/993AFE50-E498-48BC-9652-3DD0B034794A.gui"
+    "id": "E9E92402-C3F6-444E-9E66-A5F1EF4D52DC",
+    "image": "data/pix2code_kaggle/web/all_data/E9E92402-C3F6-444E-9E66-A5F1EF4D52DC.png",
+    "gui": "data/pix2code_kaggle/web/all_data/E9E92402-C3F6-444E-9E66-A5F1EF4D52DC.gui"
   },
   {
-    "id": "5B1CF3AD-A524-4AF7-B164-659F68D2BDC5",
-    "image": "/content/processed/images/5B1CF3AD-A524-4AF7-B164-659F68D2BDC5.png",
-    "gui": "/content/processed/dsl/5B1CF3AD-A524-4AF7-B164-659F68D2BDC5.gui"
+    "id": "C3AB0137-DDBF-4899-8C46-38773C76C1F3",
+    "image": "data/pix2code_kaggle/web/all_data/C3AB0137-DDBF-4899-8C46-38773C76C1F3.png",
+    "gui": "data/pix2code_kaggle/web/all_data/C3AB0137-DDBF-4899-8C46-38773C76C1F3.gui"
   },
   {
-    "id": "C35A2D61-6CCE-4911-9C90-E1129748A1FC",
-    "image": "/content/processed/images/C35A2D61-6CCE-4911-9C90-E1129748A1FC.png",
-    "gui": "/content/processed/dsl/C35A2D61-6CCE-4911-9C90-E1129748A1FC.gui"
+    "id": "93268E2D-121A-49B5-A1FF-481682907ED3",
+    "image": "data/pix2code_kaggle/web/all_data/93268E2D-121A-49B5-A1FF-481682907ED3.png",
+    "gui": "data/pix2code_kaggle/web/all_data/93268E2D-121A-49B5-A1FF-481682907ED3.gui"
   },
   {
-    "id": "EA2BA9BA-9CA9-4F25-BA43-7B1C3D430EA1",
-    "image": "/content/processed/images/EA2BA9BA-9CA9-4F25-BA43-7B1C3D430EA1.png",
-    "gui": "/content/processed/dsl/EA2BA9BA-9CA9-4F25-BA43-7B1C3D430EA1.gui"
+    "id": "3AD8509F-A870-4A05-BF80-909BED5EED6A",
+    "image": "data/pix2code_kaggle/web/all_data/3AD8509F-A870-4A05-BF80-909BED5EED6A.png",
+    "gui": "data/pix2code_kaggle/web/all_data/3AD8509F-A870-4A05-BF80-909BED5EED6A.gui"
   },
   {
-    "id": "90F9117F-55BA-4358-97C1-E1FD886CB104",
-    "image": "/content/processed/images/90F9117F-55BA-4358-97C1-E1FD886CB104.png",
-    "gui": "/content/processed/dsl/90F9117F-55BA-4358-97C1-E1FD886CB104.gui"
+    "id": "C041CF4A-8E0D-441E-8245-84428C9B3336",
+    "image": "data/pix2code_kaggle/web/all_data/C041CF4A-8E0D-441E-8245-84428C9B3336.png",
+    "gui": "data/pix2code_kaggle/web/all_data/C041CF4A-8E0D-441E-8245-84428C9B3336.gui"
   },
   {
-    "id": "22160502-7438-420F-8748-70A17477B0C7",
-    "image": "/content/processed/images/22160502-7438-420F-8748-70A17477B0C7.png",
-    "gui": "/content/processed/dsl/22160502-7438-420F-8748-70A17477B0C7.gui"
+    "id": "D9309768-E268-4597-B164-54129F8C618E",
+    "image": "data/pix2code_kaggle/web/all_data/D9309768-E268-4597-B164-54129F8C618E.png",
+    "gui": "data/pix2code_kaggle/web/all_data/D9309768-E268-4597-B164-54129F8C618E.gui"
   },
   {
-    "id": "25CDA0A2-3296-4693-BBDB-153955E849D8",
-    "image": "/content/processed/images/25CDA0A2-3296-4693-BBDB-153955E849D8.png",
-    "gui": "/content/processed/dsl/25CDA0A2-3296-4693-BBDB-153955E849D8.gui"
+    "id": "01D23C26-B39F-475F-9961-9DAFF0B987A3",
+    "image": "data/pix2code_kaggle/web/all_data/01D23C26-B39F-475F-9961-9DAFF0B987A3.png",
+    "gui": "data/pix2code_kaggle/web/all_data/01D23C26-B39F-475F-9961-9DAFF0B987A3.gui"
   },
   {
-    "id": "E5135DC5-3504-4A97-90A2-D208295EE890",
-    "image": "/content/processed/images/E5135DC5-3504-4A97-90A2-D208295EE890.png",
-    "gui": "/content/processed/dsl/E5135DC5-3504-4A97-90A2-D208295EE890.gui"
+    "id": "80E62312-9C09-4A5B-9E2C-22F396D90F90",
+    "image": "data/pix2code_kaggle/web/all_data/80E62312-9C09-4A5B-9E2C-22F396D90F90.png",
+    "gui": "data/pix2code_kaggle/web/all_data/80E62312-9C09-4A5B-9E2C-22F396D90F90.gui"
   },
   {
-    "id": "193A65EE-D49E-4CD9-95CC-74FE778B2226",
-    "image": "/content/processed/images/193A65EE-D49E-4CD9-95CC-74FE778B2226.png",
-    "gui": "/content/processed/dsl/193A65EE-D49E-4CD9-95CC-74FE778B2226.gui"
+    "id": "83C1E7CA-F6CB-40B9-B1AB-6705990C977E",
+    "image": "data/pix2code_kaggle/web/all_data/83C1E7CA-F6CB-40B9-B1AB-6705990C977E.png",
+    "gui": "data/pix2code_kaggle/web/all_data/83C1E7CA-F6CB-40B9-B1AB-6705990C977E.gui"
   },
   {
-    "id": "79361B19-0175-48E9-95FE-8B2832062A20",
-    "image": "/content/processed/images/79361B19-0175-48E9-95FE-8B2832062A20.png",
-    "gui": "/content/processed/dsl/79361B19-0175-48E9-95FE-8B2832062A20.gui"
+    "id": "AD2F0542-D090-48B2-9833-1D33345932A0",
+    "image": "data/pix2code_kaggle/web/all_data/AD2F0542-D090-48B2-9833-1D33345932A0.png",
+    "gui": "data/pix2code_kaggle/web/all_data/AD2F0542-D090-48B2-9833-1D33345932A0.gui"
   },
   {
-    "id": "4F187881-3A9A-4720-B344-7FBF8AF19F19",
-    "image": "/content/processed/images/4F187881-3A9A-4720-B344-7FBF8AF19F19.png",
-    "gui": "/content/processed/dsl/4F187881-3A9A-4720-B344-7FBF8AF19F19.gui"
+    "id": "D16F33F6-138F-43BC-958B-E95824909F09",
+    "image": "data/pix2code_kaggle/web/all_data/D16F33F6-138F-43BC-958B-E95824909F09.png",
+    "gui": "data/pix2code_kaggle/web/all_data/D16F33F6-138F-43BC-958B-E95824909F09.gui"
   },
   {
-    "id": "FB3353F0-08B9-4CCA-995C-B39350FCF9B0",
-    "image": "/content/processed/images/FB3353F0-08B9-4CCA-995C-B39350FCF9B0.png",
-    "gui": "/content/processed/dsl/FB3353F0-08B9-4CCA-995C-B39350FCF9B0.gui"
+    "id": "350F33A8-3756-4E97-B59E-C9BF614767B8",
+    "image": "data/pix2code_kaggle/web/all_data/350F33A8-3756-4E97-B59E-C9BF614767B8.png",
+    "gui": "data/pix2code_kaggle/web/all_data/350F33A8-3756-4E97-B59E-C9BF614767B8.gui"
   },
   {
-    "id": "ECC9B86E-4CC2-4B47-ADD5-26023D323573",
-    "image": "/content/processed/images/ECC9B86E-4CC2-4B47-ADD5-26023D323573.png",
-    "gui": "/content/processed/dsl/ECC9B86E-4CC2-4B47-ADD5-26023D323573.gui"
+    "id": "461B4E2F-0FF5-4823-B26B-B2B549E4C572",
+    "image": "data/pix2code_kaggle/web/all_data/461B4E2F-0FF5-4823-B26B-B2B549E4C572.png",
+    "gui": "data/pix2code_kaggle/web/all_data/461B4E2F-0FF5-4823-B26B-B2B549E4C572.gui"
   },
   {
-    "id": "751277A1-D5A0-45F3-8C14-1EBB630B0316",
-    "image": "/content/processed/images/751277A1-D5A0-45F3-8C14-1EBB630B0316.png",
-    "gui": "/content/processed/dsl/751277A1-D5A0-45F3-8C14-1EBB630B0316.gui"
+    "id": "3C593055-8F7B-4270-BD2C-ADEEAF03135F",
+    "image": "data/pix2code_kaggle/web/all_data/3C593055-8F7B-4270-BD2C-ADEEAF03135F.png",
+    "gui": "data/pix2code_kaggle/web/all_data/3C593055-8F7B-4270-BD2C-ADEEAF03135F.gui"
   },
   {
-    "id": "03AB9B85-092B-4698-ACAC-29CD48F41ABD",
-    "image": "/content/processed/images/03AB9B85-092B-4698-ACAC-29CD48F41ABD.png",
-    "gui": "/content/processed/dsl/03AB9B85-092B-4698-ACAC-29CD48F41ABD.gui"
+    "id": "DAD2314E-0B85-4AD3-8B27-96266BE0AE37",
+    "image": "data/pix2code_kaggle/web/all_data/DAD2314E-0B85-4AD3-8B27-96266BE0AE37.png",
+    "gui": "data/pix2code_kaggle/web/all_data/DAD2314E-0B85-4AD3-8B27-96266BE0AE37.gui"
   },
   {
-    "id": "AED2A964-543B-4698-AEBA-AF912B292EB1",
-    "image": "/content/processed/images/AED2A964-543B-4698-AEBA-AF912B292EB1.png",
-    "gui": "/content/processed/dsl/AED2A964-543B-4698-AEBA-AF912B292EB1.gui"
+    "id": "639A412A-16AB-46D4-A91E-018018DA0049",
+    "image": "data/pix2code_kaggle/web/all_data/639A412A-16AB-46D4-A91E-018018DA0049.png",
+    "gui": "data/pix2code_kaggle/web/all_data/639A412A-16AB-46D4-A91E-018018DA0049.gui"
   },
   {
-    "id": "8ECA8967-1415-43A3-8E11-0FBA9FCAAC17",
-    "image": "/content/processed/images/8ECA8967-1415-43A3-8E11-0FBA9FCAAC17.png",
-    "gui": "/content/processed/dsl/8ECA8967-1415-43A3-8E11-0FBA9FCAAC17.gui"
+    "id": "32F145B1-6850-4EFF-8A50-DBF34EFCFF78",
+    "image": "data/pix2code_kaggle/web/all_data/32F145B1-6850-4EFF-8A50-DBF34EFCFF78.png",
+    "gui": "data/pix2code_kaggle/web/all_data/32F145B1-6850-4EFF-8A50-DBF34EFCFF78.gui"
   },
   {
-    "id": "C081387A-CBCC-48C7-A295-5955DEF824B9",
-    "image": "/content/processed/images/C081387A-CBCC-48C7-A295-5955DEF824B9.png",
-    "gui": "/content/processed/dsl/C081387A-CBCC-48C7-A295-5955DEF824B9.gui"
+    "id": "30C284F0-37B6-4D1F-B6E1-807BD37137B7",
+    "image": "data/pix2code_kaggle/web/all_data/30C284F0-37B6-4D1F-B6E1-807BD37137B7.png",
+    "gui": "data/pix2code_kaggle/web/all_data/30C284F0-37B6-4D1F-B6E1-807BD37137B7.gui"
   },
   {
-    "id": "078CD420-8A18-4962-9FB1-8DCB8F1D06D3",
-    "image": "/content/processed/images/078CD420-8A18-4962-9FB1-8DCB8F1D06D3.png",
-    "gui": "/content/processed/dsl/078CD420-8A18-4962-9FB1-8DCB8F1D06D3.gui"
+    "id": "3C583DE4-E7AE-4814-A668-84AC9D752074",
+    "image": "data/pix2code_kaggle/web/all_data/3C583DE4-E7AE-4814-A668-84AC9D752074.png",
+    "gui": "data/pix2code_kaggle/web/all_data/3C583DE4-E7AE-4814-A668-84AC9D752074.gui"
   },
   {
-    "id": "BE512BA8-712E-48F2-8FB7-8558A53F53F4",
-    "image": "/content/processed/images/BE512BA8-712E-48F2-8FB7-8558A53F53F4.png",
-    "gui": "/content/processed/dsl/BE512BA8-712E-48F2-8FB7-8558A53F53F4.gui"
+    "id": "85F07346-C058-44F2-9E7D-A9809988DB47",
+    "image": "data/pix2code_kaggle/web/all_data/85F07346-C058-44F2-9E7D-A9809988DB47.png",
+    "gui": "data/pix2code_kaggle/web/all_data/85F07346-C058-44F2-9E7D-A9809988DB47.gui"
   },
   {
-    "id": "62B1CC57-C9F3-4A9D-BD8D-A4332BDA70E1",
-    "image": "/content/processed/images/62B1CC57-C9F3-4A9D-BD8D-A4332BDA70E1.png",
-    "gui": "/content/processed/dsl/62B1CC57-C9F3-4A9D-BD8D-A4332BDA70E1.gui"
+    "id": "CC093E3F-C88F-4AB6-808B-D0BFEE4CDAA1",
+    "image": "data/pix2code_kaggle/web/all_data/CC093E3F-C88F-4AB6-808B-D0BFEE4CDAA1.png",
+    "gui": "data/pix2code_kaggle/web/all_data/CC093E3F-C88F-4AB6-808B-D0BFEE4CDAA1.gui"
   },
   {
-    "id": "6B8BDFFD-4FBF-4268-9D8E-6064322EC649",
-    "image": "/content/processed/images/6B8BDFFD-4FBF-4268-9D8E-6064322EC649.png",
-    "gui": "/content/processed/dsl/6B8BDFFD-4FBF-4268-9D8E-6064322EC649.gui"
+    "id": "E9F4DE26-EA8E-4D8A-B7D0-C9BBD9E4E8DD",
+    "image": "data/pix2code_kaggle/web/all_data/E9F4DE26-EA8E-4D8A-B7D0-C9BBD9E4E8DD.png",
+    "gui": "data/pix2code_kaggle/web/all_data/E9F4DE26-EA8E-4D8A-B7D0-C9BBD9E4E8DD.gui"
   },
   {
-    "id": "E5E1EC31-07CB-4DB4-81F0-CDBBB433F738",
-    "image": "/content/processed/images/E5E1EC31-07CB-4DB4-81F0-CDBBB433F738.png",
-    "gui": "/content/processed/dsl/E5E1EC31-07CB-4DB4-81F0-CDBBB433F738.gui"
+    "id": "57021B2D-9959-4217-8B8F-17AC61772672",
+    "image": "data/pix2code_kaggle/web/all_data/57021B2D-9959-4217-8B8F-17AC61772672.png",
+    "gui": "data/pix2code_kaggle/web/all_data/57021B2D-9959-4217-8B8F-17AC61772672.gui"
   },
   {
-    "id": "4B22BA59-2940-466A-8B49-4BD967CF3E86",
-    "image": "/content/processed/images/4B22BA59-2940-466A-8B49-4BD967CF3E86.png",
-    "gui": "/content/processed/dsl/4B22BA59-2940-466A-8B49-4BD967CF3E86.gui"
+    "id": "2339391E-0611-4722-8025-49C6F812CC04",
+    "image": "data/pix2code_kaggle/web/all_data/2339391E-0611-4722-8025-49C6F812CC04.png",
+    "gui": "data/pix2code_kaggle/web/all_data/2339391E-0611-4722-8025-49C6F812CC04.gui"
   },
   {
-    "id": "5AAC2307-BCB1-45E4-B14A-B7F9874AD3BC",
-    "image": "/content/processed/images/5AAC2307-BCB1-45E4-B14A-B7F9874AD3BC.png",
-    "gui": "/content/processed/dsl/5AAC2307-BCB1-45E4-B14A-B7F9874AD3BC.gui"
+    "id": "D73C1938-477B-4167-9D73-40BF4476B6A3",
+    "image": "data/pix2code_kaggle/web/all_data/D73C1938-477B-4167-9D73-40BF4476B6A3.png",
+    "gui": "data/pix2code_kaggle/web/all_data/D73C1938-477B-4167-9D73-40BF4476B6A3.gui"
   },
   {
-    "id": "2386B651-2C5D-4ED0-8C3E-9FA972425CFF",
-    "image": "/content/processed/images/2386B651-2C5D-4ED0-8C3E-9FA972425CFF.png",
-    "gui": "/content/processed/dsl/2386B651-2C5D-4ED0-8C3E-9FA972425CFF.gui"
+    "id": "861291C8-E479-4EE2-9794-A6EC7620AFDE",
+    "image": "data/pix2code_kaggle/web/all_data/861291C8-E479-4EE2-9794-A6EC7620AFDE.png",
+    "gui": "data/pix2code_kaggle/web/all_data/861291C8-E479-4EE2-9794-A6EC7620AFDE.gui"
   },
   {
-    "id": "5B3B9C01-A3D9-4B22-BAF4-250C9DD4471E",
-    "image": "/content/processed/images/5B3B9C01-A3D9-4B22-BAF4-250C9DD4471E.png",
-    "gui": "/content/processed/dsl/5B3B9C01-A3D9-4B22-BAF4-250C9DD4471E.gui"
+    "id": "BA5026C9-F381-4882-A929-B629544BC56D",
+    "image": "data/pix2code_kaggle/web/all_data/BA5026C9-F381-4882-A929-B629544BC56D.png",
+    "gui": "data/pix2code_kaggle/web/all_data/BA5026C9-F381-4882-A929-B629544BC56D.gui"
   },
   {
-    "id": "36A8858B-506D-4680-B1E9-8553DFA6836B",
-    "image": "/content/processed/images/36A8858B-506D-4680-B1E9-8553DFA6836B.png",
-    "gui": "/content/processed/dsl/36A8858B-506D-4680-B1E9-8553DFA6836B.gui"
+    "id": "1A0B1DC8-8264-415D-B4FE-83D61C8EEB95",
+    "image": "data/pix2code_kaggle/web/all_data/1A0B1DC8-8264-415D-B4FE-83D61C8EEB95.png",
+    "gui": "data/pix2code_kaggle/web/all_data/1A0B1DC8-8264-415D-B4FE-83D61C8EEB95.gui"
   },
   {
-    "id": "070C477C-DADE-4409-8E99-899598B50CA1",
-    "image": "/content/processed/images/070C477C-DADE-4409-8E99-899598B50CA1.png",
-    "gui": "/content/processed/dsl/070C477C-DADE-4409-8E99-899598B50CA1.gui"
+    "id": "8ACEAAF8-38CC-4C49-911C-DB74BA8A3B07",
+    "image": "data/pix2code_kaggle/web/all_data/8ACEAAF8-38CC-4C49-911C-DB74BA8A3B07.png",
+    "gui": "data/pix2code_kaggle/web/all_data/8ACEAAF8-38CC-4C49-911C-DB74BA8A3B07.gui"
   },
   {
-    "id": "20DA3AC1-5FCC-4C85-9C93-6428011F04EF",
-    "image": "/content/processed/images/20DA3AC1-5FCC-4C85-9C93-6428011F04EF.png",
-    "gui": "/content/processed/dsl/20DA3AC1-5FCC-4C85-9C93-6428011F04EF.gui"
+    "id": "4B1CEDC4-E175-4CC4-BB56-A0A64E1410DC",
+    "image": "data/pix2code_kaggle/web/all_data/4B1CEDC4-E175-4CC4-BB56-A0A64E1410DC.png",
+    "gui": "data/pix2code_kaggle/web/all_data/4B1CEDC4-E175-4CC4-BB56-A0A64E1410DC.gui"
   },
   {
-    "id": "6FDF6182-8F51-406A-BBE5-FC33E515EAB6",
-    "image": "/content/processed/images/6FDF6182-8F51-406A-BBE5-FC33E515EAB6.png",
-    "gui": "/content/processed/dsl/6FDF6182-8F51-406A-BBE5-FC33E515EAB6.gui"
+    "id": "4D3CC644-1292-4B49-9C7C-B74EAAF74745",
+    "image": "data/pix2code_kaggle/web/all_data/4D3CC644-1292-4B49-9C7C-B74EAAF74745.png",
+    "gui": "data/pix2code_kaggle/web/all_data/4D3CC644-1292-4B49-9C7C-B74EAAF74745.gui"
   },
   {
-    "id": "2F696B6C-66A5-458A-9814-236AF29A56AB",
-    "image": "/content/processed/images/2F696B6C-66A5-458A-9814-236AF29A56AB.png",
-    "gui": "/content/processed/dsl/2F696B6C-66A5-458A-9814-236AF29A56AB.gui"
+    "id": "9D702AB2-8554-4132-92F6-1E705442F88B",
+    "image": "data/pix2code_kaggle/web/all_data/9D702AB2-8554-4132-92F6-1E705442F88B.png",
+    "gui": "data/pix2code_kaggle/web/all_data/9D702AB2-8554-4132-92F6-1E705442F88B.gui"
   },
   {
-    "id": "370BDF37-2371-488B-9E1B-E9DC4E9776D0",
-    "image": "/content/processed/images/370BDF37-2371-488B-9E1B-E9DC4E9776D0.png",
-    "gui": "/content/processed/dsl/370BDF37-2371-488B-9E1B-E9DC4E9776D0.gui"
+    "id": "4CA751FC-5CA6-4202-BB64-83253D8E912F",
+    "image": "data/pix2code_kaggle/web/all_data/4CA751FC-5CA6-4202-BB64-83253D8E912F.png",
+    "gui": "data/pix2code_kaggle/web/all_data/4CA751FC-5CA6-4202-BB64-83253D8E912F.gui"
   },
   {
-    "id": "AD4B92B9-F3F1-4AEF-BF77-F77343BF80BF",
-    "image": "/content/processed/images/AD4B92B9-F3F1-4AEF-BF77-F77343BF80BF.png",
-    "gui": "/content/processed/dsl/AD4B92B9-F3F1-4AEF-BF77-F77343BF80BF.gui"
+    "id": "08451415-0C4B-4650-A2D0-2381AA7DBC71",
+    "image": "data/pix2code_kaggle/web/all_data/08451415-0C4B-4650-A2D0-2381AA7DBC71.png",
+    "gui": "data/pix2code_kaggle/web/all_data/08451415-0C4B-4650-A2D0-2381AA7DBC71.gui"
   },
   {
-    "id": "34FB2142-538F-4C76-998F-B89B4FB3F705",
-    "image": "/content/processed/images/34FB2142-538F-4C76-998F-B89B4FB3F705.png",
-    "gui": "/content/processed/dsl/34FB2142-538F-4C76-998F-B89B4FB3F705.gui"
+    "id": "A933808A-F713-4639-B599-C8E17A6510F1",
+    "image": "data/pix2code_kaggle/web/all_data/A933808A-F713-4639-B599-C8E17A6510F1.png",
+    "gui": "data/pix2code_kaggle/web/all_data/A933808A-F713-4639-B599-C8E17A6510F1.gui"
   },
   {
-    "id": "9CC384AC-334B-4E90-859B-2B254FB9891E",
-    "image": "/content/processed/images/9CC384AC-334B-4E90-859B-2B254FB9891E.png",
-    "gui": "/content/processed/dsl/9CC384AC-334B-4E90-859B-2B254FB9891E.gui"
+    "id": "234CBBBB-4C28-4197-96E0-DBB5292665C1",
+    "image": "data/pix2code_kaggle/web/all_data/234CBBBB-4C28-4197-96E0-DBB5292665C1.png",
+    "gui": "data/pix2code_kaggle/web/all_data/234CBBBB-4C28-4197-96E0-DBB5292665C1.gui"
   },
   {
-    "id": "8B72636A-C43F-42EB-9907-6429207D6705",
-    "image": "/content/processed/images/8B72636A-C43F-42EB-9907-6429207D6705.png",
-    "gui": "/content/processed/dsl/8B72636A-C43F-42EB-9907-6429207D6705.gui"
+    "id": "C8D677C7-8A04-40C7-817C-BE67CBAAEFB0",
+    "image": "data/pix2code_kaggle/web/all_data/C8D677C7-8A04-40C7-817C-BE67CBAAEFB0.png",
+    "gui": "data/pix2code_kaggle/web/all_data/C8D677C7-8A04-40C7-817C-BE67CBAAEFB0.gui"
   },
   {
-    "id": "E088DF89-7B4B-4014-B661-3366650763C3",
-    "image": "/content/processed/images/E088DF89-7B4B-4014-B661-3366650763C3.png",
-    "gui": "/content/processed/dsl/E088DF89-7B4B-4014-B661-3366650763C3.gui"
+    "id": "865088F6-2016-48ED-B3E3-5E1407042509",
+    "image": "data/pix2code_kaggle/web/all_data/865088F6-2016-48ED-B3E3-5E1407042509.png",
+    "gui": "data/pix2code_kaggle/web/all_data/865088F6-2016-48ED-B3E3-5E1407042509.gui"
   },
   {
-    "id": "270B83E3-826C-4868-99EB-2E46CA98D7DA",
-    "image": "/content/processed/images/270B83E3-826C-4868-99EB-2E46CA98D7DA.png",
-    "gui": "/content/processed/dsl/270B83E3-826C-4868-99EB-2E46CA98D7DA.gui"
+    "id": "3A43C54D-DC60-4F7E-8817-AC252764180C",
+    "image": "data/pix2code_kaggle/web/all_data/3A43C54D-DC60-4F7E-8817-AC252764180C.png",
+    "gui": "data/pix2code_kaggle/web/all_data/3A43C54D-DC60-4F7E-8817-AC252764180C.gui"
   },
   {
-    "id": "FC6A0D19-E749-43E8-A82D-1E4AB311B656",
-    "image": "/content/processed/images/FC6A0D19-E749-43E8-A82D-1E4AB311B656.png",
-    "gui": "/content/processed/dsl/FC6A0D19-E749-43E8-A82D-1E4AB311B656.gui"
+    "id": "5632398A-8B05-410F-8468-5CF2391ABC24",
+    "image": "data/pix2code_kaggle/web/all_data/5632398A-8B05-410F-8468-5CF2391ABC24.png",
+    "gui": "data/pix2code_kaggle/web/all_data/5632398A-8B05-410F-8468-5CF2391ABC24.gui"
   },
   {
-    "id": "3E00D409-50D3-44C9-8B79-80943B9E44AF",
-    "image": "/content/processed/images/3E00D409-50D3-44C9-8B79-80943B9E44AF.png",
-    "gui": "/content/processed/dsl/3E00D409-50D3-44C9-8B79-80943B9E44AF.gui"
+    "id": "8E6A58C9-7AE4-4666-9812-83E412899367",
+    "image": "data/pix2code_kaggle/web/all_data/8E6A58C9-7AE4-4666-9812-83E412899367.png",
+    "gui": "data/pix2code_kaggle/web/all_data/8E6A58C9-7AE4-4666-9812-83E412899367.gui"
   },
   {
-    "id": "357D0385-8B71-4960-932B-91F120DFB6A7",
-    "image": "/content/processed/images/357D0385-8B71-4960-932B-91F120DFB6A7.png",
-    "gui": "/content/processed/dsl/357D0385-8B71-4960-932B-91F120DFB6A7.gui"
+    "id": "83F99F16-265A-4507-AE02-6B93CCE62A32",
+    "image": "data/pix2code_kaggle/web/all_data/83F99F16-265A-4507-AE02-6B93CCE62A32.png",
+    "gui": "data/pix2code_kaggle/web/all_data/83F99F16-265A-4507-AE02-6B93CCE62A32.gui"
   },
   {
-    "id": "D43730D2-3A0B-4C51-87C5-683C00F1260B",
-    "image": "/content/processed/images/D43730D2-3A0B-4C51-87C5-683C00F1260B.png",
-    "gui": "/content/processed/dsl/D43730D2-3A0B-4C51-87C5-683C00F1260B.gui"
+    "id": "FDC5BDA9-5E86-4020-82E7-2F231E0B890A",
+    "image": "data/pix2code_kaggle/web/all_data/FDC5BDA9-5E86-4020-82E7-2F231E0B890A.png",
+    "gui": "data/pix2code_kaggle/web/all_data/FDC5BDA9-5E86-4020-82E7-2F231E0B890A.gui"
   },
   {
-    "id": "35009FBD-6D4D-421A-938E-9E3B897EBCD3",
-    "image": "/content/processed/images/35009FBD-6D4D-421A-938E-9E3B897EBCD3.png",
-    "gui": "/content/processed/dsl/35009FBD-6D4D-421A-938E-9E3B897EBCD3.gui"
+    "id": "B471F4EB-89C4-46AC-AC8D-CB789AF37BC4",
+    "image": "data/pix2code_kaggle/web/all_data/B471F4EB-89C4-46AC-AC8D-CB789AF37BC4.png",
+    "gui": "data/pix2code_kaggle/web/all_data/B471F4EB-89C4-46AC-AC8D-CB789AF37BC4.gui"
   },
   {
-    "id": "73AA5ABD-C7F2-4E0B-924F-C1822388C183",
-    "image": "/content/processed/images/73AA5ABD-C7F2-4E0B-924F-C1822388C183.png",
-    "gui": "/content/processed/dsl/73AA5ABD-C7F2-4E0B-924F-C1822388C183.gui"
+    "id": "4775497A-7955-4426-B5FE-8D684BE95BA3",
+    "image": "data/pix2code_kaggle/web/all_data/4775497A-7955-4426-B5FE-8D684BE95BA3.png",
+    "gui": "data/pix2code_kaggle/web/all_data/4775497A-7955-4426-B5FE-8D684BE95BA3.gui"
   },
   {
-    "id": "EBD1782A-42AA-43CF-B2B0-ADB8D46EBBAD",
-    "image": "/content/processed/images/EBD1782A-42AA-43CF-B2B0-ADB8D46EBBAD.png",
-    "gui": "/content/processed/dsl/EBD1782A-42AA-43CF-B2B0-ADB8D46EBBAD.gui"
+    "id": "4BA0F041-9533-4A5F-974A-AD2E3AFE491D",
+    "image": "data/pix2code_kaggle/web/all_data/4BA0F041-9533-4A5F-974A-AD2E3AFE491D.png",
+    "gui": "data/pix2code_kaggle/web/all_data/4BA0F041-9533-4A5F-974A-AD2E3AFE491D.gui"
   },
   {
-    "id": "58EB1C1A-D591-4200-A5E9-098A19C50E13",
-    "image": "/content/processed/images/58EB1C1A-D591-4200-A5E9-098A19C50E13.png",
-    "gui": "/content/processed/dsl/58EB1C1A-D591-4200-A5E9-098A19C50E13.gui"
+    "id": "356F9563-48D4-4A0C-98C9-154DD98F32F7",
+    "image": "data/pix2code_kaggle/web/all_data/356F9563-48D4-4A0C-98C9-154DD98F32F7.png",
+    "gui": "data/pix2code_kaggle/web/all_data/356F9563-48D4-4A0C-98C9-154DD98F32F7.gui"
   },
   {
-    "id": "2584DAF8-05EB-4700-86E0-B081F0471A61",
-    "image": "/content/processed/images/2584DAF8-05EB-4700-86E0-B081F0471A61.png",
-    "gui": "/content/processed/dsl/2584DAF8-05EB-4700-86E0-B081F0471A61.gui"
+    "id": "DBDBA4D5-6823-4E6B-B14C-DCADC3F3675E",
+    "image": "data/pix2code_kaggle/web/all_data/DBDBA4D5-6823-4E6B-B14C-DCADC3F3675E.png",
+    "gui": "data/pix2code_kaggle/web/all_data/DBDBA4D5-6823-4E6B-B14C-DCADC3F3675E.gui"
   },
   {
-    "id": "F364A03F-89DE-40EF-9001-543C797E1848",
-    "image": "/content/processed/images/F364A03F-89DE-40EF-9001-543C797E1848.png",
-    "gui": "/content/processed/dsl/F364A03F-89DE-40EF-9001-543C797E1848.gui"
+    "id": "3A256EFA-AFBA-403C-A030-2A78E6EF0E55",
+    "image": "data/pix2code_kaggle/web/all_data/3A256EFA-AFBA-403C-A030-2A78E6EF0E55.png",
+    "gui": "data/pix2code_kaggle/web/all_data/3A256EFA-AFBA-403C-A030-2A78E6EF0E55.gui"
   },
   {
-    "id": "45D1EC59-633A-4807-B6EC-CF14CD11A7C7",
-    "image": "/content/processed/images/45D1EC59-633A-4807-B6EC-CF14CD11A7C7.png",
-    "gui": "/content/processed/dsl/45D1EC59-633A-4807-B6EC-CF14CD11A7C7.gui"
+    "id": "88E67E5E-1D83-41BE-956F-6D97B7004E26",
+    "image": "data/pix2code_kaggle/web/all_data/88E67E5E-1D83-41BE-956F-6D97B7004E26.png",
+    "gui": "data/pix2code_kaggle/web/all_data/88E67E5E-1D83-41BE-956F-6D97B7004E26.gui"
   },
   {
-    "id": "D7D46D2B-196F-49E5-A122-4EE9CE677EB1",
-    "image": "/content/processed/images/D7D46D2B-196F-49E5-A122-4EE9CE677EB1.png",
-    "gui": "/content/processed/dsl/D7D46D2B-196F-49E5-A122-4EE9CE677EB1.gui"
+    "id": "E5A6F66C-D727-4D75-A3EA-E6F37E58E333",
+    "image": "data/pix2code_kaggle/web/all_data/E5A6F66C-D727-4D75-A3EA-E6F37E58E333.png",
+    "gui": "data/pix2code_kaggle/web/all_data/E5A6F66C-D727-4D75-A3EA-E6F37E58E333.gui"
   },
   {
-    "id": "16C00015-876A-4286-AFE1-0B12224DF228",
-    "image": "/content/processed/images/16C00015-876A-4286-AFE1-0B12224DF228.png",
-    "gui": "/content/processed/dsl/16C00015-876A-4286-AFE1-0B12224DF228.gui"
+    "id": "9DC60D6F-9FF5-4B87-B3FC-3D4DB06741A4",
+    "image": "data/pix2code_kaggle/web/all_data/9DC60D6F-9FF5-4B87-B3FC-3D4DB06741A4.png",
+    "gui": "data/pix2code_kaggle/web/all_data/9DC60D6F-9FF5-4B87-B3FC-3D4DB06741A4.gui"
   },
   {
-    "id": "D36CD740-F095-4B23-83C9-B6A0DB79FB41",
-    "image": "/content/processed/images/D36CD740-F095-4B23-83C9-B6A0DB79FB41.png",
-    "gui": "/content/processed/dsl/D36CD740-F095-4B23-83C9-B6A0DB79FB41.gui"
+    "id": "FAE4C6E5-3041-4DD0-86AA-22C4EBF2496C",
+    "image": "data/pix2code_kaggle/web/all_data/FAE4C6E5-3041-4DD0-86AA-22C4EBF2496C.png",
+    "gui": "data/pix2code_kaggle/web/all_data/FAE4C6E5-3041-4DD0-86AA-22C4EBF2496C.gui"
   },
   {
-    "id": "BF23F8C6-6600-4B08-AD80-0A53363877C2",
-    "image": "/content/processed/images/BF23F8C6-6600-4B08-AD80-0A53363877C2.png",
-    "gui": "/content/processed/dsl/BF23F8C6-6600-4B08-AD80-0A53363877C2.gui"
+    "id": "30EEFC5A-7BAC-43BC-9DD0-F47A32F42195",
+    "image": "data/pix2code_kaggle/web/all_data/30EEFC5A-7BAC-43BC-9DD0-F47A32F42195.png",
+    "gui": "data/pix2code_kaggle/web/all_data/30EEFC5A-7BAC-43BC-9DD0-F47A32F42195.gui"
   },
   {
-    "id": "AE192503-890C-490C-81A6-BA94D26A9298",
-    "image": "/content/processed/images/AE192503-890C-490C-81A6-BA94D26A9298.png",
-    "gui": "/content/processed/dsl/AE192503-890C-490C-81A6-BA94D26A9298.gui"
+    "id": "392A74C3-1B51-4AD6-9EF0-B2328EB21ADA",
+    "image": "data/pix2code_kaggle/web/all_data/392A74C3-1B51-4AD6-9EF0-B2328EB21ADA.png",
+    "gui": "data/pix2code_kaggle/web/all_data/392A74C3-1B51-4AD6-9EF0-B2328EB21ADA.gui"
   },
   {
-    "id": "78618DAE-276F-449D-B4FC-381C1269B744",
-    "image": "/content/processed/images/78618DAE-276F-449D-B4FC-381C1269B744.png",
-    "gui": "/content/processed/dsl/78618DAE-276F-449D-B4FC-381C1269B744.gui"
+    "id": "1040D773-A4FE-4695-B375-620F2F2318A8",
+    "image": "data/pix2code_kaggle/web/all_data/1040D773-A4FE-4695-B375-620F2F2318A8.png",
+    "gui": "data/pix2code_kaggle/web/all_data/1040D773-A4FE-4695-B375-620F2F2318A8.gui"
   },
   {
-    "id": "7B414AF1-FB84-4043-9E0C-3EF05F95548B",
-    "image": "/content/processed/images/7B414AF1-FB84-4043-9E0C-3EF05F95548B.png",
-    "gui": "/content/processed/dsl/7B414AF1-FB84-4043-9E0C-3EF05F95548B.gui"
+    "id": "DE4C3802-937F-4794-90F7-8F4F9C3E5EA3",
+    "image": "data/pix2code_kaggle/web/all_data/DE4C3802-937F-4794-90F7-8F4F9C3E5EA3.png",
+    "gui": "data/pix2code_kaggle/web/all_data/DE4C3802-937F-4794-90F7-8F4F9C3E5EA3.gui"
   },
   {
-    "id": "F855AC43-C46F-47F5-BD28-B5C4AAA28687",
-    "image": "/content/processed/images/F855AC43-C46F-47F5-BD28-B5C4AAA28687.png",
-    "gui": "/content/processed/dsl/F855AC43-C46F-47F5-BD28-B5C4AAA28687.gui"
+    "id": "BEA2DB3E-E497-4FF9-8B0D-CA087565B8EF",
+    "image": "data/pix2code_kaggle/web/all_data/BEA2DB3E-E497-4FF9-8B0D-CA087565B8EF.png",
+    "gui": "data/pix2code_kaggle/web/all_data/BEA2DB3E-E497-4FF9-8B0D-CA087565B8EF.gui"
+  },
+  {
+    "id": "7994F711-3A59-477A-B796-49E0F401BE35",
+    "image": "data/pix2code_kaggle/web/all_data/7994F711-3A59-477A-B796-49E0F401BE35.png",
+    "gui": "data/pix2code_kaggle/web/all_data/7994F711-3A59-477A-B796-49E0F401BE35.gui"
+  },
+  {
+    "id": "C5AF994E-C289-46EF-A223-436CBE13F561",
+    "image": "data/pix2code_kaggle/web/all_data/C5AF994E-C289-46EF-A223-436CBE13F561.png",
+    "gui": "data/pix2code_kaggle/web/all_data/C5AF994E-C289-46EF-A223-436CBE13F561.gui"
+  },
+  {
+    "id": "D5435D00-A6C9-402B-A27B-5648D8551F1D",
+    "image": "data/pix2code_kaggle/web/all_data/D5435D00-A6C9-402B-A27B-5648D8551F1D.png",
+    "gui": "data/pix2code_kaggle/web/all_data/D5435D00-A6C9-402B-A27B-5648D8551F1D.gui"
+  },
+  {
+    "id": "02AC4408-AC50-4ADE-9AB0-10479A69987F",
+    "image": "data/pix2code_kaggle/web/all_data/02AC4408-AC50-4ADE-9AB0-10479A69987F.png",
+    "gui": "data/pix2code_kaggle/web/all_data/02AC4408-AC50-4ADE-9AB0-10479A69987F.gui"
+  },
+  {
+    "id": "DE4CB8B1-C302-4335-B4D5-41261C8535F4",
+    "image": "data/pix2code_kaggle/web/all_data/DE4CB8B1-C302-4335-B4D5-41261C8535F4.png",
+    "gui": "data/pix2code_kaggle/web/all_data/DE4CB8B1-C302-4335-B4D5-41261C8535F4.gui"
+  },
+  {
+    "id": "8AB1859C-FE06-45A3-BBEF-BE7B8DF0021C",
+    "image": "data/pix2code_kaggle/web/all_data/8AB1859C-FE06-45A3-BBEF-BE7B8DF0021C.png",
+    "gui": "data/pix2code_kaggle/web/all_data/8AB1859C-FE06-45A3-BBEF-BE7B8DF0021C.gui"
+  },
+  {
+    "id": "355278CC-B263-4A1B-913B-9C2331988EEE",
+    "image": "data/pix2code_kaggle/web/all_data/355278CC-B263-4A1B-913B-9C2331988EEE.png",
+    "gui": "data/pix2code_kaggle/web/all_data/355278CC-B263-4A1B-913B-9C2331988EEE.gui"
+  },
+  {
+    "id": "F213E610-E368-4B51-B6F7-C0C0AB889784",
+    "image": "data/pix2code_kaggle/web/all_data/F213E610-E368-4B51-B6F7-C0C0AB889784.png",
+    "gui": "data/pix2code_kaggle/web/all_data/F213E610-E368-4B51-B6F7-C0C0AB889784.gui"
+  },
+  {
+    "id": "495A4F22-F2D6-488C-A029-C862613E4ED1",
+    "image": "data/pix2code_kaggle/web/all_data/495A4F22-F2D6-488C-A029-C862613E4ED1.png",
+    "gui": "data/pix2code_kaggle/web/all_data/495A4F22-F2D6-488C-A029-C862613E4ED1.gui"
+  },
+  {
+    "id": "1EFC9908-123D-40FB-8636-FEB5FA4FA96D",
+    "image": "data/pix2code_kaggle/web/all_data/1EFC9908-123D-40FB-8636-FEB5FA4FA96D.png",
+    "gui": "data/pix2code_kaggle/web/all_data/1EFC9908-123D-40FB-8636-FEB5FA4FA96D.gui"
+  },
+  {
+    "id": "93ABD885-C510-400B-8F4A-ADFDFA477CD4",
+    "image": "data/pix2code_kaggle/web/all_data/93ABD885-C510-400B-8F4A-ADFDFA477CD4.png",
+    "gui": "data/pix2code_kaggle/web/all_data/93ABD885-C510-400B-8F4A-ADFDFA477CD4.gui"
+  },
+  {
+    "id": "30AFA7A3-0619-4EB4-B68C-0F70086E9189",
+    "image": "data/pix2code_kaggle/web/all_data/30AFA7A3-0619-4EB4-B68C-0F70086E9189.png",
+    "gui": "data/pix2code_kaggle/web/all_data/30AFA7A3-0619-4EB4-B68C-0F70086E9189.gui"
+  },
+  {
+    "id": "9D55B368-417A-48FD-B161-758784C96EB6",
+    "image": "data/pix2code_kaggle/web/all_data/9D55B368-417A-48FD-B161-758784C96EB6.png",
+    "gui": "data/pix2code_kaggle/web/all_data/9D55B368-417A-48FD-B161-758784C96EB6.gui"
+  },
+  {
+    "id": "31B7A383-F196-40B5-B932-9BA6D7E4C37A",
+    "image": "data/pix2code_kaggle/web/all_data/31B7A383-F196-40B5-B932-9BA6D7E4C37A.png",
+    "gui": "data/pix2code_kaggle/web/all_data/31B7A383-F196-40B5-B932-9BA6D7E4C37A.gui"
+  },
+  {
+    "id": "52437DB9-FC03-4DA1-A827-1A449D16CF70",
+    "image": "data/pix2code_kaggle/web/all_data/52437DB9-FC03-4DA1-A827-1A449D16CF70.png",
+    "gui": "data/pix2code_kaggle/web/all_data/52437DB9-FC03-4DA1-A827-1A449D16CF70.gui"
+  },
+  {
+    "id": "A83FB08E-5E76-48BF-9375-D4475D63686E",
+    "image": "data/pix2code_kaggle/web/all_data/A83FB08E-5E76-48BF-9375-D4475D63686E.png",
+    "gui": "data/pix2code_kaggle/web/all_data/A83FB08E-5E76-48BF-9375-D4475D63686E.gui"
+  },
+  {
+    "id": "72287E93-C120-4421-85B8-DE9B6194CCBF",
+    "image": "data/pix2code_kaggle/web/all_data/72287E93-C120-4421-85B8-DE9B6194CCBF.png",
+    "gui": "data/pix2code_kaggle/web/all_data/72287E93-C120-4421-85B8-DE9B6194CCBF.gui"
+  },
+  {
+    "id": "C628285B-6338-455C-AF1C-546D4AD6E4CF",
+    "image": "data/pix2code_kaggle/web/all_data/C628285B-6338-455C-AF1C-546D4AD6E4CF.png",
+    "gui": "data/pix2code_kaggle/web/all_data/C628285B-6338-455C-AF1C-546D4AD6E4CF.gui"
+  },
+  {
+    "id": "598B0B58-EF96-41EF-ABAE-BC305065AED4",
+    "image": "data/pix2code_kaggle/web/all_data/598B0B58-EF96-41EF-ABAE-BC305065AED4.png",
+    "gui": "data/pix2code_kaggle/web/all_data/598B0B58-EF96-41EF-ABAE-BC305065AED4.gui"
+  },
+  {
+    "id": "9C9F3A3A-80E0-45DB-A21E-56B8C432A8B0",
+    "image": "data/pix2code_kaggle/web/all_data/9C9F3A3A-80E0-45DB-A21E-56B8C432A8B0.png",
+    "gui": "data/pix2code_kaggle/web/all_data/9C9F3A3A-80E0-45DB-A21E-56B8C432A8B0.gui"
+  },
+  {
+    "id": "C1BF3962-4E5C-4D74-A0A6-E2D3F2562056",
+    "image": "data/pix2code_kaggle/web/all_data/C1BF3962-4E5C-4D74-A0A6-E2D3F2562056.png",
+    "gui": "data/pix2code_kaggle/web/all_data/C1BF3962-4E5C-4D74-A0A6-E2D3F2562056.gui"
+  },
+  {
+    "id": "5DE4CCA5-3DC2-4208-B8B5-9C434D450DF6",
+    "image": "data/pix2code_kaggle/web/all_data/5DE4CCA5-3DC2-4208-B8B5-9C434D450DF6.png",
+    "gui": "data/pix2code_kaggle/web/all_data/5DE4CCA5-3DC2-4208-B8B5-9C434D450DF6.gui"
+  },
+  {
+    "id": "9965FC97-9D18-4911-A5AF-C51ED5E00B42",
+    "image": "data/pix2code_kaggle/web/all_data/9965FC97-9D18-4911-A5AF-C51ED5E00B42.png",
+    "gui": "data/pix2code_kaggle/web/all_data/9965FC97-9D18-4911-A5AF-C51ED5E00B42.gui"
+  },
+  {
+    "id": "A6C57040-59BB-42CD-97A8-791A814502E1",
+    "image": "data/pix2code_kaggle/web/all_data/A6C57040-59BB-42CD-97A8-791A814502E1.png",
+    "gui": "data/pix2code_kaggle/web/all_data/A6C57040-59BB-42CD-97A8-791A814502E1.gui"
+  },
+  {
+    "id": "32C1D269-CE56-4116-88CB-2CACCE66AC3E",
+    "image": "data/pix2code_kaggle/web/all_data/32C1D269-CE56-4116-88CB-2CACCE66AC3E.png",
+    "gui": "data/pix2code_kaggle/web/all_data/32C1D269-CE56-4116-88CB-2CACCE66AC3E.gui"
+  },
+  {
+    "id": "7AFECB33-ADE7-476B-8027-C7F0C35427A5",
+    "image": "data/pix2code_kaggle/web/all_data/7AFECB33-ADE7-476B-8027-C7F0C35427A5.png",
+    "gui": "data/pix2code_kaggle/web/all_data/7AFECB33-ADE7-476B-8027-C7F0C35427A5.gui"
+  },
+  {
+    "id": "82685FFF-3200-44E0-A407-5424E2E595B7",
+    "image": "data/pix2code_kaggle/web/all_data/82685FFF-3200-44E0-A407-5424E2E595B7.png",
+    "gui": "data/pix2code_kaggle/web/all_data/82685FFF-3200-44E0-A407-5424E2E595B7.gui"
+  },
+  {
+    "id": "CB78DF68-685F-401C-99C2-0645B12F6184",
+    "image": "data/pix2code_kaggle/web/all_data/CB78DF68-685F-401C-99C2-0645B12F6184.png",
+    "gui": "data/pix2code_kaggle/web/all_data/CB78DF68-685F-401C-99C2-0645B12F6184.gui"
+  },
+  {
+    "id": "2AD03204-6FF3-46AD-8D28-28219BD390D1",
+    "image": "data/pix2code_kaggle/web/all_data/2AD03204-6FF3-46AD-8D28-28219BD390D1.png",
+    "gui": "data/pix2code_kaggle/web/all_data/2AD03204-6FF3-46AD-8D28-28219BD390D1.gui"
+  },
+  {
+    "id": "3243AD5F-4131-4112-B073-910AA191CBD9",
+    "image": "data/pix2code_kaggle/web/all_data/3243AD5F-4131-4112-B073-910AA191CBD9.png",
+    "gui": "data/pix2code_kaggle/web/all_data/3243AD5F-4131-4112-B073-910AA191CBD9.gui"
+  },
+  {
+    "id": "71A1E213-9551-4901-ADCF-3674EF15B83A",
+    "image": "data/pix2code_kaggle/web/all_data/71A1E213-9551-4901-ADCF-3674EF15B83A.png",
+    "gui": "data/pix2code_kaggle/web/all_data/71A1E213-9551-4901-ADCF-3674EF15B83A.gui"
+  },
+  {
+    "id": "CD2B42EE-96CB-468D-807A-80F509F88893",
+    "image": "data/pix2code_kaggle/web/all_data/CD2B42EE-96CB-468D-807A-80F509F88893.png",
+    "gui": "data/pix2code_kaggle/web/all_data/CD2B42EE-96CB-468D-807A-80F509F88893.gui"
+  },
+  {
+    "id": "4B323C11-960D-4857-BB07-792E51401C94",
+    "image": "data/pix2code_kaggle/web/all_data/4B323C11-960D-4857-BB07-792E51401C94.png",
+    "gui": "data/pix2code_kaggle/web/all_data/4B323C11-960D-4857-BB07-792E51401C94.gui"
+  },
+  {
+    "id": "126F52F9-D9E8-43C4-9AAC-CC3A8BA6BCF7",
+    "image": "data/pix2code_kaggle/web/all_data/126F52F9-D9E8-43C4-9AAC-CC3A8BA6BCF7.png",
+    "gui": "data/pix2code_kaggle/web/all_data/126F52F9-D9E8-43C4-9AAC-CC3A8BA6BCF7.gui"
+  },
+  {
+    "id": "88D6A330-43E3-486D-B150-52DC71BEBD11",
+    "image": "data/pix2code_kaggle/web/all_data/88D6A330-43E3-486D-B150-52DC71BEBD11.png",
+    "gui": "data/pix2code_kaggle/web/all_data/88D6A330-43E3-486D-B150-52DC71BEBD11.gui"
+  },
+  {
+    "id": "E2D0ED94-834C-4E61-8149-09363355FDA4",
+    "image": "data/pix2code_kaggle/web/all_data/E2D0ED94-834C-4E61-8149-09363355FDA4.png",
+    "gui": "data/pix2code_kaggle/web/all_data/E2D0ED94-834C-4E61-8149-09363355FDA4.gui"
+  },
+  {
+    "id": "77DD95AB-8035-4DA8-8D29-1A0E77888F09",
+    "image": "data/pix2code_kaggle/web/all_data/77DD95AB-8035-4DA8-8D29-1A0E77888F09.png",
+    "gui": "data/pix2code_kaggle/web/all_data/77DD95AB-8035-4DA8-8D29-1A0E77888F09.gui"
+  },
+  {
+    "id": "852206B3-587B-40F5-8DFC-4ABFACCAF9D2",
+    "image": "data/pix2code_kaggle/web/all_data/852206B3-587B-40F5-8DFC-4ABFACCAF9D2.png",
+    "gui": "data/pix2code_kaggle/web/all_data/852206B3-587B-40F5-8DFC-4ABFACCAF9D2.gui"
+  },
+  {
+    "id": "BF128063-69C4-4B73-8C14-F4FE5B3A11F5",
+    "image": "data/pix2code_kaggle/web/all_data/BF128063-69C4-4B73-8C14-F4FE5B3A11F5.png",
+    "gui": "data/pix2code_kaggle/web/all_data/BF128063-69C4-4B73-8C14-F4FE5B3A11F5.gui"
+  },
+  {
+    "id": "50BB4B50-135A-42F9-ABDD-E5D79071DA2C",
+    "image": "data/pix2code_kaggle/web/all_data/50BB4B50-135A-42F9-ABDD-E5D79071DA2C.png",
+    "gui": "data/pix2code_kaggle/web/all_data/50BB4B50-135A-42F9-ABDD-E5D79071DA2C.gui"
+  },
+  {
+    "id": "9A5B520C-DB5E-4217-8C7B-D9272E0C5DD8",
+    "image": "data/pix2code_kaggle/web/all_data/9A5B520C-DB5E-4217-8C7B-D9272E0C5DD8.png",
+    "gui": "data/pix2code_kaggle/web/all_data/9A5B520C-DB5E-4217-8C7B-D9272E0C5DD8.gui"
+  },
+  {
+    "id": "33946EDA-14FD-4310-BF01-C064E63E88B5",
+    "image": "data/pix2code_kaggle/web/all_data/33946EDA-14FD-4310-BF01-C064E63E88B5.png",
+    "gui": "data/pix2code_kaggle/web/all_data/33946EDA-14FD-4310-BF01-C064E63E88B5.gui"
+  },
+  {
+    "id": "8B03AC02-A718-4316-9A79-9DBE014789EC",
+    "image": "data/pix2code_kaggle/web/all_data/8B03AC02-A718-4316-9A79-9DBE014789EC.png",
+    "gui": "data/pix2code_kaggle/web/all_data/8B03AC02-A718-4316-9A79-9DBE014789EC.gui"
+  },
+  {
+    "id": "D2C9DF9F-3D01-44AC-8B38-EAE1E2DA6548",
+    "image": "data/pix2code_kaggle/web/all_data/D2C9DF9F-3D01-44AC-8B38-EAE1E2DA6548.png",
+    "gui": "data/pix2code_kaggle/web/all_data/D2C9DF9F-3D01-44AC-8B38-EAE1E2DA6548.gui"
+  },
+  {
+    "id": "E8AAF84D-15A4-449B-9CC0-44EDB9EAD690",
+    "image": "data/pix2code_kaggle/web/all_data/E8AAF84D-15A4-449B-9CC0-44EDB9EAD690.png",
+    "gui": "data/pix2code_kaggle/web/all_data/E8AAF84D-15A4-449B-9CC0-44EDB9EAD690.gui"
+  },
+  {
+    "id": "E33FBC33-5C94-4BA2-A9BC-140588E186DB",
+    "image": "data/pix2code_kaggle/web/all_data/E33FBC33-5C94-4BA2-A9BC-140588E186DB.png",
+    "gui": "data/pix2code_kaggle/web/all_data/E33FBC33-5C94-4BA2-A9BC-140588E186DB.gui"
+  },
+  {
+    "id": "4A452632-9458-418D-A9B4-65363C55D31C",
+    "image": "data/pix2code_kaggle/web/all_data/4A452632-9458-418D-A9B4-65363C55D31C.png",
+    "gui": "data/pix2code_kaggle/web/all_data/4A452632-9458-418D-A9B4-65363C55D31C.gui"
+  },
+  {
+    "id": "3E106EF6-1841-4149-BC43-0D77B00A7241",
+    "image": "data/pix2code_kaggle/web/all_data/3E106EF6-1841-4149-BC43-0D77B00A7241.png",
+    "gui": "data/pix2code_kaggle/web/all_data/3E106EF6-1841-4149-BC43-0D77B00A7241.gui"
+  },
+  {
+    "id": "D670AD8D-DD4D-4C72-9E75-8DA532391FA7",
+    "image": "data/pix2code_kaggle/web/all_data/D670AD8D-DD4D-4C72-9E75-8DA532391FA7.png",
+    "gui": "data/pix2code_kaggle/web/all_data/D670AD8D-DD4D-4C72-9E75-8DA532391FA7.gui"
+  },
+  {
+    "id": "59B99BC1-A8BB-4D3B-B011-DDFFFF82B546",
+    "image": "data/pix2code_kaggle/web/all_data/59B99BC1-A8BB-4D3B-B011-DDFFFF82B546.png",
+    "gui": "data/pix2code_kaggle/web/all_data/59B99BC1-A8BB-4D3B-B011-DDFFFF82B546.gui"
+  },
+  {
+    "id": "E660B6BF-3C67-4E7B-8406-7A4841FA2BA5",
+    "image": "data/pix2code_kaggle/web/all_data/E660B6BF-3C67-4E7B-8406-7A4841FA2BA5.png",
+    "gui": "data/pix2code_kaggle/web/all_data/E660B6BF-3C67-4E7B-8406-7A4841FA2BA5.gui"
+  },
+  {
+    "id": "50C92209-8D71-4432-911C-C15E20A1DC54",
+    "image": "data/pix2code_kaggle/web/all_data/50C92209-8D71-4432-911C-C15E20A1DC54.png",
+    "gui": "data/pix2code_kaggle/web/all_data/50C92209-8D71-4432-911C-C15E20A1DC54.gui"
+  },
+  {
+    "id": "41C19FBD-6990-48DA-A33B-C30E500AA1E0",
+    "image": "data/pix2code_kaggle/web/all_data/41C19FBD-6990-48DA-A33B-C30E500AA1E0.png",
+    "gui": "data/pix2code_kaggle/web/all_data/41C19FBD-6990-48DA-A33B-C30E500AA1E0.gui"
+  },
+  {
+    "id": "554868EF-3A24-466F-A63A-24D0E78F95ED",
+    "image": "data/pix2code_kaggle/web/all_data/554868EF-3A24-466F-A63A-24D0E78F95ED.png",
+    "gui": "data/pix2code_kaggle/web/all_data/554868EF-3A24-466F-A63A-24D0E78F95ED.gui"
+  },
+  {
+    "id": "BF66ABD9-B1A4-4ABC-A57C-BA3BE57D5B0B",
+    "image": "data/pix2code_kaggle/web/all_data/BF66ABD9-B1A4-4ABC-A57C-BA3BE57D5B0B.png",
+    "gui": "data/pix2code_kaggle/web/all_data/BF66ABD9-B1A4-4ABC-A57C-BA3BE57D5B0B.gui"
+  },
+  {
+    "id": "43DDF132-B905-4A4C-B577-0E77A654F2AF",
+    "image": "data/pix2code_kaggle/web/all_data/43DDF132-B905-4A4C-B577-0E77A654F2AF.png",
+    "gui": "data/pix2code_kaggle/web/all_data/43DDF132-B905-4A4C-B577-0E77A654F2AF.gui"
+  },
+  {
+    "id": "807F4D51-C633-4622-9BE4-F403F5D297E4",
+    "image": "data/pix2code_kaggle/web/all_data/807F4D51-C633-4622-9BE4-F403F5D297E4.png",
+    "gui": "data/pix2code_kaggle/web/all_data/807F4D51-C633-4622-9BE4-F403F5D297E4.gui"
+  },
+  {
+    "id": "8D586BF3-661F-4136-BB07-729E56DF6468",
+    "image": "data/pix2code_kaggle/web/all_data/8D586BF3-661F-4136-BB07-729E56DF6468.png",
+    "gui": "data/pix2code_kaggle/web/all_data/8D586BF3-661F-4136-BB07-729E56DF6468.gui"
+  },
+  {
+    "id": "C0078F8B-AFB2-4469-8C4E-397A1719796F",
+    "image": "data/pix2code_kaggle/web/all_data/C0078F8B-AFB2-4469-8C4E-397A1719796F.png",
+    "gui": "data/pix2code_kaggle/web/all_data/C0078F8B-AFB2-4469-8C4E-397A1719796F.gui"
+  },
+  {
+    "id": "EE3E2AF8-ABB0-46F2-8243-70722E3B37DE",
+    "image": "data/pix2code_kaggle/web/all_data/EE3E2AF8-ABB0-46F2-8243-70722E3B37DE.png",
+    "gui": "data/pix2code_kaggle/web/all_data/EE3E2AF8-ABB0-46F2-8243-70722E3B37DE.gui"
+  },
+  {
+    "id": "C58592BB-9A7B-4386-A459-5EC1E3F7667C",
+    "image": "data/pix2code_kaggle/web/all_data/C58592BB-9A7B-4386-A459-5EC1E3F7667C.png",
+    "gui": "data/pix2code_kaggle/web/all_data/C58592BB-9A7B-4386-A459-5EC1E3F7667C.gui"
+  },
+  {
+    "id": "A47F0087-EBA9-4929-908C-0004C6D54E23",
+    "image": "data/pix2code_kaggle/web/all_data/A47F0087-EBA9-4929-908C-0004C6D54E23.png",
+    "gui": "data/pix2code_kaggle/web/all_data/A47F0087-EBA9-4929-908C-0004C6D54E23.gui"
+  },
+  {
+    "id": "375578BE-9F75-45F2-8620-E190CA93FE77",
+    "image": "data/pix2code_kaggle/web/all_data/375578BE-9F75-45F2-8620-E190CA93FE77.png",
+    "gui": "data/pix2code_kaggle/web/all_data/375578BE-9F75-45F2-8620-E190CA93FE77.gui"
+  },
+  {
+    "id": "C8F69595-5EFB-43DF-BF1E-629C1C3BE109",
+    "image": "data/pix2code_kaggle/web/all_data/C8F69595-5EFB-43DF-BF1E-629C1C3BE109.png",
+    "gui": "data/pix2code_kaggle/web/all_data/C8F69595-5EFB-43DF-BF1E-629C1C3BE109.gui"
+  },
+  {
+    "id": "241CD27C-2540-4935-9CA7-22AF17A9509A",
+    "image": "data/pix2code_kaggle/web/all_data/241CD27C-2540-4935-9CA7-22AF17A9509A.png",
+    "gui": "data/pix2code_kaggle/web/all_data/241CD27C-2540-4935-9CA7-22AF17A9509A.gui"
+  },
+  {
+    "id": "9B2F4DC6-105A-43EE-87D5-63DBB44F3F20",
+    "image": "data/pix2code_kaggle/web/all_data/9B2F4DC6-105A-43EE-87D5-63DBB44F3F20.png",
+    "gui": "data/pix2code_kaggle/web/all_data/9B2F4DC6-105A-43EE-87D5-63DBB44F3F20.gui"
+  },
+  {
+    "id": "5A02B078-D35C-4911-B498-235DC827137F",
+    "image": "data/pix2code_kaggle/web/all_data/5A02B078-D35C-4911-B498-235DC827137F.png",
+    "gui": "data/pix2code_kaggle/web/all_data/5A02B078-D35C-4911-B498-235DC827137F.gui"
+  },
+  {
+    "id": "4B12C02E-E854-41C3-B66E-06887B1505CB",
+    "image": "data/pix2code_kaggle/web/all_data/4B12C02E-E854-41C3-B66E-06887B1505CB.png",
+    "gui": "data/pix2code_kaggle/web/all_data/4B12C02E-E854-41C3-B66E-06887B1505CB.gui"
+  },
+  {
+    "id": "957BB488-2558-4CCB-8DEA-0F163071EED5",
+    "image": "data/pix2code_kaggle/web/all_data/957BB488-2558-4CCB-8DEA-0F163071EED5.png",
+    "gui": "data/pix2code_kaggle/web/all_data/957BB488-2558-4CCB-8DEA-0F163071EED5.gui"
+  },
+  {
+    "id": "80D55A0E-8C17-44CE-B6A3-CA3C3CF1735A",
+    "image": "data/pix2code_kaggle/web/all_data/80D55A0E-8C17-44CE-B6A3-CA3C3CF1735A.png",
+    "gui": "data/pix2code_kaggle/web/all_data/80D55A0E-8C17-44CE-B6A3-CA3C3CF1735A.gui"
+  },
+  {
+    "id": "4414C575-EF1C-4F9F-8645-3213EA59F4AC",
+    "image": "data/pix2code_kaggle/web/all_data/4414C575-EF1C-4F9F-8645-3213EA59F4AC.png",
+    "gui": "data/pix2code_kaggle/web/all_data/4414C575-EF1C-4F9F-8645-3213EA59F4AC.gui"
+  },
+  {
+    "id": "CD49494E-2C5D-485E-8BB5-407EFD9B2637",
+    "image": "data/pix2code_kaggle/web/all_data/CD49494E-2C5D-485E-8BB5-407EFD9B2637.png",
+    "gui": "data/pix2code_kaggle/web/all_data/CD49494E-2C5D-485E-8BB5-407EFD9B2637.gui"
+  },
+  {
+    "id": "51D1C4DD-75C7-4A8F-A886-8CFD832B4423",
+    "image": "data/pix2code_kaggle/web/all_data/51D1C4DD-75C7-4A8F-A886-8CFD832B4423.png",
+    "gui": "data/pix2code_kaggle/web/all_data/51D1C4DD-75C7-4A8F-A886-8CFD832B4423.gui"
+  },
+  {
+    "id": "8BB34555-23B9-4ACE-9F4F-CD3B7704B2D9",
+    "image": "data/pix2code_kaggle/web/all_data/8BB34555-23B9-4ACE-9F4F-CD3B7704B2D9.png",
+    "gui": "data/pix2code_kaggle/web/all_data/8BB34555-23B9-4ACE-9F4F-CD3B7704B2D9.gui"
+  },
+  {
+    "id": "036C9412-D477-46B7-9F7F-6B4A3B5B1F50",
+    "image": "data/pix2code_kaggle/web/all_data/036C9412-D477-46B7-9F7F-6B4A3B5B1F50.png",
+    "gui": "data/pix2code_kaggle/web/all_data/036C9412-D477-46B7-9F7F-6B4A3B5B1F50.gui"
+  },
+  {
+    "id": "0760CA6A-B885-455B-AE48-DD9F8AF4C334",
+    "image": "data/pix2code_kaggle/web/all_data/0760CA6A-B885-455B-AE48-DD9F8AF4C334.png",
+    "gui": "data/pix2code_kaggle/web/all_data/0760CA6A-B885-455B-AE48-DD9F8AF4C334.gui"
+  },
+  {
+    "id": "0877A39E-7D17-4C49-85E4-32FA784AB116",
+    "image": "data/pix2code_kaggle/web/all_data/0877A39E-7D17-4C49-85E4-32FA784AB116.png",
+    "gui": "data/pix2code_kaggle/web/all_data/0877A39E-7D17-4C49-85E4-32FA784AB116.gui"
+  },
+  {
+    "id": "E8F4B31C-6D6C-41AF-A6C5-29B0E00ED0F5",
+    "image": "data/pix2code_kaggle/web/all_data/E8F4B31C-6D6C-41AF-A6C5-29B0E00ED0F5.png",
+    "gui": "data/pix2code_kaggle/web/all_data/E8F4B31C-6D6C-41AF-A6C5-29B0E00ED0F5.gui"
+  },
+  {
+    "id": "D50B9FB8-1FFA-4602-90E3-EFAFF99BF315",
+    "image": "data/pix2code_kaggle/web/all_data/D50B9FB8-1FFA-4602-90E3-EFAFF99BF315.png",
+    "gui": "data/pix2code_kaggle/web/all_data/D50B9FB8-1FFA-4602-90E3-EFAFF99BF315.gui"
+  },
+  {
+    "id": "7C818073-24ED-41F0-B714-2DD22A6A5B08",
+    "image": "data/pix2code_kaggle/web/all_data/7C818073-24ED-41F0-B714-2DD22A6A5B08.png",
+    "gui": "data/pix2code_kaggle/web/all_data/7C818073-24ED-41F0-B714-2DD22A6A5B08.gui"
+  },
+  {
+    "id": "4FDD4517-CE37-43F4-8128-A439ACF2C790",
+    "image": "data/pix2code_kaggle/web/all_data/4FDD4517-CE37-43F4-8128-A439ACF2C790.png",
+    "gui": "data/pix2code_kaggle/web/all_data/4FDD4517-CE37-43F4-8128-A439ACF2C790.gui"
+  },
+  {
+    "id": "E8EFD999-ACB7-493B-97C7-064AEBB1CAD1",
+    "image": "data/pix2code_kaggle/web/all_data/E8EFD999-ACB7-493B-97C7-064AEBB1CAD1.png",
+    "gui": "data/pix2code_kaggle/web/all_data/E8EFD999-ACB7-493B-97C7-064AEBB1CAD1.gui"
+  },
+  {
+    "id": "24347C72-41D8-4D24-A9B3-69786DA9D845",
+    "image": "data/pix2code_kaggle/web/all_data/24347C72-41D8-4D24-A9B3-69786DA9D845.png",
+    "gui": "data/pix2code_kaggle/web/all_data/24347C72-41D8-4D24-A9B3-69786DA9D845.gui"
+  },
+  {
+    "id": "397DA58A-B833-42FB-85F4-715E61F2E6FA",
+    "image": "data/pix2code_kaggle/web/all_data/397DA58A-B833-42FB-85F4-715E61F2E6FA.png",
+    "gui": "data/pix2code_kaggle/web/all_data/397DA58A-B833-42FB-85F4-715E61F2E6FA.gui"
+  },
+  {
+    "id": "2EB3E321-FC4E-45C3-B6D2-E464D8719567",
+    "image": "data/pix2code_kaggle/web/all_data/2EB3E321-FC4E-45C3-B6D2-E464D8719567.png",
+    "gui": "data/pix2code_kaggle/web/all_data/2EB3E321-FC4E-45C3-B6D2-E464D8719567.gui"
+  },
+  {
+    "id": "D49D8E36-2E87-4DF3-AF0C-78A7B3EF9A59",
+    "image": "data/pix2code_kaggle/web/all_data/D49D8E36-2E87-4DF3-AF0C-78A7B3EF9A59.png",
+    "gui": "data/pix2code_kaggle/web/all_data/D49D8E36-2E87-4DF3-AF0C-78A7B3EF9A59.gui"
+  },
+  {
+    "id": "099F631C-1308-417E-AE1A-4284075AC5D1",
+    "image": "data/pix2code_kaggle/web/all_data/099F631C-1308-417E-AE1A-4284075AC5D1.png",
+    "gui": "data/pix2code_kaggle/web/all_data/099F631C-1308-417E-AE1A-4284075AC5D1.gui"
+  },
+  {
+    "id": "CD0C0585-986C-4DB7-989F-EADD714CEB52",
+    "image": "data/pix2code_kaggle/web/all_data/CD0C0585-986C-4DB7-989F-EADD714CEB52.png",
+    "gui": "data/pix2code_kaggle/web/all_data/CD0C0585-986C-4DB7-989F-EADD714CEB52.gui"
   }
 ]

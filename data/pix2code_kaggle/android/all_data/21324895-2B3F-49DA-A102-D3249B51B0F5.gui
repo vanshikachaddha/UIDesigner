@@ -1,0 +1,14 @@
+stack {
+row {
+btn
+}
+row {
+check
+}
+row {
+switch, btn
+}
+}
+footer {
+btn-notifications, btn-home, btn-notifications
+}
