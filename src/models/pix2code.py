@@ -1,21 +1,19 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-pix2code.py
+pix2code_transformer.py
 
 Top-level script wiring together:
 - Tokenizer
 - Dataset
-- CNNEncoder + LSTMDecoder into Pix2CodeModel
-- Greedy decoding
+- VisionTransformerEncoder + TransformerDecoder
+- Greedy decoding (Transformer-style)
 - CLI:
     * generate: image -> tokens -> HTML/DSL
-    * evaluate: dataset JSON -> token accuracy + BLEU
-
-Assumptions:
-- vocab.json: {"<PAD>": 0, "<SOS>": 1, "<EOS>": 2, ...}
-- Dataset JSON: list of {"image": "path/to/image.png", "tokens": [int, ...]}
+    * evaluate: dataset JSON -> BLEU + token accuracy
 """
+import sys, os
+sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 
 import argparse
 import json
@@ -29,9 +27,8 @@ from PIL import Image
 from torchvision import transforms
 from nltk.translate.bleu_score import sentence_bleu, SmoothingFunction
 
-from encoder import CNNEncoder
-from decoder import LSTMDecoder
-
+from .encoder import VisionTransformerEncoder
+from .decoder import TransformerDecoder  # your transformer decoder
 
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 
@@ -46,41 +43,32 @@ class Tokenizer:
             self.token_to_id = json.load(f)
         self.id_to_token = {i: t for t, i in self.token_to_id.items()}
 
-        # required special tokens
         self.pad_id = self.token_to_id.get("<PAD>", 0)
         self.sos_id = self.token_to_id.get("<SOS>", 1)
         self.eos_id = self.token_to_id.get("<EOS>", 2)
 
-    def encode(self, text: str) -> List[int]:
-        """
-        Very simple example: assume DSL tokens are space-separated.
-        Change this to match your actual tokenizer logic.
-        """
+    def encode(self, text: str):
         tokens = text.strip().split()
         return [self.token_to_id[t] for t in tokens]
 
-    def decode(self, ids: List[int]) -> str:
-        """
-        Turn a list of token IDs into a string.
-        """
-        tokens = [self.id_to_token[i] for i in ids if i in self.id_to_token]
+    def decode(self, ids: List[int]):
+        tokens = [self.id_to_token.get(i, "<UNK>") for i in ids]
         return " ".join(tokens)
 
 
 # -------------------------------------------------------------------------
-# Dataset (for evaluation)
+# Dataset (image + GT tokens)
 # -------------------------------------------------------------------------
 
 class Pix2CodeDataset(Dataset):
     """
-    Expects a JSON file with entries:
-        {"image": "path/to/image.png", "tokens": [int, ...]}
+    Expects JSON: [{"image": "...", "tokens": [...]}]
     """
 
-    def __init__(self, json_path: str, vocab_path: str, img_size: int = 224):
+    def __init__(self, json_path: str, vocab_path: str, img_size: int = 256):
         super().__init__()
-        self.json_path = json_path
-        self.samples = self._load_json(json_path)
+        with open(json_path, "r") as f:
+            self.samples = json.load(f)
 
         with open(vocab_path, "r") as f:
             self.vocab = json.load(f)
@@ -90,280 +78,196 @@ class Pix2CodeDataset(Dataset):
         self.transform = transforms.Compose([
             transforms.Resize((img_size, img_size)),
             transforms.ToTensor(),
-            # IMPORTANT: Use same normalization as training
             transforms.Normalize(mean=[0.5, 0.5, 0.5],
                                  std=[0.5, 0.5, 0.5]),
         ])
-
-    @staticmethod
-    def _load_json(path: str):
-        with open(path, "r") as f:
-            data = json.load(f)
-        return data
 
     def __len__(self):
         return len(self.samples)
 
     def __getitem__(self, idx: int):
         sample = self.samples[idx]
-        img_path = sample["image"]
-        tokens = sample["tokens"]
-
-        img = Image.open(img_path).convert("RGB")
+        img = Image.open(sample["image"]).convert("RGB")
         img = self.transform(img)
 
-        target = torch.tensor(tokens, dtype=torch.long)
+        tokens = torch.tensor(sample["tokens"], dtype=torch.long)
 
-        return img, target
+        return img, tokens
 
 
 # -------------------------------------------------------------------------
-# Pix2CodeModel = CNNEncoder + LSTMDecoder
+# Pix2CodeModel: ViT encoder + Transformer decoder
 # -------------------------------------------------------------------------
 
 class Pix2CodeModel(nn.Module):
-    def __init__(
-        self,
-        vocab_size: int,
-        cnn_enc_dim: int = 512,
-        emb_dim: int = 256,
-        hidden_dim: int = 512,
-        num_layers: int = 1,
-    ):
+    def __init__(self, vocab_size: int):
         super().__init__()
-        self.encoder = CNNEncoder(out_dim=cnn_enc_dim)
-        self.decoder = LSTMDecoder(
-            vocab_size=vocab_size,
-            emb_dim=emb_dim,
-            hidden_dim=hidden_dim,
-            enc_dim=cnn_enc_dim,
-            num_layers=num_layers,
+
+        self.encoder = VisionTransformerEncoder(
+            image_height=256,
+            image_width=256,
+            patch_size=16,
+            embedding_dim=512,
         )
 
-    def forward(self, images: torch.Tensor, tgt_tokens: torch.Tensor) -> torch.Tensor:
-        """
-        For training with teacher forcing.
-        images: (B, 3, H, W)
-        tgt_tokens: (B, T)
+        self.decoder = TransformerDecoder(
+            vocab_size=vocab_size,
+            dim=512,
+            depth=6,
+            heads=8,
+            max_len=1024,
+        )
 
-        Returns:
-            logits: (B, T, vocab_size)
+    def forward(self, images, tgt_tokens):
         """
-        enc_feat = self.encoder(images)           # (B, enc_dim)
-        logits = self.decoder(enc_feat, tgt_tokens)
+        Training forward pass.
+        images: (B, 3, 256, 256)
+        tgt_tokens: (B, T)
+        """
+        visual_embeds = self.encoder(images)              # (B, S, 512)
+        logits = self.decoder(visual_embeds, tgt_tokens)  # (B, T, vocab)
         return logits
 
-    def encode(self, images: torch.Tensor) -> torch.Tensor:
-        return self.encoder(images)
-
-    def decode_step(
-        self,
-        enc_feat: torch.Tensor,
-        prev_token: torch.Tensor,
-        hidden: Optional[Tuple[torch.Tensor, torch.Tensor]] = None,
-    ) -> Tuple[torch.Tensor, Tuple[torch.Tensor, torch.Tensor]]:
-        return self.decoder.decode_step(enc_feat, prev_token, hidden)
-
 
 # -------------------------------------------------------------------------
-# Greedy decoding
+# Greedy decoding (Transformer-style)
 # -------------------------------------------------------------------------
 
-def greedy_decode(
-    model: Pix2CodeModel,
-    img_tensor: torch.Tensor,
-    tokenizer: Tokenizer,
-    max_len: int = 120,
-) -> List[int]:
+def greedy_decode(model, img_tensor, tokenizer, max_len=120):
     """
-    Greedy decoding for a single image.
-    img_tensor: (1, 3, H, W)
-    Returns:
-        token_ids (without <SOS> / <EOS>)
+    Decode by growing a prefix:
+    prefix = [SOS], then keep appending next_token until EOS.
     """
     model.eval()
     img_tensor = img_tensor.to(DEVICE)
 
-    sos_id = tokenizer.sos_id
-    eos_id = tokenizer.eos_id
+    sos = tokenizer.sos_id
+    eos = tokenizer.eos_id
 
-    decoded_ids = [sos_id]
-    hidden = None
+    decoded = [sos]
 
     with torch.no_grad():
-        enc_feat = model.encode(img_tensor)  # (1, enc_dim)
+        visual_embeds = model.encoder(img_tensor)   # (1, S, 512)
 
         for _ in range(max_len):
-            prev_token = torch.tensor(
-                [[decoded_ids[-1]]],
-                dtype=torch.long,
-                device=DEVICE,
-            )  # (1, 1)
-            logits, hidden = model.decode_step(enc_feat, prev_token, hidden)
-            # logits: (1, 1, vocab_size)
-            next_id = logits.argmax(dim=-1).item()
+            prefix = torch.tensor([decoded], dtype=torch.long, device=DEVICE)
+            logits = model.decoder(visual_embeds, prefix)
+            next_id = logits[:, -1, :].argmax(dim=-1).item()
 
-            if next_id == eos_id:
+            if next_id == eos:
                 break
-            decoded_ids.append(next_id)
+            decoded.append(next_id)
 
-    # drop SOS
-    return decoded_ids[1:]
+    return decoded[1:]   # drop SOS
 
 
 # -------------------------------------------------------------------------
-# Image loader for inference
+# Single-image loader
 # -------------------------------------------------------------------------
 
-def load_single_image(path: str, img_size: int = 224) -> torch.Tensor:
+def load_single_image(path: str, img_size=256):
     img = Image.open(path).convert("RGB")
     transform = transforms.Compose([
         transforms.Resize((img_size, img_size)),
         transforms.ToTensor(),
-        transforms.Normalize(mean=[0.5, 0.5, 0.5],
-                             std=[0.5, 0.5, 0.5]),
+        transforms.Normalize([0.5]*3, [0.5]*3),
     ])
-    return transform(img).unsqueeze(0)  # (1, 3, H, W)
+    return transform(img).unsqueeze(0)   # (1, 3, H, W)
 
 
 # -------------------------------------------------------------------------
-# Evaluation loop
+# Evaluation
 # -------------------------------------------------------------------------
 
-def evaluate(
-    model: Pix2CodeModel,
-    dataloader: DataLoader,
-    tokenizer: Tokenizer,
-    max_len: int = 120,
-    max_batches: Optional[int] = None,
-) -> Tuple[float, float]:
-    """
-    Returns:
-        avg_token_acc, avg_bleu
-    """
+def evaluate(model, dataloader, tokenizer, max_len=120, max_batches=None):
     model.eval()
-    total_token_acc = 0.0
+    total_acc = 0
     total_tokens = 0
-    total_bleu = 0.0
-    n_samples = 0
+    total_bleu = 0
+    sample_count = 0
 
-    chencherry = SmoothingFunction()
+    smooth = SmoothingFunction()
 
     with torch.no_grad():
         for i, (images, targets) in enumerate(dataloader):
-            if max_batches is not None and i >= max_batches:
+            if max_batches and i >= max_batches:
                 break
 
-            images = images.to(DEVICE)      # (B, C, H, W)
-            targets = targets.to(DEVICE)    # (B, T)
-            B, T = targets.shape
+            images = images.to(DEVICE)
+            targets = targets.to(DEVICE)
 
-            preds: List[List[int]] = []
+            B, T = targets.shape
+            preds = []
+
             for b in range(B):
                 img = images[b:b+1]
                 pred_ids = greedy_decode(model, img, tokenizer, max_len)
                 preds.append(pred_ids)
 
-            pad_id = tokenizer.pad_id
-            eos_id = tokenizer.eos_id
+            pad = tokenizer.pad_id
+            eos = tokenizer.eos_id
 
             for b in range(B):
-                gt = targets[b].tolist()
-                # strip padding + EOS
-                gt_clean = [t for t in gt if t not in (pad_id, eos_id)]
-                pred_clean = preds[b]
+                gt = [t for t in targets[b].tolist() if t not in (pad, eos)]
+                pr = preds[b]
 
-                # token accuracy
-                L = min(len(gt_clean), len(pred_clean))
+                L = min(len(gt), len(pr))
                 if L > 0:
-                    match = sum(
-                        1 for k in range(L) if gt_clean[k] == pred_clean[k]
-                    )
-                    total_token_acc += match
+                    matches = sum(gt[k] == pr[k] for k in range(L))
+                    total_acc += matches
                     total_tokens += L
 
-                # BLEU
-                if len(gt_clean) > 0 and len(pred_clean) > 0:
-                    reference = [gt_clean]
-                    hypothesis = pred_clean
-                    bleu = sentence_bleu(
-                        reference,
-                        hypothesis,
-                        smoothing_function=chencherry.method1,
+                if gt and pr:
+                    total_bleu += sentence_bleu(
+                        [gt], pr,
+                        smoothing_function=smooth.method1
                     )
-                    total_bleu += bleu
-                    n_samples += 1
+                    sample_count += 1
 
-    avg_token_acc = total_token_acc / total_tokens if total_tokens else 0.0
-    avg_bleu = total_bleu / n_samples if n_samples else 0.0
-    return avg_token_acc, avg_bleu
+    avg_acc = total_acc / total_tokens if total_tokens else 0.0
+    avg_bleu = total_bleu / sample_count if sample_count else 0.0
+    return avg_acc, avg_bleu
 
 
 # -------------------------------------------------------------------------
-# CLI entry points: generate / evaluate
+# CLI: generate / evaluate
 # -------------------------------------------------------------------------
 
 def run_generate(args):
     tokenizer = Tokenizer(args.vocab)
 
-    model = Pix2CodeModel(
-        vocab_size=len(tokenizer.token_to_id),
-        cnn_enc_dim=args.cnn_dim,
-        emb_dim=args.emb_dim,
-        hidden_dim=args.hidden_dim,
-        num_layers=args.num_layers,
-    )
+    model = Pix2CodeModel(vocab_size=len(tokenizer.token_to_id))
     ckpt = torch.load(args.checkpoint, map_location=DEVICE)
-    state_dict = ckpt.get("model", ckpt)  # support {"model": ...} or direct dict
-    model.load_state_dict(state_dict)
+    model.load_state_dict(ckpt.get("model", ckpt))
     model.to(DEVICE)
 
-    img_tensor = load_single_image(args.image, img_size=args.img_size)
+    img_tensor = load_single_image(args.image, img_size=256)
     token_ids = greedy_decode(model, img_tensor, tokenizer, max_len=args.max_len)
     html = tokenizer.decode(token_ids)
 
-    out_path = args.out
-    os.makedirs(os.path.dirname(out_path) or ".", exist_ok=True)
-    with open(out_path, "w") as f:
+    out = args.out
+    os.makedirs(os.path.dirname(out) or ".", exist_ok=True)
+    with open(out, "w") as f:
         f.write(html)
 
-    print(f"[generate] Saved predicted HTML/DSL to {out_path}")
+    print(f"[generate] Saved DSL/HTML to {out}")
 
 
 def run_evaluate(args):
     tokenizer = Tokenizer(args.vocab)
 
-    model = Pix2CodeModel(
-        vocab_size=len(tokenizer.token_to_id),
-        cnn_enc_dim=args.cnn_dim,
-        emb_dim=args.emb_dim,
-        hidden_dim=args.hidden_dim,
-        num_layers=args.num_layers,
-    )
+    model = Pix2CodeModel(vocab_size=len(tokenizer.token_to_id))
     ckpt = torch.load(args.checkpoint, map_location=DEVICE)
-    state_dict = ckpt.get("model", ckpt)
-    model.load_state_dict(state_dict)
+    model.load_state_dict(ckpt.get("model", ckpt))
     model.to(DEVICE)
 
-    dataset = Pix2CodeDataset(args.data_json, args.vocab, img_size=args.img_size)
-    dataloader = DataLoader(
-        dataset,
-        batch_size=args.batch_size,
-        shuffle=False,
-        num_workers=args.num_workers,
-    )
+    dataset = Pix2CodeDataset(args.data_json, args.vocab, img_size=256)
+    loader = DataLoader(dataset, batch_size=args.batch_size, shuffle=False)
 
-    token_acc, bleu = evaluate(
-        model,
-        dataloader,
-        tokenizer,
-        max_len=args.max_len,
-        max_batches=args.max_batches,
-    )
+    acc, bleu = evaluate(model, loader, tokenizer, max_len=args.max_len, max_batches=args.max_batches)
 
-    print(f"[evaluate] Data: {args.data_json}")
-    print(f"[evaluate] Token accuracy: {token_acc:.4f}")
-    print(f"[evaluate] BLEU:           {bleu:.4f}")
+    print(f"[evaluate] Token accuracy: {acc:.4f}")
+    print(f"[evaluate] BLEU: {bleu:.4f}")
 
 
 # -------------------------------------------------------------------------
@@ -371,54 +275,33 @@ def run_evaluate(args):
 # -------------------------------------------------------------------------
 
 def main():
-    parser = argparse.ArgumentParser(description="pix2code-style model script")
+    parser = argparse.ArgumentParser("pix2code-transformer")
 
     subparsers = parser.add_subparsers(dest="mode", required=True)
 
-    # ----------------------------- generate -----------------------------
-    gen_p = subparsers.add_parser("generate", help="Generate HTML/DSL from image")
-    gen_p.add_argument("--image", type=str, required=True,
-                       help="Path to input UI screenshot")
-    gen_p.add_argument("--checkpoint", type=str, required=True,
-                       help="Path to trained model checkpoint (.pt)")
-    gen_p.add_argument("--vocab", type=str, default="data/vocab.json",
-                       help="Path to vocab.json")
-    gen_p.add_argument("--out", type=str, default="output.html",
-                       help="Output HTML/DSL file path")
-    gen_p.add_argument("--max_len", type=int, default=120)
-    gen_p.add_argument("--img_size", type=int, default=224)
-    gen_p.add_argument("--cnn_dim", type=int, default=512)
-    gen_p.add_argument("--emb_dim", type=int, default=256)
-    gen_p.add_argument("--hidden_dim", type=int, default=512)
-    gen_p.add_argument("--num_layers", type=int, default=1)
+    # -------- generate --------
+    gen = subparsers.add_parser("generate")
+    gen.add_argument("--image", required=True)
+    gen.add_argument("--checkpoint", required=True)
+    gen.add_argument("--vocab", default="data/vocab.json")
+    gen.add_argument("--out", default="output.html")
+    gen.add_argument("--max_len", type=int, default=120)
 
-    # ----------------------------- evaluate -----------------------------
-    eval_p = subparsers.add_parser("evaluate", help="Evaluate model on a dataset")
-    eval_p.add_argument("--data_json", type=str, required=True,
-                        help="Path to dataset JSON (list of {image, tokens})")
-    eval_p.add_argument("--checkpoint", type=str, required=True,
-                        help="Path to trained model checkpoint (.pt)")
-    eval_p.add_argument("--vocab", type=str, default="data/vocab.json",
-                        help="Path to vocab.json")
-    eval_p.add_argument("--batch_size", type=int, default=4)
-    eval_p.add_argument("--num_workers", type=int, default=0)
-    eval_p.add_argument("--max_len", type=int, default=120)
-    eval_p.add_argument("--max_batches", type=int, default=None,
-                        help="Limit number of batches for quick testing")
-    eval_p.add_argument("--img_size", type=int, default=224)
-    eval_p.add_argument("--cnn_dim", type=int, default=512)
-    eval_p.add_argument("--emb_dim", type=int, default=256)
-    eval_p.add_argument("--hidden_dim", type=int, default=512)
-    eval_p.add_argument("--num_layers", type=int, default=1)
+    # -------- evaluate --------
+    ev = subparsers.add_parser("evaluate")
+    ev.add_argument("--data_json", required=True)
+    ev.add_argument("--checkpoint", required=True)
+    ev.add_argument("--vocab", default="data/vocab.json")
+    ev.add_argument("--batch_size", type=int, default=4)
+    ev.add_argument("--max_len", type=int, default=120)
+    ev.add_argument("--max_batches", type=int, default=None)
 
     args = parser.parse_args()
 
     if args.mode == "generate":
         run_generate(args)
-    elif args.mode == "evaluate":
-        run_evaluate(args)
     else:
-        raise ValueError(f"Unknown mode: {args.mode}")
+        run_evaluate(args)
 
 
 if __name__ == "__main__":

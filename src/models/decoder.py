@@ -1,111 +1,65 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-decoder.py
-
-LSTM decoder for pix2code-style model.
-"""
-
-from typing import Tuple, Optional
-
 import torch
 import torch.nn as nn
+import torch.nn.functional as F
 
+from .attention import CrossAttention
 
-class LSTMDecoder(nn.Module):
-    """
-    LSTM decoder with:
-    - token embedding
-    - conditioning on encoder features via initial hidden state
-    """
-
-    def __init__(
-        self,
-        vocab_size: int,
-        emb_dim: int = 256,
-        hidden_dim: int = 512,
-        enc_dim: int = 512,
-        num_layers: int = 1,
-    ):
+class TransformerDecoderBlock(nn.Module):
+    def __init__(self, dim, heads=8, mlp_ratio=4.0, dropout=0.1):
         super().__init__()
-        self.vocab_size = vocab_size
-        self.emb_dim = emb_dim
-        self.hidden_dim = hidden_dim
-        self.enc_dim = enc_dim
-        self.num_layers = num_layers
 
-        self.embedding = nn.Embedding(vocab_size, emb_dim)
+        self.self_attn = nn.MultiheadAttention(dim, heads, dropout=dropout, batch_first=True)
+        self.cross_attn = CrossAttention(dim=dim, heads=heads, dropout=dropout)
 
-        self.lstm = nn.LSTM(
-            input_size=emb_dim,
-            hidden_size=hidden_dim,
-            num_layers=num_layers,
-            batch_first=True,
+        self.mlp = nn.Sequential(
+            nn.Linear(dim, int(dim * mlp_ratio)),
+            nn.GELU(),
+            nn.Linear(int(dim * mlp_ratio), dim)
         )
 
-        # project encoder feature into initial hidden state
-        self.enc_to_h = nn.Linear(enc_dim, hidden_dim)
-        self.enc_to_c = nn.Linear(enc_dim, hidden_dim)
+        self.norm1 = nn.LayerNorm(dim)
+        self.norm2 = nn.LayerNorm(dim)
+        self.norm3 = nn.LayerNorm(dim)
 
-        self.fc_out = nn.Linear(hidden_dim, vocab_size)
+    def forward(self, tokens, visual_embeds, mask=None):
+        # 1) Masked self-attention (autoregressive)
+        x = self.norm1(tokens)
+        x,_ = self.self_attn(x, x, x, attn_mask=mask)
+        tokens = tokens + x
 
-    def init_hidden(
-        self, enc_feat: torch.Tensor
-    ) -> Tuple[torch.Tensor, torch.Tensor]:
-        """
-        enc_feat: (B, enc_dim)
-        Returns (h0, c0) each of shape (num_layers, B, hidden_dim)
-        """
-        h0 = self.enc_to_h(enc_feat)  # (B, hidden_dim)
-        c0 = self.enc_to_c(enc_feat)  # (B, hidden_dim)
+        # 2) Cross-attention to encoder features
+        x = self.norm2(tokens)
+        context = self.cross_attn(x, visual_embeds)
+        tokens = tokens + context
 
-        # reshape for LSTM
-        h0 = h0.unsqueeze(0).repeat(self.num_layers, 1, 1)  # (num_layers, B, H)
-        c0 = c0.unsqueeze(0).repeat(self.num_layers, 1, 1)
-        return h0, c0
+        # 3) Feed-forward expansion
+        x = self.norm3(tokens)
+        tokens = tokens + self.mlp(x)
 
-    def forward(
-        self,
-        enc_feat: torch.Tensor,
-        tgt_tokens: torch.Tensor,
-    ) -> torch.Tensor:
-        """
-        Teacher-forcing forward pass.
+        return tokens
 
-        enc_feat: (B, enc_dim)
-        tgt_tokens: (B, T)
 
-        Returns:
-            logits: (B, T, vocab_size)
-        """
-        h0, c0 = self.init_hidden(enc_feat)  # each: (num_layers, B, H)
-        emb = self.embedding(tgt_tokens)     # (B, T, emb_dim)
+class TransformerDecoder(nn.Module):
+    def __init__(self, vocab_size, dim=512, depth=6, heads=8, max_len=1024):
+        super().__init__()
 
-        outputs, _ = self.lstm(emb, (h0, c0))   # (B, T, hidden_dim)
-        logits = self.fc_out(outputs)           # (B, T, vocab_size)
-        return logits
+        self.token_emb = nn.Embedding(vocab_size, dim)
+        self.pos_emb   = nn.Embedding(max_len, dim)
+        self.layers = nn.ModuleList([
+            TransformerDecoderBlock(dim, heads=heads) for _ in range(depth)
+        ])
+        self.output_fc = nn.Linear(dim, vocab_size)
 
-    def decode_step(
-        self,
-        enc_feat: torch.Tensor,
-        prev_token: torch.Tensor,
-        hidden: Optional[Tuple[torch.Tensor, torch.Tensor]] = None,
-    ) -> Tuple[torch.Tensor, Tuple[torch.Tensor, torch.Tensor]]:
-        """
-        Single decoding step for greedy search.
+    def forward(self, visual_embeds, token_ids):
+        B,T = token_ids.shape
+        pos = torch.arange(0,T,device=token_ids.device).unsqueeze(0)
 
-        enc_feat: (B, enc_dim)
-        prev_token: (B, 1)
-        hidden: (h, c) or None
+        x = self.token_emb(token_ids) + self.pos_emb(pos)
 
-        Returns:
-            logits: (B, 1, vocab_size)
-            hidden: updated hidden state
-        """
-        if hidden is None:
-            hidden = self.init_hidden(enc_feat)
+        # autoregressive attention mask (no peeking ahead)
+        mask = torch.triu(torch.ones(T,T,device=token_ids.device)*float("-inf"),1)
 
-        emb = self.embedding(prev_token)     # (B, 1, emb_dim)
-        output, hidden = self.lstm(emb, hidden)  # (B, 1, hidden_dim)
-        logits = self.fc_out(output)         # (B, 1, vocab_size)
-        return logits, hidden
+        for layer in self.layers:
+            x = layer(x, visual_embeds, mask)
+
+        return self.output_fc(x)  # (B,T,vocab_size)
