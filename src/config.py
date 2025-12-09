@@ -1,7 +1,7 @@
 DATA_ROOT = "data"          # folder that contains vocab.json, train.json, val.json, images/, tokens/
-BATCH_SIZE = 8
+BATCH_SIZE = 4
 IMG_SIZE = 224
-MAX_SEQ_LEN = 120
+MAX_SEQ_LEN = 512
 
 EPOCHS = 35                 # change
 LR = 1e-4

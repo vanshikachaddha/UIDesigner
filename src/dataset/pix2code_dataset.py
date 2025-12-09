@@ -5,7 +5,7 @@ from PIL import Image
 import os
 
 
-class Pix2CodeDataset:
+class Pix2CodeDataset(Dataset):
     def __init__(self, root_dir, split="train", transform=None, max_seq_len=512):
         self.root_dir = root_dir
         self.split = split

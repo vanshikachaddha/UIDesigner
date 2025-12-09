@@ -14,7 +14,6 @@ transform = transforms.Compose([
                          std=[0.5, 0.5, 0.5]),
 ])
 
-# Use the same data root / batch size / seq len as config
 train_loader, val_loader = get_dataloaders(
     root_dir=config.DATA_ROOT,
     batch_size=config.BATCH_SIZE,
