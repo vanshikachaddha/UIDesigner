@@ -1,0 +1,17 @@
+stack {
+row {
+radio
+}
+row {
+check
+}
+row {
+label, btn
+}
+row {
+check
+}
+}
+footer {
+btn-home, btn-dashboard, btn-search
+}

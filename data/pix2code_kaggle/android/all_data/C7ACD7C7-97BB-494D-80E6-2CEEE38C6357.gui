@@ -1,0 +1,8 @@
+stack {
+row {
+switch
+}
+}
+footer {
+btn-search, btn-dashboard, btn-home, btn-home
+}

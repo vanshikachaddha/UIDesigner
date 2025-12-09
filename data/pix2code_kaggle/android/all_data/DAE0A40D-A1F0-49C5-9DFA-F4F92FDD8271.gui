@@ -1,0 +1,11 @@
+stack {
+row {
+radio
+}
+row {
+switch
+}
+}
+footer {
+btn-search, btn-notifications, btn-home
+}

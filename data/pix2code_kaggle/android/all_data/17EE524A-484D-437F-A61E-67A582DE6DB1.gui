@@ -1,0 +1,14 @@
+stack {
+row {
+label, btn
+}
+row {
+btn, btn, switch, btn
+}
+row {
+label, slider, label
+}
+}
+footer {
+btn-home, btn-home
+}

@@ -1,0 +1,8 @@
+stack {
+row {
+img, img
+}
+}
+footer {
+btn-more, btn-more, btn-contact, btn-more
+}

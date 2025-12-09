@@ -1,0 +1,8 @@
+stack {
+row {
+label, slider, label
+}
+}
+footer {
+btn-more, btn-download
+}

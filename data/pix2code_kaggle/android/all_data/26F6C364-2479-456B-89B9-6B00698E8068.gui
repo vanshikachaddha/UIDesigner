@@ -1,0 +1,17 @@
+stack {
+row {
+label, btn, btn
+}
+row {
+label, btn, btn
+}
+row {
+label, btn
+}
+row {
+btn, btn
+}
+}
+footer {
+btn-dashboard, btn-search, btn-dashboard
+}

@@ -1,0 +1,8 @@
+stack {
+row {
+label, switch
+}
+}
+footer {
+btn-contact, btn-contact
+}

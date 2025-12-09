@@ -78,7 +78,11 @@ def train_epoch(
     num_batches = 0
     loss_window = deque(maxlen=100)
     
-    scaler = torch.cuda.amp.GradScaler(enabled=use_amp)
+    # Use torch.amp GradScaler when available; fall back for older Torch versions
+    try:
+        scaler = torch.amp.GradScaler(enabled=use_amp)
+    except TypeError:
+        scaler = torch.cuda.amp.GradScaler(enabled=use_amp)
     
     for batch_idx, batch in enumerate(train_loader, start=1):
         images, input_tokens, target_tokens = batch
