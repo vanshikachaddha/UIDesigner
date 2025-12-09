@@ -6,7 +6,7 @@ pix2code.py
 Top-level script wiring together:
 - Tokenizer
 - Dataset
-- CNNEncoder + LSTMDecoder into Pix2CodeModel
+- ResNetEncoder + TransformerDecoder into Pix2CodeModel
 - Greedy decoding
 - CLI:
     * generate: image -> tokens -> HTML/DSL
@@ -29,8 +29,8 @@ from PIL import Image
 from torchvision import transforms
 from nltk.translate.bleu_score import sentence_bleu, SmoothingFunction
 
-from encoder import CNNEncoder
-from decoder import LSTMDecoder
+from src.models.encoder import ResNetEncoder, PositionalEncoding2D
+from src.models.decoder import TransformerDecoder
 
 
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
@@ -52,17 +52,10 @@ class Tokenizer:
         self.eos_id = self.token_to_id.get("<EOS>", 2)
 
     def encode(self, text: str) -> List[int]:
-        """
-        Very simple example: assume DSL tokens are space-separated.
-        Change this to match your actual tokenizer logic.
-        """
         tokens = text.strip().split()
         return [self.token_to_id[t] for t in tokens]
 
     def decode(self, ids: List[int]) -> str:
-        """
-        Turn a list of token IDs into a string.
-        """
         tokens = [self.id_to_token[i] for i in ids if i in self.id_to_token]
         return " ".join(tokens)
 
@@ -118,27 +111,57 @@ class Pix2CodeDataset(Dataset):
 
 
 # -------------------------------------------------------------------------
-# Pix2CodeModel = CNNEncoder + LSTMDecoder
+# Pix2CodeModel = ResNetEncoder + TransformerDecoder
 # -------------------------------------------------------------------------
 
 class Pix2CodeModel(nn.Module):
     def __init__(
         self,
         vocab_size: int,
-        cnn_enc_dim: int = 512,
-        emb_dim: int = 256,
-        hidden_dim: int = 512,
-        num_layers: int = 1,
+        d_model: int = 512,
+        nhead: int = 8,
+        num_decoder_layers: int = 6,
+        dim_feedforward: int = 2048,
+        dropout: float = 0.1,
+        resnet_version: str = "resnet50",
+        pretrained: bool = True,
+        freeze_backbone: bool = False,
+        pad_idx: int = 0,
     ):
         super().__init__()
-        self.encoder = CNNEncoder(out_dim=cnn_enc_dim)
-        self.decoder = LSTMDecoder(
-            vocab_size=vocab_size,
-            emb_dim=emb_dim,
-            hidden_dim=hidden_dim,
-            enc_dim=cnn_enc_dim,
-            num_layers=num_layers,
+
+        # Image encoder (spatial features)
+        self.encoder = ResNetEncoder(
+            resnet_version=resnet_version,
+            pretrained=pretrained,
+            feature_dim=d_model,
+            freeze_backbone=freeze_backbone,
         )
+
+        # 2D positional encoding for image patches
+        # Defaults (max_h/max_w) are generous in encoder.PositionalEncoding2D
+        self.img_pos_encoding = PositionalEncoding2D(d_model=d_model)
+
+        # Transformer decoder (token side)
+        self.decoder = TransformerDecoder(
+            vocab_size=vocab_size,
+            d_model=d_model,
+            nhead=nhead,
+            num_layers=num_decoder_layers,
+            dim_feedforward=dim_feedforward,
+            dropout=dropout,
+            pad_idx=pad_idx,
+        )
+
+    def encode(self, images: torch.Tensor) -> torch.Tensor:
+        """
+        images: (B, 3, H, W)
+        Returns:
+            memory: (B, S, d_model) with 2D positional encoding applied
+        """
+        features, spatial_shape = self.encoder(images)      # (B, S, d_model), (h, w)
+        features = self.img_pos_encoding(features, spatial_shape)
+        return features
 
     def forward(self, images: torch.Tensor, tgt_tokens: torch.Tensor) -> torch.Tensor:
         """
@@ -149,20 +172,23 @@ class Pix2CodeModel(nn.Module):
         Returns:
             logits: (B, T, vocab_size)
         """
-        enc_feat = self.encoder(images)           # (B, enc_dim)
-        logits = self.decoder(enc_feat, tgt_tokens)
+        memory = self.encode(images)  # (B, S, d_model)
+        logits = self.decoder(memory=memory, tgt_tokens=tgt_tokens)
         return logits
-
-    def encode(self, images: torch.Tensor) -> torch.Tensor:
-        return self.encoder(images)
 
     def decode_step(
         self,
-        enc_feat: torch.Tensor,
-        prev_token: torch.Tensor,
-        hidden: Optional[Tuple[torch.Tensor, torch.Tensor]] = None,
-    ) -> Tuple[torch.Tensor, Tuple[torch.Tensor, torch.Tensor]]:
-        return self.decoder.decode_step(enc_feat, prev_token, hidden)
+        memory: torch.Tensor,
+        prev_tokens: torch.Tensor,
+    ) -> torch.Tensor:
+        """
+        Single step for greedy decoding (no caching).
+        memory: (B, S, d_model)
+        prev_tokens: (B, T_so_far)
+        Returns:
+            logits_last: (B, 1, vocab_size)
+        """
+        return self.decoder.decode_step(memory=memory, prev_tokens=prev_tokens)
 
 
 # -------------------------------------------------------------------------
@@ -188,20 +214,20 @@ def greedy_decode(
     eos_id = tokenizer.eos_id
 
     decoded_ids = [sos_id]
-    hidden = None
 
     with torch.no_grad():
-        enc_feat = model.encode(img_tensor)  # (1, enc_dim)
+        memory = model.encode(img_tensor)  # (1, S, d_model)
 
         for _ in range(max_len):
-            prev_token = torch.tensor(
-                [[decoded_ids[-1]]],
+            # full sequence so far (including SOS)
+            prev_tokens = torch.tensor(
+                [decoded_ids],
                 dtype=torch.long,
                 device=DEVICE,
-            )  # (1, 1)
-            logits, hidden = model.decode_step(enc_feat, prev_token, hidden)
-            # logits: (1, 1, vocab_size)
-            next_id = logits.argmax(dim=-1).item()
+            )  # (1, T_so_far)
+
+            logits_last = model.decode_step(memory, prev_tokens)  # (1, 1, V)
+            next_id = logits_last.argmax(dim=-1).item()
 
             if next_id == eos_id:
                 break
@@ -303,16 +329,26 @@ def evaluate(
 # CLI entry points: generate / evaluate
 # -------------------------------------------------------------------------
 
+def build_model_from_args(args, tokenizer: Tokenizer) -> Pix2CodeModel:
+    model = Pix2CodeModel(
+        vocab_size=len(tokenizer.token_to_id),
+        d_model=args.d_model,
+        nhead=args.nhead,
+        num_decoder_layers=args.num_layers,
+        dim_feedforward=args.ff_dim,
+        dropout=args.dropout,
+        resnet_version=args.resnet_version,
+        pretrained=not args.no_pretrained,
+        freeze_backbone=args.freeze_backbone,
+        pad_idx=tokenizer.pad_id,
+    )
+    return model
+
+
 def run_generate(args):
     tokenizer = Tokenizer(args.vocab)
 
-    model = Pix2CodeModel(
-        vocab_size=len(tokenizer.token_to_id),
-        cnn_enc_dim=args.cnn_dim,
-        emb_dim=args.emb_dim,
-        hidden_dim=args.hidden_dim,
-        num_layers=args.num_layers,
-    )
+    model = build_model_from_args(args, tokenizer)
     ckpt = torch.load(args.checkpoint, map_location=DEVICE)
     state_dict = ckpt.get("model", ckpt)  # support {"model": ...} or direct dict
     model.load_state_dict(state_dict)
@@ -333,13 +369,7 @@ def run_generate(args):
 def run_evaluate(args):
     tokenizer = Tokenizer(args.vocab)
 
-    model = Pix2CodeModel(
-        vocab_size=len(tokenizer.token_to_id),
-        cnn_enc_dim=args.cnn_dim,
-        emb_dim=args.emb_dim,
-        hidden_dim=args.hidden_dim,
-        num_layers=args.num_layers,
-    )
+    model = build_model_from_args(args, tokenizer)
     ckpt = torch.load(args.checkpoint, map_location=DEVICE)
     state_dict = ckpt.get("model", ckpt)
     model.load_state_dict(state_dict)
@@ -387,10 +417,25 @@ def main():
                        help="Output HTML/DSL file path")
     gen_p.add_argument("--max_len", type=int, default=120)
     gen_p.add_argument("--img_size", type=int, default=224)
-    gen_p.add_argument("--cnn_dim", type=int, default=512)
-    gen_p.add_argument("--emb_dim", type=int, default=256)
-    gen_p.add_argument("--hidden_dim", type=int, default=512)
-    gen_p.add_argument("--num_layers", type=int, default=1)
+
+    # encoder/decoder hyperparams
+    gen_p.add_argument("--d_model", type=int, default=512,
+                       help="Transformer hidden size / encoder feature dim")
+    gen_p.add_argument("--nhead", type=int, default=8,
+                       help="Number of attention heads")
+    gen_p.add_argument("--num_layers", type=int, default=6,
+                       help="Number of transformer decoder layers")
+    gen_p.add_argument("--ff_dim", type=int, default=2048,
+                       help="Transformer feedforward dimension")
+    gen_p.add_argument("--dropout", type=float, default=0.1,
+                       help="Dropout in transformer decoder")
+    gen_p.add_argument("--resnet_version", type=str, default="resnet50",
+                       choices=["resnet18", "resnet34", "resnet50", "resnet101"],
+                       help="ResNet backbone version")
+    gen_p.add_argument("--no_pretrained", action="store_true",
+                       help="Disable ImageNet pretraining for ResNet")
+    gen_p.add_argument("--freeze_backbone", action="store_true",
+                       help="Freeze ResNet backbone during training")
 
     # ----------------------------- evaluate -----------------------------
     eval_p = subparsers.add_parser("evaluate", help="Evaluate model on a dataset")
@@ -406,10 +451,25 @@ def main():
     eval_p.add_argument("--max_batches", type=int, default=None,
                         help="Limit number of batches for quick testing")
     eval_p.add_argument("--img_size", type=int, default=224)
-    eval_p.add_argument("--cnn_dim", type=int, default=512)
-    eval_p.add_argument("--emb_dim", type=int, default=256)
-    eval_p.add_argument("--hidden_dim", type=int, default=512)
-    eval_p.add_argument("--num_layers", type=int, default=1)
+
+    # encoder/decoder hyperparams
+    eval_p.add_argument("--d_model", type=int, default=512,
+                        help="Transformer hidden size / encoder feature dim")
+    eval_p.add_argument("--nhead", type=int, default=8,
+                        help="Number of attention heads")
+    eval_p.add_argument("--num_layers", type=int, default=6,
+                        help="Number of transformer decoder layers")
+    eval_p.add_argument("--ff_dim", type=int, default=2048,
+                        help="Transformer feedforward dimension")
+    eval_p.add_argument("--dropout", type=float, default=0.1,
+                        help="Dropout in transformer decoder")
+    eval_p.add_argument("--resnet_version", type=str, default="resnet50",
+                        choices=["resnet18", "resnet34", "resnet50", "resnet101"],
+                        help="ResNet backbone version")
+    eval_p.add_argument("--no_pretrained", action="store_true",
+                        help="Disable ImageNet pretraining for ResNet")
+    eval_p.add_argument("--freeze_backbone", action="store_true",
+                        help="Freeze ResNet backbone during training")
 
     args = parser.parse_args()
 
