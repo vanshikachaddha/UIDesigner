@@ -3,7 +3,7 @@ BATCH_SIZE = 4
 IMG_SIZE = 224
 MAX_SEQ_LEN = 512
 
-EPOCHS = 35                 # change
+EPOCHS = 45                 # change
 LR = 1e-4
 D_MODEL = 512
 NHEAD = 8
