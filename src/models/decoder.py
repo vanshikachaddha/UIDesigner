@@ -3,7 +3,8 @@
 """
 decoder.py
 
-Transformer decoder for pix2code-style model.
+Transformer-style decoder with explicit CrossAttention
+for pix2code-style model.
 """
 
 from typing import Optional
@@ -11,42 +12,94 @@ import math
 
 import torch
 import torch.nn as nn
+import torch.nn.functional as F
+
+from src.models.attention import CrossAttention
 
 
-class PositionalEncoding1D(nn.Module):
+class TransformerDecoderBlock(nn.Module):
     """
-    Standard 1D sinusoidal positional encoding for token sequences.
+    One decoder block:
+      1) masked self-attention over tokens
+      2) cross-attention over visual (encoder) features
+      3) feed-forward network
     """
 
-    def __init__(self, d_model: int, max_len: int = 512):
+    def __init__(self, dim: int, heads: int = 8, mlp_ratio: float = 4.0, dropout: float = 0.1):
         super().__init__()
-        pe = torch.zeros(max_len, d_model)
-        position = torch.arange(0, max_len).unsqueeze(1)  # (max_len, 1)
-        div_term = torch.exp(
-            torch.arange(0, d_model, 2) * (-math.log(10000.0) / d_model)
-        )  # (d_model/2,)
 
-        pe[:, 0::2] = torch.sin(position * div_term)  # even indices
-        pe[:, 1::2] = torch.cos(position * div_term)  # odd indices
+        self.self_attn = nn.MultiheadAttention(
+            embed_dim=dim,
+            num_heads=heads,
+            dropout=dropout,
+            batch_first=True,  # (B, T, C)
+        )
+        self.cross_attn = CrossAttention(dim=dim, heads=heads, dropout=dropout)
 
-        # shape: (1, max_len, d_model) for easy broadcasting
-        self.register_buffer("pe", pe.unsqueeze(0))
+        self.mlp = nn.Sequential(
+            nn.Linear(dim, int(dim * mlp_ratio)),
+            nn.GELU(),
+            nn.Linear(int(dim * mlp_ratio), dim),
+        )
 
-    def forward(self, x: torch.Tensor) -> torch.Tensor:
+        self.norm1 = nn.LayerNorm(dim)
+        self.norm2 = nn.LayerNorm(dim)
+        self.norm3 = nn.LayerNorm(dim)
+
+        self.dropout = nn.Dropout(dropout)
+
+    def forward(
+        self,
+        tokens: torch.Tensor,
+        visual_embeds: torch.Tensor,
+        self_attn_mask: Optional[torch.Tensor] = None,
+        self_key_padding_mask: Optional[torch.Tensor] = None,
+        memory_key_padding_mask: Optional[torch.Tensor] = None,
+    ) -> torch.Tensor:
         """
-        x: (B, T, d_model)
+        tokens: (B, T, C)
+        visual_embeds: (B, S, C)
+        self_attn_mask: (T, T) causal mask
+        self_key_padding_mask: (B, T) True where PAD in tokens
+        memory_key_padding_mask: (B, S) True where PAD in encoder features
         """
-        T = x.size(1)
-        return x + self.pe[:, :T, :]
+        # 1) Masked self-attention
+        x = self.norm1(tokens)
+        x, _ = self.self_attn(
+            x,
+            x,
+            x,
+            attn_mask=self_attn_mask,
+            key_padding_mask=self_key_padding_mask,
+        )
+        tokens = tokens + self.dropout(x)
+
+        # 2) Cross-attention to encoder features
+        x = self.norm2(tokens)
+        # CrossAttention is assumed to handle (B, T, C) + (B, S, C)
+        # and optionally memory_key_padding_mask internally if you add it.
+        context = self.cross_attn(x, visual_embeds)
+        tokens = tokens + self.dropout(context)
+
+        # 3) Feed-forward network
+        x = self.norm3(tokens)
+        x = self.mlp(x)
+        tokens = tokens + self.dropout(x)
+
+        return tokens
 
 
 class TransformerDecoder(nn.Module):
     """
-    Transformer-based autoregressive decoder.
+    Autoregressive decoder that:
+      - embeds tokens
+      - adds learned positional embeddings
+      - applies a stack of TransformerDecoderBlock
+      - projects to vocabulary logits
 
-    - Cross-attends to image features from ResNetEncoder (memory).
-    - Uses token embeddings + 1D positional encoding.
-    - Causal mask for autoregressive decoding.
+    Exposes the same interface as the previous implementation:
+      forward(memory, tgt_tokens, memory_key_padding_mask=None) -> (B, T, V)
+      decode_step(memory, prev_tokens, ...) -> (B, 1, V)
     """
 
     def __init__(
@@ -60,55 +113,57 @@ class TransformerDecoder(nn.Module):
         max_tgt_len: int = 512,
         pad_idx: int = 0,
     ):
-        """
-        Args:
-            vocab_size: size of the DSL vocabulary.
-            d_model: transformer hidden size (must match encoder feature_dim).
-            nhead: number of attention heads.
-            num_layers: number of transformer decoder layers.
-            dim_feedforward: FFN inner dimension.
-            dropout: dropout probability.
-            max_tgt_len: max target sequence length for positional encoding.
-            pad_idx: padding index in the token vocabulary.
-        """
         super().__init__()
 
         self.vocab_size = vocab_size
         self.d_model = d_model
         self.pad_idx = pad_idx
+        self.max_tgt_len = max_tgt_len
 
-        # Token embedding
-        self.embedding = nn.Embedding(vocab_size, d_model)
+        # Token + positional embeddings (learned)
+        self.token_emb = nn.Embedding(vocab_size, d_model)
+        self.pos_emb = nn.Embedding(max_tgt_len, d_model)
 
-        # Positional encoding for target sequence
-        self.pos_encoding = PositionalEncoding1D(d_model, max_len=max_tgt_len)
-
-        # Transformer decoder stack
-        decoder_layer = nn.TransformerDecoderLayer(
-            d_model=d_model,
-            nhead=nhead,
-            dim_feedforward=dim_feedforward,
-            dropout=dropout,
-            batch_first=True,  # (B, T, C)
+        # Decoder blocks
+        self.layers = nn.ModuleList(
+            [
+                TransformerDecoderBlock(
+                    dim=d_model,
+                    heads=nhead,
+                    mlp_ratio=dim_feedforward / d_model,
+                    dropout=dropout,
+                )
+                for _ in range(num_layers)
+            ]
         )
-        self.transformer_decoder = nn.TransformerDecoder(
-            decoder_layer, num_layers=num_layers
-        )
 
-        # Output projection to vocabulary
+        # Final projection to vocab
         self.fc_out = nn.Linear(d_model, vocab_size)
 
     @staticmethod
-    def _generate_square_subsequent_mask(sz: int, device: torch.device) -> torch.Tensor:
+    def _generate_causal_mask(T: int, device: torch.device) -> torch.Tensor:
         """
-        Causal mask for autoregressive decoding.
-
-        Returns:
-            mask: (T, T) with True in positions that should be masked.
+        Returns an additive causal mask of shape (T, T) with -inf above the diagonal
+        and 0 on/below the diagonal, suitable for MultiheadAttention attn_mask.
         """
-        # upper-triangular (excluding diagonal) is True (masked)
-        mask = torch.triu(torch.ones(sz, sz, device=device), diagonal=1).bool()
+        mask = torch.triu(
+            torch.full((T, T), float("-inf"), device=device),
+            diagonal=1,
+        )
         return mask
+
+    def _embed_tokens(self, tgt_tokens: torch.Tensor) -> torch.Tensor:
+        """
+        tgt_tokens: (B, T)
+        returns: (B, T, d_model)
+        """
+        B, T = tgt_tokens.shape
+        device = tgt_tokens.device
+
+        pos = torch.arange(0, T, device=device).unsqueeze(0)  # (1, T)
+        x = self.token_emb(tgt_tokens) * math.sqrt(self.d_model)
+        x = x + self.pos_emb(pos)  # (B, T, d_model)
+        return x
 
     def forward(
         self,
@@ -119,13 +174,9 @@ class TransformerDecoder(nn.Module):
         """
         Teacher-forcing forward pass.
 
-        Args:
-            memory: encoder output, shape (B, S, d_model)
-                    (S = num_patches from ResNetEncoder)
-                    NOTE: memory can already include 2D positional encoding.
-            tgt_tokens: target token ids, shape (B, T)
-                        (assumed already shifted by training loop if needed)
-            memory_key_padding_mask: optional, shape (B, S), True where memory is PAD.
+        memory: (B, S, d_model) encoder output (ResNetEncoder + PosEnc2D)
+        tgt_tokens: (B, T) token ids (already shifted by training loop)
+        memory_key_padding_mask: (B, S), True where encoder tokens are PAD
 
         Returns:
             logits: (B, T, vocab_size)
@@ -133,28 +184,26 @@ class TransformerDecoder(nn.Module):
         B, T = tgt_tokens.shape
         device = tgt_tokens.device
 
-        # Token embedding + positional encoding
-        tgt_emb = self.embedding(tgt_tokens) * math.sqrt(self.d_model)  # (B, T, C)
-        tgt_emb = self.pos_encoding(tgt_emb)                            # (B, T, C)
+        x = self._embed_tokens(tgt_tokens)  # (B, T, d_model)
 
-        # Causal mask so position i attends only to <= i
-        tgt_mask = self._generate_square_subsequent_mask(T, device=device)  # (T, T)
+        # Causal mask for self-attention
+        self_attn_mask = self._generate_causal_mask(T, device=device)  # (T, T)
 
-        # Padding mask for target: True where PAD
+        # Padding mask for tokens
         tgt_key_padding_mask = (
             tgt_tokens == self.pad_idx if self.pad_idx is not None else None
         )  # (B, T)
 
-        # Run transformer decoder
-        dec_out = self.transformer_decoder(
-            tgt=tgt_emb,
-            memory=memory,
-            tgt_mask=tgt_mask,
-            tgt_key_padding_mask=tgt_key_padding_mask,
-            memory_key_padding_mask=memory_key_padding_mask,
-        )  # (B, T, d_model)
+        for layer in self.layers:
+            x = layer(
+                tokens=x,
+                visual_embeds=memory,
+                self_attn_mask=self_attn_mask,
+                self_key_padding_mask=tgt_key_padding_mask,
+                memory_key_padding_mask=memory_key_padding_mask,
+            )
 
-        logits = self.fc_out(dec_out)  # (B, T, vocab_size)
+        logits = self.fc_out(x)  # (B, T, vocab_size)
         return logits
 
     def decode_step(
@@ -164,23 +213,20 @@ class TransformerDecoder(nn.Module):
         memory_key_padding_mask: Optional[torch.Tensor] = None,
     ) -> torch.Tensor:
         """
-        Single autoregressive step (no state cache).
+        Single autoregressive step (no caching).
 
-        Args:
-            memory: encoder output, (B, S, d_model)
-            prev_tokens: full sequence generated so far, (B, T_so_far)
-                         (including BOS, etc.)
-            memory_key_padding_mask: optional, (B, S)
+        memory: (B, S, d_model)
+        prev_tokens: (B, T_so_far)
+        memory_key_padding_mask: (B, S)
 
         Returns:
-            logits_last: (B, 1, vocab_size) – logits for next token position
+            logits_last: (B, 1, vocab_size)
         """
-        # Reuse full forward, take last time step
         logits = self.forward(
             memory=memory,
             tgt_tokens=prev_tokens,
             memory_key_padding_mask=memory_key_padding_mask,
-        )  # (B, T_so_far, vocab_size)
+        )  # (B, T_so_far, V)
 
-        logits_last = logits[:, -1:, :]  # (B, 1, vocab_size)
+        logits_last = logits[:, -1:, :]  # (B, 1, V)
         return logits_last
