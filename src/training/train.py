@@ -7,7 +7,7 @@ import sys, os
 sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 
 from models.pix2code import Pix2CodeModel, Tokenizer
-from dataset.dataloader import get_dataloaders  # your existing helper
+from dataset.dataloader import get_dataloaders
 
 # --------- SETUP ---------
 
@@ -17,34 +17,37 @@ vocab_size = len(tokenizer.token_to_id)
 device = "cuda" if torch.cuda.is_available() else "cpu"
 print("Running on:", device)
 
-# If your get_dataloaders requires transform, build it like ViT:
 from torchvision import transforms
 transform = transforms.Compose([
     transforms.Resize((256, 256)),
     transforms.ToTensor(),
-    transforms.Normalize(mean=[0.5, 0.5, 0.5],
-                         std=[0.5, 0.5, 0.5]),
+    transforms.Normalize(mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5]),
 ])
 
-# Create dataloaders
-train_loader, val_loader = get_dataloaders(
+train_loader, val_loader, _ = get_dataloaders(
     root_dir="data/",
     batch_size=4,
     transform=transform,
     max_seq_len=512,
 )
 
-# Model, loss, optimizer, scaler
 model = Pix2CodeModel(vocab_size=vocab_size).to(device)
-
 criterion = torch.nn.CrossEntropyLoss(ignore_index=tokenizer.pad_id)
 optimizer = torch.optim.AdamW(model.parameters(), lr=1e-4)
 scaler = torch.cuda.amp.GradScaler()
 
 EPOCHS = 50
-
 train_losses = []
 val_losses = []
+
+# Create logs directory
+os.makedirs("logs", exist_ok=True)
+LOG_PATH = "logs/training_log.txt"
+
+# Clear previous log file
+with open(LOG_PATH, "w") as f:
+    f.write("Epoch | Train Loss | Val Loss\n")
+    f.write("-------------------------------------\n")
 
 # --------- TRAINING LOOP ---------
 
@@ -55,17 +58,16 @@ for epoch in range(EPOCHS):
     running_loss = 0.0
 
     for batch_idx, batch in enumerate(train_loader):
-        images = batch[0].to(device)        # (B, 3, 256, 256)
-        tokens = batch[1].to(device)        # (B, T_full)
+        images = batch[0].to(device)
+        tokens = batch[1].to(device)
 
-        # teacher forcing split
-        dec_in  = tokens[:, :-1]            # input to decoder
-        dec_out = tokens[:, 1:]             # prediction targets
+        dec_in  = tokens[:, :-1]
+        dec_out = tokens[:, 1:]
 
         optimizer.zero_grad()
 
         with torch.cuda.amp.autocast():
-            pred = model(images, dec_in)    # (B, T-1, vocab)
+            pred = model(images, dec_in)
             B, Tm1, V = pred.shape
 
             loss = criterion(
@@ -82,7 +84,6 @@ for epoch in range(EPOCHS):
 
     avg_train_loss = running_loss / len(train_loader)
     train_losses.append(avg_train_loss)
-    print(f"Epoch {epoch+1}/{EPOCHS} - Train Loss: {avg_train_loss:.4f}")
 
     # ---- VALIDATION ----
     model.eval()
@@ -107,8 +108,18 @@ for epoch in range(EPOCHS):
 
     avg_val_loss = val_loss / len(val_loader)
     val_losses.append(avg_val_loss)
-    print(f"Epoch {epoch+1}/{EPOCHS} - Val Loss: {avg_val_loss:.4f}")
 
-    # optional: cleanup
-    gc.collect()
-    torch.cuda.empty_cache()
+    # ---- PRINT RESULTS ----
+    print(f"Epoch {epoch+1}/{EPOCHS} | Train Loss: {avg_train_loss:.4f} | Val Loss: {avg_val_loss:.4f}")
+
+    # ---- WRITE TO LOG FILE ----
+    with open(LOG_PATH, "a") as f:
+        f.write(f"{epoch+1:3d} | {avg_train_loss:.6f} | {avg_val_loss:.6f}\n")
+
+    # optional cleanup
+os.makedirs("saved_models", exist_ok=True)
+save_path = "saved_models/vit_transformer.pth"
+torch.save(model.state_dict(), save_path)
+print(f"\nModel saved to: {save_path}")
+
+print(f"\nTraining complete. Logs saved to: {LOG_PATH}")
