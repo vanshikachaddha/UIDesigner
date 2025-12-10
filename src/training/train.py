@@ -11,7 +11,7 @@ from dataset.dataloader import get_dataloaders
 from torchvision import transforms
 
 # ---------------------------------------------------------
-# 🔧 SETUP
+# SETUP
 # ---------------------------------------------------------
 device = "cuda" if torch.cuda.is_available() else "cpu"
 print("Running on:", device)
@@ -71,7 +71,7 @@ def train_step(batch):
 
 
 # ---------------------------------------------------------
-# 🧊 VALIDATION STEP (ONE BATCH)
+# VALIDATION STEP (ONE BATCH)
 # ---------------------------------------------------------
 @torch.no_grad()
 def val_step(batch):
@@ -120,3 +120,4 @@ for epoch in range(EPOCHS):
     save_path = "saved_models/baseline.pth"
     torch.save(model.state_dict(), save_path)
     print(f"\nModel saved to: {save_path}")
+
