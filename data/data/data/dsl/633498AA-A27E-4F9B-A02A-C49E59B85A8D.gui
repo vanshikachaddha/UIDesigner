@@ -1,0 +1,11 @@
+stack {
+row {
+label, switch
+}
+row {
+label, btn-add
+}
+}
+footer {
+btn-search, btn-download, btn-search, btn-contact
+}

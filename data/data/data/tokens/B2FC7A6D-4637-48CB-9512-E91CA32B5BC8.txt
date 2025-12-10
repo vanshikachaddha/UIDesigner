@@ -1,0 +1,1 @@
+stack { row { label , slider , label } row { label , slider , label } } footer { btn-download , btn-contact , btn-search }
