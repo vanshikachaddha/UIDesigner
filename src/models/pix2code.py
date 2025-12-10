@@ -28,7 +28,7 @@ from torchvision import transforms
 from nltk.translate.bleu_score import sentence_bleu, SmoothingFunction
 
 from .encoder import VisionTransformerEncoder
-from .decoder import TransformerDecoder  # your transformer decoder
+from .decoder import TransformerDecoder, TransformerDecoderNoCross  # your transformer decoders
 
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 
@@ -100,7 +100,7 @@ class Pix2CodeDataset(Dataset):
 # -------------------------------------------------------------------------
 
 class Pix2CodeModel(nn.Module):
-    def __init__(self, vocab_size: int):
+    def __init__(self, vocab_size: int, use_global_summary: bool = False):
         super().__init__()
 
         self.encoder = VisionTransformerEncoder(
@@ -116,6 +116,7 @@ class Pix2CodeModel(nn.Module):
             depth=6,
             heads=8,
             max_len=1024,
+            use_global_summary=use_global_summary,
         )
 
     def forward(self, images, tgt_tokens):
@@ -127,6 +128,33 @@ class Pix2CodeModel(nn.Module):
         visual_embeds = self.encoder(images)              # (B, S, 512)
         logits = self.decoder(visual_embeds, tgt_tokens)  # (B, T, vocab)
         return logits
+
+
+class Pix2CodeModelNoCross(nn.Module):
+    """
+    Baseline model without cross-attention. Decoder only sees the encoder CLS summary.
+    """
+    def __init__(self, vocab_size: int):
+        super().__init__()
+
+        self.encoder = VisionTransformerEncoder(
+            image_height=256,
+            image_width=256,
+            patch_size=16,
+            embedding_dim=512,
+        )
+
+        self.decoder = TransformerDecoderNoCross(
+            vocab_size=vocab_size,
+            dim=512,
+            depth=6,
+            heads=8,
+            max_len=1024,
+        )
+
+    def forward(self, images, tgt_tokens):
+        visual_embeds = self.encoder(images)
+        return self.decoder(visual_embeds, tgt_tokens)
 
 
 # -------------------------------------------------------------------------

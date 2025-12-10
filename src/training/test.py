@@ -1,79 +1,74 @@
-
-import sys, os
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+#!/usr/bin/env python3
+"""
+Evaluate the no-cross-attention model on the held-out test split.
+Assumes checkpoints saved via src/training/train.py (Pix2CodeModelNoCross).
+"""
+import os
+import sys
 
 import torch
-from PIL import Image
 from torchvision import transforms
 
-from models.pix2code import Pix2CodeModel, Tokenizer
-import nltk
-from nltk.translate.bleu_score import sentence_bleu
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
-PROJECT_ROOT = "/content/UIDesigner"
-DATA_ROOT    = f"{PROJECT_ROOT}/data"
-
-VOCAB_PATH   = f"{DATA_ROOT}/vocab.json"
-IMAGE_DIR    = f"{DATA_ROOT}/images"
-TOKEN_DIR    = f"{DATA_ROOT}/tokens"
-
-print("TEST (Teacher Forced) is running...")
-
-tokenizer = Tokenizer(VOCAB_PATH)
-vocab_size = len(tokenizer.token_to_id)
-
-model = Pix2CodeModel(vocab_size=vocab_size)
+from models.pix2code import Pix2CodeModelNoCross, Tokenizer  # noqa: E402
+from dataset.dataloader import get_dataloaders  # noqa: E402
 
 
-CHECKPOINT = f"{PROJECT_ROOT}/saved_models/vit_transformer.pth"
-state = torch.load(CHECKPOINT, map_location="cpu")
-model.load_state_dict(state)
-model.eval()
-print(f"✔ Loaded weights from {CHECKPOINT}")
+def evaluate_on_test(model, test_loader, criterion, device):
+    model.eval()
+    test_loss = 0.0
 
-device = "cuda" if torch.cuda.is_available() else "cpu"
-model = model.to(device)
+    with torch.no_grad():
+        for images, tokens in test_loader:
+            images = images.to(device)
+            tokens = tokens.to(device)
 
-TEST_IMAGE = f"{IMAGE_DIR}/001B5BD8-0401-4411-A3C4-A745050326C0.png"
+            dec_in = tokens[:, :-1]
+            dec_out = tokens[:, 1:]
 
-transform = transforms.Compose([
-    transforms.Resize((256, 256)),
-    transforms.ToTensor(),
-    transforms.Normalize([0.5]*3, [0.5]*3),
-])
+            pred = model(images, dec_in)
+            B, Tm1, V = pred.shape
 
-img = Image.open(TEST_IMAGE).convert("RGB")
-img = transform(img).unsqueeze(0).to(device)
+            loss = criterion(
+                pred.reshape(B * Tm1, V),
+                dec_out.reshape(B * Tm1)
+            )
 
-img_id = os.path.basename(TEST_IMAGE).replace(".png", "")
-gt_path = f"{TOKEN_DIR}/{img_id}.txt"
+            test_loss += loss.item()
 
-with open(gt_path, "r") as f:
-    gt_tokens = f.read().strip().split()
-
-
-gt_ids = [tokenizer.token_to_id[t] for t in gt_tokens]
-
-start_id = tokenizer.token_to_id["<START>"]
-dec_input_ids = [start_id] + gt_ids[:-1]
-
-dec_in = torch.tensor([dec_input_ids], device=device)
-
-logits = model(img, dec_in)     
-pred_ids = logits.argmax(-1).squeeze().tolist()
-
-pred_tokens = [tokenizer.id_to_token[i] for i in pred_ids]
+    avg_test_loss = test_loss / len(test_loader)
+    print(f"TEST LOSS: {avg_test_loss:.4f}")
+    return avg_test_loss
 
 
-correct = sum(p == g for p, g in zip(pred_tokens, gt_tokens))
-token_acc = correct / max(len(gt_tokens), 1)
+if __name__ == "__main__":
+    tokenizer = Tokenizer("data/vocab.json")
+    vocab_size = len(tokenizer.token_to_id)
 
-bleu = sentence_bleu([gt_tokens], pred_tokens)
+    device = "cuda" if torch.cuda.is_available() else "cpu"
 
-edit_dist = nltk.edit_distance(gt_tokens, pred_tokens)
+    transform = transforms.Compose([
+        transforms.Resize((256, 256)),
+        transforms.ToTensor(),
+        transforms.Normalize(mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5]),
+    ])
 
-print("\n===== TEACHER-FORCED METRICS =====")
-print(f"Token Accuracy: {token_acc:.4f}")
-print(f"BLEU Score:     {bleu:.4f}")
-print(f"Edit Distance:  {edit_dist}")
-print("==================================\n")
+    # expect test loader from get_dataloaders
+    _, _, test_loader = get_dataloaders(
+        root_dir="data/",
+        batch_size=4,
+        transform=transform,
+        max_seq_len=512,
+    )
+
+    model = Pix2CodeModelNoCross(vocab_size=vocab_size).to(device)
+    state = torch.load("saved_models/vit_transformer.pth", map_location=device)
+    model.load_state_dict(state.get("model", state))
+
+    criterion = torch.nn.CrossEntropyLoss(ignore_index=tokenizer.pad_id)
+
+    test_loss = evaluate_on_test(model, test_loader, criterion, device)
+
+    with open("test_results.txt", "a") as f:
+        f.write(f"Test Loss: {test_loss:.6f}\n")

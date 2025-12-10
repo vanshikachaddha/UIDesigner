@@ -6,7 +6,7 @@ import numpy as np
 import sys, os
 sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 
-from models.pix2code import Pix2CodeModel, Tokenizer
+from models.pix2code import Pix2CodeModelNoCross, Tokenizer
 from dataset.dataloader import get_dataloaders
 
 # --------- SETUP ---------
@@ -31,7 +31,7 @@ train_loader, val_loader, _ = get_dataloaders(
     max_seq_len=512,
 )
 
-model = Pix2CodeModel(vocab_size=vocab_size).to(device)
+model = Pix2CodeModelNoCross(vocab_size=vocab_size).to(device)
 criterion = torch.nn.CrossEntropyLoss(ignore_index=tokenizer.pad_id)
 optimizer = torch.optim.AdamW(model.parameters(), lr=1e-4)
 scaler = torch.cuda.amp.GradScaler()
