@@ -51,7 +51,6 @@ Consumes:
 * Teacher Forcing
 * Cross-Entropy Loss
 * BLEU Score evaluation
-* DSL → HTML generation for qualitative evaluation
 
 ### Phase 2 — Modern Architecture Upgrade (Goal)
 Once the baseline is working:
@@ -101,8 +100,8 @@ Why?
 * Evaluation metrics
 
 ### Evaluation + Generation
-* Convert predicted DSL → HTML/CSS
-* Compare against ground truth
+* Evaluate predicted DSL sequences
+* Compare against ground truth DSL
 * Calculate BLEU scores
 * Produce demo outputs
 
