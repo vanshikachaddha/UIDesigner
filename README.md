@@ -17,7 +17,7 @@
 This project aims to rebuild and modernize the Pix2Code architecture, a system that transforms UI screenshots into frontend code. We start by faithfully recreating the original 2017 architecture (CNN + LSTM), and then upgrade the model with modern components like Vision Transformers (ViT) and Transformer Decoders
 
 * Take a screenshot of a mobile/web UI
-* Generate clean DSL → convert to HTML/CSS
+* Generate structured DSL tokens that describe the UI layout
 * Eventually upgrade the model for improved accuracy & generalization
 
 ### Motivation
@@ -56,7 +56,7 @@ Consumes:
 ### Phase 2 — Modern Architecture Upgrade (Goal)
 Once the baseline is working:
 
-### Upgrade Encoder → ViT (Vision Transformer)
+### Upgrade Encoder → ViT (Vision Transformer) and ResNet
 Why?
 * Better global understanding
 * Better performance on structured UIs
@@ -70,9 +70,17 @@ Why?
 
 ### Add Attention → Cross Attention
 Why?
-* Referencing past tokens before generating new ones
+* Lets the decoder directly attend to image features at each decoding step, improving image–token alignment.
 * Instead of having one vector -> flatten to patches
 * Better inferences rather than model trying to remember 
+
+### Six Total Architectures Evaluated
+1. CNN + LSTM (Baseline)
+2. ResNet + Transformer
+3. ViT + Transformer
+4. CNN + Transformer + Cross-Attention
+5. ResNet + Transformer + Cross-Attention
+6. ViT + Transformer + Cross-Attention
 
 ## 3. Team Responsiblity
 
@@ -100,9 +108,10 @@ Why?
 
 ## 4. Evaluation
 ### We evaluate models using:
+* Cross Entropy loss
 * Token-level accuracy
 * BLEU score (reproduction of DSL sequence)
-* Render comparison (visual matching HTML outputs)
+* Edit distance
 
 ## 5. Dependencies
 * Python
@@ -111,7 +120,6 @@ Why?
 * Matplotlib / Seaborn
 * OpenCV
 * TorchVision
-* 
 
 ## 6. FINAL GOALS
 * ✔️ A fully working Pix2Code baseline
