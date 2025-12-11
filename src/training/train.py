@@ -136,3 +136,14 @@ np.savez(
     val=np.array(val_loss_history),
 )
 print("Saved loss history to logs/loss_history.npz")
+
+# Save the trained model
+os.makedirs("checkpoints", exist_ok=True)
+torch.save({
+    'epoch': config.EPOCHS,
+    'model_state_dict': model.state_dict(),
+    'optimizer_state_dict': optimizer.state_dict(),
+    'train_loss_history': train_loss_history,
+    'val_loss_history': val_loss_history,
+}, "checkpoints/final_model.pt")
+print("Saved model to checkpoints/final_model.pt")
