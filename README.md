@@ -92,6 +92,10 @@ Why?
 ### Model Implementation
 * CNN Encoder
 * LSTM Decoder
+* ResNet Encoder
+* ViT Encoder
+* Transformer Decoder
+* Cross Attention
   
 ### Training Pipeline
 * Forward pass
